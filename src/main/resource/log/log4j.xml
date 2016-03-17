@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//log4j/log4j Configuration//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/"
+                     threshold="null" debug="null">
+    <appender name="CONSOLE"
+              class="org.apache.log4j.ConsoleAppender">
+        <param name="Target" value="System.out"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[poi-lego-web]%d %-5p [%c] %m%n"/>
+        </layout>
+    </appender>
+
+    <appender name="fileAppender" class="org.apache.log4j.DailyRollingFileAppender">
+        <!-- <param name="Threshold" value="INFO" /> -->
+        <param name="File" value="/data/applogs/insect-web/app.log"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="[poi-lego-web]%d %-5p  [%c %L] %m%n"/>
+        </layout>
+    </appender>
+
+
+    <logger name="com.dianping" additivity="false">
+        <level value="ERROR"/>
+    </logger>
+
+    <logger name="com.ibatis" additivity="false">
+        <level value="WARN"/>
+        <appender-ref ref="CONSOLE"/>
+    </logger>
+
+    <logger name="java.sql">
+        <level value="WARN"/>
+    </logger>
+
+    <logger name="org.springframework.jms">
+        <level value="ERROR"/>
+    </logger>
+    <logger name="org.apache.activemq">
+        <level value="ERROR"/>
+    </logger>
+
+    <logger name="org.apache.struts2">
+        <level value="ERROR"/>
+    </logger>
+
+
+    <logger name="com.dianping.poi" additivity="false">
+        <level value="DEBUG"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="fileAppender" />
+        <appender-ref ref="catAppender" />
+    </logger>
+
+    <appender name="catAppender" class="com.dianping.cat.log4j.CatAppender"></appender>
+    
+    <root>
+        <level value="INFO"/>
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="fileAppender" />
+        <appender-ref ref="catAppender" />
+    </root>
+
+</log4j:configuration>
