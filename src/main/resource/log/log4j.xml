@@ -19,10 +19,6 @@
     </appender>
 
 
-    <logger name="com.dianping" additivity="false">
-        <level value="ERROR"/>
-    </logger>
-
     <logger name="com.ibatis" additivity="false">
         <level value="WARN"/>
         <appender-ref ref="CONSOLE"/>
@@ -43,16 +39,6 @@
         <level value="ERROR"/>
     </logger>
 
-
-    <logger name="com.dianping.poi" additivity="false">
-        <level value="DEBUG"/>
-        <appender-ref ref="CONSOLE"/>
-        <appender-ref ref="fileAppender" />
-        <appender-ref ref="catAppender" />
-    </logger>
-
-    <appender name="catAppender" class="com.dianping.cat.log4j.CatAppender"></appender>
-    
     <root>
         <level value="INFO"/>
         <appender-ref ref="CONSOLE"/>

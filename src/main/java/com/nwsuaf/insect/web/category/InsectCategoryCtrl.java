@@ -27,12 +27,14 @@ public class InsectCategoryCtrl {
 	@Autowired
 	private InsectUserRoleService insectUserRoleService;
 
+	@RequestMapping(value = "/tree")
 	public String getTree(ModelMap model, HttpServletRequest request) {
 		User user = (User) request.getSession().getAttribute("user");
 		List<Integer> categoryIds = insectUserRoleService
 				.getBackCategoryIds(user.getInsectCateUserRoles());
-		String poiCategoryHTML = treeBuilderService.buildInsectTree(insectCategoryService
-				.getInsectCategoryTree(categoryIds,user.getIsRoot()));
+		String poiCategoryHTML = treeBuilderService
+				.buildInsectTree(insectCategoryService.getInsectCategoryTree(
+						categoryIds, user.getIsRoot()));
 		model.addAttribute("poiCategoryHTML", poiCategoryHTML);
 		return "insectCategoryTree/tree";
 	}
