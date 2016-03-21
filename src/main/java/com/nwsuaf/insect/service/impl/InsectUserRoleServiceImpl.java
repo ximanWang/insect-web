@@ -26,6 +26,7 @@ public class InsectUserRoleServiceImpl implements InsectUserRoleService {
 			}
 		}
 		return categoryIds;
+		
 	}
 
 }
