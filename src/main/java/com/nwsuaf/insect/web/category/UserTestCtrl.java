@@ -12,7 +12,7 @@ public class UserTestCtrl {
     public ModelAndView getUser() {  
         ModelAndView mv = new ModelAndView();  
         mv.addObject("message", "Hello World!!!");  
-        mv.setViewName("hello");  
+        mv.setViewName("hello1");  
         System.out.println("ininininin");
         return mv;  
     }  
