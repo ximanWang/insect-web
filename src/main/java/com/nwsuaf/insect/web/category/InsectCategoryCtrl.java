@@ -9,7 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.nwsuaf.insect.model.User;
+import com.nwsuaf.insect.model.query.User;
 import com.nwsuaf.insect.service.InsectCategoryService;
 import com.nwsuaf.insect.service.InsectUserRoleService;
 import com.nwsuaf.insect.service.TreeBuilderService;

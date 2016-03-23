@@ -18,15 +18,17 @@ public class InsectUserRoleServiceImpl implements InsectUserRoleService {
 		List<Integer> categoryIds = new ArrayList<Integer>();
 		for (InsectCateUserRoleQuery insectCateUserRole : insectCateUserRoles) {
 			if (RoleType.BACK.name().equals(insectCateUserRole.getRoleType())
-					&& UserRoleEnum.ROLE_MOD.getRoleCode().equals(
+					&& UserRoleEnum.BACK_CATE.getRoleCode().equals(
 							insectCateUserRole.getRoleCode())
-					|| UserRoleEnum.ROLE_DEL.getRoleCode().equals(
+					|| UserRoleEnum.BACK_PRO.getRoleCode().equals(
+							insectCateUserRole.getRoleCode())
+					|| UserRoleEnum.BACK_CATE_PRO.getRoleCode().equals(
 							insectCateUserRole.getRoleCode())) {
 				categoryIds.addAll(insectCateUserRole.getCategoryIds());
 			}
 		}
 		return categoryIds;
-		
+
 	}
 
 }

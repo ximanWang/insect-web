@@ -10,9 +10,11 @@ public enum UserRoleEnum {
 
 	ROOT("ROOT", "超级权限"), 
 	
-	ROLE_MOD("ROLE01", "修改权限"),
+	BACK_CATE("BACK01", "修改类目权限"),
 	
-	ROLE_DEL("ROLE02", "删除权限");
+	BACK_PRO("BACK02", "修改属性权限"),
+	
+	BACK_CATE_PRO("BACK03", "后台类目、属性修改权限");
 
 	private String roleName;
 	
