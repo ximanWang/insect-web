@@ -14,9 +14,7 @@ public class TreeBuilderServiceImpl implements TreeBuilderService {
 
 		StringBuilder sb = new StringBuilder();
 		for (InsectCategoryQuery insectCategoryQuery : insectCategorys) {
-			if (insectCategoryQuery.getChildren().size() == 0
-					|| insectCategoryQuery.getChildren() == null
-					|| insectCategoryQuery.getIsLeaf() == 1) {
+			if (insectCategoryQuery.getIsLeaf() == 1) {
 				sb.append("<li oprStatus='").append(
 						insectCategoryQuery.isPrivilege());
 				sb.append("' isMain='").append(true);

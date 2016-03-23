@@ -3,16 +3,16 @@ package com.nwsuaf.insect.validator;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.nwsuaf.insect.model.query.User;
+import com.nwsuaf.insect.model.query.UserQuery;
 
 public class UserVaildator implements Validator{
 
 	public boolean supports(Class cla) {
-		return cla.equals(User.class);
+		return cla.equals(UserQuery.class);
 	}
 
 	public void validate(Object obj, Errors error) {
-		User user = (User)obj;
+		UserQuery user = (UserQuery)obj;
 		if(!"ximan".equals(user.getUserName())){
 			error.rejectValue("userName", "userNameError", null, "用户名不正确");
 		}

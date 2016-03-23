@@ -5,7 +5,7 @@ import java.util.List;
 import lombok.Data;
 
 @Data
-public class User {
+public class UserQuery {
 
 	private String userName; // 用户名
 	
