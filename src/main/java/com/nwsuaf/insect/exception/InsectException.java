@@ -1,6 +1,4 @@
 package com.nwsuaf.insect.exception;
-
-
 /**
  * 
  * @author ximan

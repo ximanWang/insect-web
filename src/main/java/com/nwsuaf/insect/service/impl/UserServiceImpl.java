@@ -7,7 +7,7 @@ import com.nwsuaf.insect.mapper.UserMapper;
 import com.nwsuaf.insect.model.User;
 import com.nwsuaf.insect.service.UserService;
 
-@Service
+@Service("UserServiceImpl")
 public class UserServiceImpl implements UserService{
 	
 	@Autowired
