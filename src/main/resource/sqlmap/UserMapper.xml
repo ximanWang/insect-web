@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.nwsuaf.insect.mapper.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.nwsuaf.insect.model.User" >
+  <resultMap id="BaseResultMap" type="com.nwsuaf.insect.model.InsectCateUserRole" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="userrole_id" property="userroleId" jdbcType="INTEGER" />
     <result column="user_code" property="userCode" jdbcType="VARCHAR" />
@@ -26,11 +26,17 @@
     from insect_cateuserrole
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByName" resultMap="BaseResultMap" parameterType="java.lang.String">
+  	select 
+  	<include refid="Base_Column_List" />
+  	from insect_cateuserrole
+    where user_name = #{userName,jdbcType=VARCHAR} 	
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from insect_cateuserrole
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.nwsuaf.insect.model.User" >
+  <insert id="insert" parameterType="com.nwsuaf.insect.model.InsectCateUserRole" >
     insert into insect_cateuserrole (id, userrole_id, user_code, 
       role_code, user_name, user_passwd, 
       user_email, role_type, remark, 
@@ -42,7 +48,7 @@
       #{addUser,jdbcType=VARCHAR}, #{addTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.User" >
+  <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.InsectCateUserRole" >
     insert into insect_cateuserrole
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -127,7 +133,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.nwsuaf.insect.model.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.nwsuaf.insect.model.InsectCateUserRole" >
     update insect_cateuserrole
     <set >
       <if test="userroleId != null" >
@@ -169,7 +175,7 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.nwsuaf.insect.model.User" >
+  <update id="updateByPrimaryKey" parameterType="com.nwsuaf.insect.model.InsectCateUserRole" >
     update insect_cateuserrole
     set userrole_id = #{userroleId,jdbcType=INTEGER},
       user_code = #{userCode,jdbcType=VARCHAR},

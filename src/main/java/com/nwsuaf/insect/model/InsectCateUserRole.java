@@ -17,7 +17,9 @@ public class InsectCateUserRole {
 	
 	private String userName;
 	
-	private String userEmial;
+	private String userPasswd;
+	
+	private String userEmail;
 	
 	private String roleType;
 	
@@ -30,4 +32,5 @@ public class InsectCateUserRole {
 	private String updateUser;
 	
 	private Date updateTime;
+
 }

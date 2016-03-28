@@ -34,7 +34,25 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
-
+	
+	<mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/insectCategory/"/>
+             <!-- 需拦截的地址 -->  
+                        <!-- 一级目录 -->  
+           <!--  <mvc:mapping path="/*.do" />  
+            <mvc:mapping path="/*.ajax" />  
+            <mvc:mapping path="/*.htm" />  
+  
+            <mvc:mapping path="/*/*.do" />  
+            <mvc:mapping path="/*/*.ajax" />  
+            <mvc:mapping path="/*/*.htm" />   -->
+            <!-- 需排除拦截的地址 -->  
+            <mvc:exclude-mapping path="/toLogin"/> 
+            <bean id="loginInterceptor" class="com.nwsuaf.insect.interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
 	<!-- <mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/supplier/*" />

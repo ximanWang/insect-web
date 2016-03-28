@@ -1,17 +1,20 @@
 package com.nwsuaf.insect.mapper;
 
-import com.nwsuaf.insect.model.User;
+import com.nwsuaf.insect.model.InsectCateUserRole;
+
 
 public interface UserMapper {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(User record);
+    int insert(InsectCateUserRole record);
 
-    int insertSelective(User record);
+    int insertSelective(InsectCateUserRole record);
 
-    User selectByPrimaryKey(Integer id);
+    InsectCateUserRole selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByPrimaryKeySelective(InsectCateUserRole record);
 
-    int updateByPrimaryKey(User record);
+    int updateByPrimaryKey(InsectCateUserRole record);
+    
+    InsectCateUserRole selectByName(String InsectCateUserRolename);
 }
