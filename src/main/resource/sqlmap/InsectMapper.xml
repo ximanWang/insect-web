@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nwsuaf.insect.mapper.InsectMapper" >
+  <resultMap id="BaseResultMap" type="com.nwsuaf.insect.model.Insect" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="chinese_name" property="chineseName" jdbcType="VARCHAR" />
+    <result column="english_name" property="englishName" jdbcType="VARCHAR" />
+    <result column="lation_name" property="lationName" jdbcType="VARCHAR" />
+    <result column="alias" property="alias" jdbcType="VARCHAR" />
+    <result column="category_id" property="categoryId" jdbcType="INTEGER" />
+    <result column="is_pest" property="isPest" jdbcType="INTEGER" />
+    <result column="pestcate_id" property="pestcateId" jdbcType="INTEGER" />
+    <result column="host" property="host" jdbcType="VARCHAR" />
+    <result column="distribution" property="distribution" jdbcType="VARCHAR" />
+    <result column="gather_place" property="gatherPlace" jdbcType="VARCHAR" />
+    <result column="features" property="features" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, chinese_name, english_name, lation_name, alias, category_id, is_pest, pestcate_id, 
+    host, distribution, gather_place, features
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from insect_zhong
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from insect_zhong
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nwsuaf.insect.model.Insect" >
+    insert into insect_zhong (id, chinese_name, english_name, 
+      lation_name, alias, category_id, 
+      is_pest, pestcate_id, host, 
+      distribution, gather_place, features
+      )
+    values (#{id,jdbcType=INTEGER}, #{chineseName,jdbcType=VARCHAR}, #{englishName,jdbcType=VARCHAR}, 
+      #{lationName,jdbcType=VARCHAR}, #{alias,jdbcType=VARCHAR}, #{categoryId,jdbcType=INTEGER}, 
+      #{isPest,jdbcType=INTEGER}, #{pestcateId,jdbcType=INTEGER}, #{host,jdbcType=VARCHAR}, 
+      #{distribution,jdbcType=VARCHAR}, #{gatherPlace,jdbcType=VARCHAR}, #{features,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.Insect" >
+    insert into insect_zhong
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="chineseName != null" >
+        chinese_name,
+      </if>
+      <if test="englishName != null" >
+        english_name,
+      </if>
+      <if test="lationName != null" >
+        lation_name,
+      </if>
+      <if test="alias != null" >
+        alias,
+      </if>
+      <if test="categoryId != null" >
+        category_id,
+      </if>
+      <if test="isPest != null" >
+        is_pest,
+      </if>
+      <if test="pestcateId != null" >
+        pestcate_id,
+      </if>
+      <if test="host != null" >
+        host,
+      </if>
+      <if test="distribution != null" >
+        distribution,
+      </if>
+      <if test="gatherPlace != null" >
+        gather_place,
+      </if>
+      <if test="features != null" >
+        features,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="chineseName != null" >
+        #{chineseName,jdbcType=VARCHAR},
+      </if>
+      <if test="englishName != null" >
+        #{englishName,jdbcType=VARCHAR},
+      </if>
+      <if test="lationName != null" >
+        #{lationName,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null" >
+        #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null" >
+        #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="isPest != null" >
+        #{isPest,jdbcType=INTEGER},
+      </if>
+      <if test="pestcateId != null" >
+        #{pestcateId,jdbcType=INTEGER},
+      </if>
+      <if test="host != null" >
+        #{host,jdbcType=VARCHAR},
+      </if>
+      <if test="distribution != null" >
+        #{distribution,jdbcType=VARCHAR},
+      </if>
+      <if test="gatherPlace != null" >
+        #{gatherPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="features != null" >
+        #{features,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.nwsuaf.insect.model.Insect" >
+    update insect_zhong
+    <set >
+      <if test="chineseName != null" >
+        chinese_name = #{chineseName,jdbcType=VARCHAR},
+      </if>
+      <if test="englishName != null" >
+        english_name = #{englishName,jdbcType=VARCHAR},
+      </if>
+      <if test="lationName != null" >
+        lation_name = #{lationName,jdbcType=VARCHAR},
+      </if>
+      <if test="alias != null" >
+        alias = #{alias,jdbcType=VARCHAR},
+      </if>
+      <if test="categoryId != null" >
+        category_id = #{categoryId,jdbcType=INTEGER},
+      </if>
+      <if test="isPest != null" >
+        is_pest = #{isPest,jdbcType=INTEGER},
+      </if>
+      <if test="pestcateId != null" >
+        pestcate_id = #{pestcateId,jdbcType=INTEGER},
+      </if>
+      <if test="host != null" >
+        host = #{host,jdbcType=VARCHAR},
+      </if>
+      <if test="distribution != null" >
+        distribution = #{distribution,jdbcType=VARCHAR},
+      </if>
+      <if test="gatherPlace != null" >
+        gather_place = #{gatherPlace,jdbcType=VARCHAR},
+      </if>
+      <if test="features != null" >
+        features = #{features,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.nwsuaf.insect.model.Insect" >
+    update insect_zhong
+    set chinese_name = #{chineseName,jdbcType=VARCHAR},
+      english_name = #{englishName,jdbcType=VARCHAR},
+      lation_name = #{lationName,jdbcType=VARCHAR},
+      alias = #{alias,jdbcType=VARCHAR},
+      category_id = #{categoryId,jdbcType=INTEGER},
+      is_pest = #{isPest,jdbcType=INTEGER},
+      pestcate_id = #{pestcateId,jdbcType=INTEGER},
+      host = #{host,jdbcType=VARCHAR},
+      distribution = #{distribution,jdbcType=VARCHAR},
+      gather_place = #{gatherPlace,jdbcType=VARCHAR},
+      features = #{features,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
