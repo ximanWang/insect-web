@@ -1,7 +1,7 @@
 package com.nwsuaf.insect.model;
 
 public class Insect {
-    private Integer id;
+	private Integer id;
 
     private String chineseName;
 

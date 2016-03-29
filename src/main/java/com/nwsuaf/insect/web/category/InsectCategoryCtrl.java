@@ -33,11 +33,11 @@ public class InsectCategoryCtrl {
 
 	@RequestMapping(value = "/tree")
 	public String getTree(ModelMap model, HttpServletRequest request) {
-//		UserQuery user = (UserQuery) request.getSession().getAttribute("user");
 		UserQuery userq = new UserQuery();
 		userq.setIsRoot(true);
-	/*	List<Integer> categoryIds = insectUserRoleService
-				.getBackCategoryIds(userq.getInsectCateUserRoles());*/
+//		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
+//		List<Integer> categoryIds = insectUserRoleService
+//				.getBackCategoryIds(userq.getInsectCateUserRoles());
 		List<Integer> categoryIds = new ArrayList<Integer>();
 		categoryIds.add(2);
 		categoryIds.add(3);

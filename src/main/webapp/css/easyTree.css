@@ -1,0 +1,324 @@
+.main-content{
+    background-color: rgba(255, 255, 255, 0.81);
+    padding: 50px;
+    font-size: 16px;
+    color: #5b5c5a;
+}
+
+.lead-title{
+    background-color: #676767;
+    width: 2000px;
+    overflow:visible;
+    position: fixed;
+    overflow:visible;
+    position: fixed;/*固定作用*/
+    top: 0px;
+    /*ie6下样式，加下划线表示只针对ie6 的hack */
+    _position:absolute;/* 把导航栏位置定义为绝对位置  关键*/
+    _top: expression(documentElement.scrollTop + "px"); /* 把导航栏位置放在浏览器垂直滚动条的顶端  关键 */
+    z-index:9999; /* 让导航栏浮在网页的高层位置，遇到flash和图片时候也能始终保持最外层 */
+    text-align:left;
+    height:40px;
+    color:#ffffff;
+    padding-left:0px;
+}
+
+.lead-title .p-insect{
+    font-size: 30px;
+    margin-left: 60px;
+}
+
+.lead-second{
+    background-color: #eee;
+    width: 2000px;
+    padding-left:0px;
+}
+/** Easy Tree style */
+.easy-tree {
+    min-height: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    border-top: none;
+    padding-bottom: 15px;
+}
+
+.easy-tree2 {
+    min-height: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    border-top: none;
+    padding-bottom: 15px;
+}
+
+.easy-tree > ul {
+    padding-left: 15px;
+}
+
+.easy-tree li {
+    list-style-type: none;
+    margin: 0;
+    padding: 10px 5px 0 5px;
+    position: relative
+}
+
+.easy-tree li::before, .easy-tree li::after {
+    content: '';
+    left: -30px;
+    position: absolute;
+    right: auto
+}
+
+.easy-tree li::before {
+    border-left: 1px solid #5cb85c;
+    bottom: 50px;
+    height: 100%;
+    top: 0;
+    width: 1px
+}
+
+.easy-tree li::after {
+    border-top: 1px solid #5cb85c;
+    height: 20px;
+    top: 25px;
+    width: 35px
+}
+
+.easy-tree li > span {
+    border: 1px solid #5cb85c;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none
+}
+
+.easy-tree li.disabled > span {
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none
+}
+
+.easy-tree li.primary > span {
+    border: 1px solid #F00;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none
+}
+
+.easy-tree li.secondary > span {
+    border: 1px solid #000;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none
+}
+
+.easy-tree li > span:hover {
+    border: 1px solid #5cb85c;
+    background: #cccccc;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none
+}
+
+.easy-tree li.disabled > span:hover {
+    border: 1px solid #bbb;
+    background: #cccccc;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none
+}
+
+.easy-tree li.primary > span:hover {
+    border: 1px solid #F00;
+    background: #cccccc;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none
+}
+
+.easy-tree li.secondary > span:hover {
+    border: 1px solid #000;
+    background: #cccccc;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 5px;
+    text-decoration: none
+}
+
+.easy-tree li.parent_li > span {
+    cursor: pointer,
+}
+
+
+.easy-tree > ul > li::before, .easy-tree > ul > li::after {
+    border: 0
+}
+
+.easy-tree li:last-child::before {
+    height: 30px
+}
+
+/*.easy-tree li.parent_li > span:hover, .easy-tree li.parent_li > span:hover + ul li span {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.easy-tree li.parent_li > span:hover, .easy-tree li.parent_li > span:hover + ul li span a {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.easy-tree li.parent_li > span:hover + ul li.li_selected span {
+    background: #5cb85c;
+    color: #fff;
+}
+
+.easy-tree li.parent_li > span:hover + ul li.li_selected span a {
+    background: #e5e2e1;
+    color: #fff;
+}*/
+
+.easy-tree li > span > a, .easy-tree li > span > span {
+    margin-left: 8px;
+    color: #5cb85c;
+    text-decoration: none;
+}
+
+.easy-tree li.primary > span > a, .easy-tree li.primary > span > span {
+    margin-left: 8px;
+    color: #F00;
+    text-decoration: none;
+}
+
+.easy-tree li.secondary > span > a, .easy-tree li.secondary > span > span {
+    margin-left: 8px;
+    color: #000;
+    text-decoration: none;
+}
+
+.easy-tree li.disabled > span > a, .easy-tree li.disabled > span > span {
+    color: #aaa;
+    text-decoration: none;
+}
+
+.easy-tree li > span:hover > a, .easy-tree li > span:hover > span {
+    color: #fff;
+    text-decoration: none;
+}
+
+.easy-tree li.li_selected > span > a, .easy-tree li.li_selected > span > span {
+    color: #fff;
+    text-decoration: none;
+}
+
+.easy-tree li > span > span.glyphicon-folder-close,
+.easy-tree li > span > span.glyphicon-folder-open,
+.easy-tree li > span > span.glyphicon-file {
+    margin-right: 5px;
+    color: #5cb85c;
+}
+
+.easy-tree li.disabled > span > span.glyphicon-folder-close,
+.easy-tree li.disabled > span > span.glyphicon-folder-open,
+.easy-tree li.disabled > span > span.glyphicon-file {
+    margin-right: 5px;
+    color: #aaa;
+}
+
+.easy-tree input {
+    color: #5cb85c;
+}
+
+.easy-tree li.li_selected > span > span.glyphicon-folder-close,
+.easy-tree li.li_selected > span > span.glyphicon-folder-open,
+.easy-tree li.li_selected > span > span.glyphicon-file {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.easy-tree li.li_selected > span, .easy-tree li.li_selected > span > a {
+    background: #5cb85c;
+    color: #fff;
+}
+
+/*.easy-tree li.li_selected > span:hover, .easy-tree li.li_selected > span:hover > a {
+    background: #e5e2e1;
+    color: #fff;
+}*/
+
+.easy-tree li.li_selected > span:hover > span.glyphicon-folder-close,
+.easy-tree li.li_selected > span:hover > span.glyphicon-folder-open,
+.easy-tree li.li_selected > span:hover > span.glyphicon-file {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.easy-tree li > span:hover > span.glyphicon-folder-close,
+.easy-tree li > span:hover > span.glyphicon-folder-open,
+.easy-tree li > span:hover > span.glyphicon-file {
+    margin-right: 5px;
+    color: #fff;
+}
+
+.easy-tree .easy-tree-toolbar {
+    z-index: 100;
+    filter:alpha(opacity=0); /*ie透明度20%*/ 
+	-moz-opacity:1;        /*Moz + FF 透明度20%*/ 
+	opacity:1; 			/*支持CSS3的浏览器(FF1.5也支持)透明度20%*/ 
+}
+
+.easy-tree .operatebar {
+    margin-left: 15px;
+    background-color: #ffffff;
+    width: 200px
+}
+
+.easy-tree .citySelectBar {
+    margin-left: 20px;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.easy-tree .actionbar {
+    margin-left: 20px;
+    width: 50%;
+}
+
+.easy-tree .easy-tree-toolbar .operatebar > div {
+    display: inline-block;
+}
+
+.easy-tree .easy-tree-toolbar .operatebar > div > button {
+    border-radius: 0;
+    margin: 10px 5px;
+}
+
+.easy-tree .actionbar .input-group {
+    top: -15px;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.easy-tree .actionbar .input-group input {
+    border-radius: 0;
+}
+
+.easy-tree .actionbar .input-group button {
+    border-radius: 0;
+}
+
+.easy-tree .affix {
+    position: fixed;
+    top: 40;
+    width: 72%;
+}

@@ -32,6 +32,7 @@ public class LoginController extends AbstractController{
 		String password = request.getParameter("password");
 		UserQuery user = getUser(username,password);
 		if(user != null){
+			request.getSession().setAttribute("user", user);
 			return new ModelAndView(new RedirectView("/insect-web/insectCategory/tree"));
 		}else{
 			return new ModelAndView("login");

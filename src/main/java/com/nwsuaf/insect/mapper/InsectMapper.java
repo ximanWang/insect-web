@@ -3,6 +3,7 @@ package com.nwsuaf.insect.mapper;
 import com.nwsuaf.insect.model.Insect;
 
 public interface InsectMapper {
+	
     int deleteByPrimaryKey(Integer id);
 
     int insert(Insect record);

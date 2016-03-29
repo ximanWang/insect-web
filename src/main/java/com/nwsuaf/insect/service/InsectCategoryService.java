@@ -15,5 +15,7 @@ public interface InsectCategoryService {
 	List<InsectCategoryQuery> getInsectCategoryTree(List<Integer> categoryIds, boolean isRoot);
 	
 	Integer insertCategory(InsectCategory insectCategory);
+	
+//	List<InsectCategoryQuery> getParents(Integer id);
 
 }

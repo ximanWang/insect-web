@@ -1,5 +1,6 @@
 package com.nwsuaf.insect.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -30,7 +31,7 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 		List<InsectCategoryQuery> categories = insectCategoryBizService.buildCategoryTree(0, categoryIds, cateMap, false, isRoot);
 		return categories;
 	}
-
+	
 	public Integer insertCategory(InsectCategory insectCategory) {
 		if(insectCategory == null){
 			throw new InsectException("插入不能为空！");

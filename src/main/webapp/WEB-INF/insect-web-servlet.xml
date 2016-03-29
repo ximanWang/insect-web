@@ -13,6 +13,9 @@
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/font/" mapping="/font/**" />
 	<mvc:resources location="/dist/" mapping="/dist/**" />
+	<mvc:resources location="/css/" mapping="/css/**" />
+	<mvc:resources location="/font-css/" mapping="/font-css/**" />
+	<mvc:resources location="/images/" mapping="/images/**" />
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
 			<bean
@@ -34,31 +37,15 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
-	
-	<mvc:interceptors>
-        <mvc:interceptor>
-            <mvc:mapping path="/insectCategory/"/>
-             <!-- 需拦截的地址 -->  
-                        <!-- 一级目录 -->  
-           <!--  <mvc:mapping path="/*.do" />  
-            <mvc:mapping path="/*.ajax" />  
-            <mvc:mapping path="/*.htm" />  
-  
-            <mvc:mapping path="/*/*.do" />  
-            <mvc:mapping path="/*/*.ajax" />  
-            <mvc:mapping path="/*/*.htm" />   -->
-            <!-- 需排除拦截的地址 -->  
-            <mvc:exclude-mapping path="/toLogin"/> 
-            <bean id="loginInterceptor" class="com.nwsuaf.insect.interceptor.LoginInterceptor"/>
-        </mvc:interceptor>
-    </mvc:interceptors>
-    
+
 	<!-- <mvc:interceptors>
 		<mvc:interceptor>
-			<mvc:mapping path="/supplier/*" />
-			<mvc:mapping path="/goods/*" />
-			<mvc:mapping path="/contact/*" />
-			<bean class="com.nwsuaf.insect.interceptor.UserInterceptor"></bean>
+			需拦截的地址
+			<mvc:mapping path="/insectCategory/*" />
+			需排除拦截的地址
+			<mvc:exclude-mapping path="/toLogin" />
+			<mvc:exclude-mapping path="/login" />
+			<bean id="loginInterceptor" class="com.nwsuaf.insect.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors> -->
 

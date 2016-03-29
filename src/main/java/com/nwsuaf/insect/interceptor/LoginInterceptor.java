@@ -2,7 +2,6 @@ package com.nwsuaf.insect.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
@@ -12,7 +11,6 @@ import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.web.login.LoginController;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
-	private static final String[] IGNORE_URI = { "toLogin" };
 	private String location = "/insect-web/loginController/toLogin";
 	@Autowired
 	private LoginController loginController;
@@ -20,7 +18,6 @@ public class LoginInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response,
 			Object handler) throws Exception {
-		HttpSession session = request.getSession(true);
 		// 从session 里面获取用户名的信息
 		UserQuery userQuery = loginController.getLoginUser(request);
 		// 判断如果没有取到用户信息，就跳转到登陆页面，提示用户进行登陆
