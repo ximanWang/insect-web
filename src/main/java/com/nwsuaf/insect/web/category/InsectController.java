@@ -21,7 +21,7 @@ public class InsectController {
 		ModelAndView mv = new ModelAndView();
 		Insect insect = insectService.selectById(id);
 		mv.addObject("insect", insect);
-		mv.setViewName("insectCategoryTree/tree");
+		mv.setViewName("backInsect/backinsect");
 		return mv;
 	}
 }

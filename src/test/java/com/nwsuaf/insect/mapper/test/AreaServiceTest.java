@@ -1,7 +1,5 @@
 package com.nwsuaf.insect.mapper.test;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,30 +7,23 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.nwsuaf.insect.mapper.AreaMapper;
-import com.nwsuaf.insect.mapper.InsectCategoryMapper;
-import com.nwsuaf.insect.model.query.InsectCategoryQuery;
+import com.nwsuaf.insect.model.Area;
+import com.nwsuaf.insect.service.AreaService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:spring.xml",
 		"classpath:spring-mybatis.xml" })
-public class TestInsectCategoryMapper {
-
-	@Autowired
-	public InsectCategoryMapper insectCategoryMapper; 
+public class AreaServiceTest {
 	
+	@Autowired
+	private AreaService areaService;
 	@Autowired
 	private AreaMapper areaMapper;
 	
 	@Test
-	public void testGet(){
-//		insectCategoryMapper.selectByPrimaryKey(1);
-		areaMapper.selectByPrimaryKey(10);
+	public void testInsert(){
+		Area area = new Area();
+		area.setName("保定");
+		areaService.insectArea(area, 10);
 	}
-	
-	@Test
-	public void testSelectAll(){
-		List<InsectCategoryQuery> list = insectCategoryMapper.selectAllInsectCategories();
-		System.out.println(list.size());
-	}
-
 }

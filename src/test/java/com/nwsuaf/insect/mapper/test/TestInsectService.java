@@ -9,7 +9,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import com.nwsuaf.insect.mapper.InsectMapper;
 import com.nwsuaf.insect.mapper.UserMapper;
 import com.nwsuaf.insect.model.Insect;
-import com.nwsuaf.insect.model.query.InsectQuery;
 import com.nwsuaf.insect.service.InsectService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
