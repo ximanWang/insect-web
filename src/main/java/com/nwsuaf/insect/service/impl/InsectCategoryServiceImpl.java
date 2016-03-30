@@ -40,4 +40,11 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 		return result;
 	}
 
+	public List<InsectCategory> getParents(Integer id) {
+		List<InsectCategory> insectCateList = insectCategoryMapper.getParents(id);
+		//去掉ROOT
+		insectCateList.remove(0);
+		return insectCateList;
+	}
+
 }

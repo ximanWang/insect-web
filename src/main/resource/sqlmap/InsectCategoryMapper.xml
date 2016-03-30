@@ -17,7 +17,8 @@
 		<result column="update_time" property="updateTime" jdbcType="TIMESTAMP" />
 	</resultMap>
 	<sql id="Base_Column_List">
-		id, category_id, category_name, lation_name, parent_id, category_level,
+		id, category_id, category_name, lation_name, parent_id,
+		category_level,
 		is_leaf,
 		add_user, add_time, update_user, update_time
 	</sql>
@@ -29,20 +30,25 @@
 		where id = #{id,jdbcType=INTEGER}
 	</select>
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-		delete from insect_category
+		delete from
+		insect_category
 		where id = #{id,jdbcType=INTEGER}
 	</delete>
 	<insert id="insert" parameterType="com.nwsuaf.insect.model.InsectCategory">
-		insert into insect_category (id, category_id, category_name,
-		lation_name, parent_id, category_level,
+		insert into insect_category
+		(id, category_id, category_name,
+		lation_name, parent_id,
+		category_level,
 		is_leaf, add_user, add_time,
 		update_user, update_time)
 		values (#{id,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER},
 		#{categoryName,jdbcType=VARCHAR},
-		#{lationName,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER}, #{categoryLevel,jdbcType=INTEGER},
+		#{lationName,jdbcType=VARCHAR},
+		#{parentId,jdbcType=INTEGER}, #{categoryLevel,jdbcType=INTEGER},
 		#{isLeaf,jdbcType=INTEGER}, #{addUser,jdbcType=VARCHAR},
 		#{addTime,jdbcType=TIMESTAMP},
-		#{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP})
+		#{updateUser,jdbcType=VARCHAR},
+		#{updateTime,jdbcType=TIMESTAMP})
 	</insert>
 	<insert id="insertSelective" parameterType="com.nwsuaf.insect.model.InsectCategory">
 		insert into insect_category
@@ -154,26 +160,41 @@
 		where id = #{id,jdbcType=INTEGER}
 	</update>
 	<update id="updateByPrimaryKey" parameterType="com.nwsuaf.insect.model.InsectCategory">
-		update insect_category
+		update
+		insect_category
 		set category_id = #{categoryId,jdbcType=INTEGER},
 		category_name = #{categoryName,jdbcType=VARCHAR},
-		lation_name = #{lationName,jdbcType=VARCHAR},
-		parent_id = #{parentId,jdbcType=INTEGER},
-		category_level = #{categoryLevel,jdbcType=INTEGER},
-		is_leaf = #{isLeaf,jdbcType=INTEGER},
+		lation_name =
+		#{lationName,jdbcType=VARCHAR},
+		parent_id =
+		#{parentId,jdbcType=INTEGER},
+		category_level =
+		#{categoryLevel,jdbcType=INTEGER},
+		is_leaf =
+		#{isLeaf,jdbcType=INTEGER},
 		add_user = #{addUser,jdbcType=VARCHAR},
 		add_time = #{addTime,jdbcType=TIMESTAMP},
-		update_user = #{updateUser,jdbcType=VARCHAR},
-		update_time = #{updateTime,jdbcType=TIMESTAMP}
+		update_user =
+		#{updateUser,jdbcType=VARCHAR},
+		update_time =
+		#{updateTime,jdbcType=TIMESTAMP}
 		where id = #{id,jdbcType=INTEGER}
 	</update>
-	
+
 	<resultMap id="PlusResultMap"
 		type="com.nwsuaf.insect.model.query.InsectCategoryQuery" extends="BaseResultMap">
 	</resultMap>
-	
+
 	<select id="selectAllInsectCategories" resultMap="PlusResultMap">
 		select * from
 		insect_category
+	</select>
+	<select id="getParents" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+		select
+		parent.*
+		FROM insect_category node, insect_category parent
+		WHERE node.lft BETWEEN parent.lft AND parent.rgt
+		AND node.id = #{id,jdbcType=INTEGER}
+		ORDER BY node.lft
 	</select>
 </mapper>

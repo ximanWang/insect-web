@@ -113,7 +113,9 @@
                     <p>9.形态特征：${insect.getFeatures()}</p>
                     <p>10.寄主：${insect.getHost()}</p>
                     <p>11.分布：${insect.getDistribution()}</p>
+                    <#if insect.getGatherPlace()??>
                     <p>12.采集地：${insect.getGatherPlace()}</p>
+                    </#if>
                 </div>
 
         </div>

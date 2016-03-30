@@ -20,4 +20,6 @@ public interface InsectCategoryMapper {
     int updateByPrimaryKey(InsectCategory record);
 
 	List<InsectCategoryQuery> selectAllInsectCategories();
+	
+	List<InsectCategory> getParents(Integer id);
 }

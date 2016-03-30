@@ -16,6 +16,6 @@ public interface InsectCategoryService {
 	
 	Integer insertCategory(InsectCategory insectCategory);
 	
-//	List<InsectCategoryQuery> getParents(Integer id);
+	List<InsectCategory> getParents(Integer id);
 
 }

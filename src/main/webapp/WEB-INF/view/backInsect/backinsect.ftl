@@ -71,24 +71,49 @@
     <div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
             <div class="easy-tree2" >
                 <div class="main-content">
-                    <p>1.学名（中文）：${insect.getChineseName()}</p>
-                    <p>2.学名（拉丁文）：${insect.getLationName()}</p>
-                    <p>3.学名（英文）：${insect.getEnglishName()}</p>
-                    <p>4.别名：${insect.getAlias()}</p>
+                	<#if insectQuery.getChineseName()??>
+                    <p>1.学名（中文）：${insectQuery.getChineseName()}</p>
+                	</#if>
+                	
+                	<#if insectQuery.getLationName()??>
+                    <p>2.学名（拉丁文）：${insectQuery.getLationName()}</p>
+                    </#if>
+                    
+                    <#if insectQuery.getEnglishName()??>
+                    <p>3.学名（英文）：${insectQuery.getEnglishName()}</p>
+                    </#if>
+                    
+                    <#if insectQuery.getAlias()??>
+                    <p>4.别名：${insectQuery.getAlias()}</p>
+                    </#if>
+                    
                     <p>5.分类地位（中文）：<br/>
-                        ①　目：鞘翅目<br/>
-                        ②　科：天牛科<br/>
-                        ③　属：星天牛属<br/><br/>
-                        6.分类地位（拉丁文）：<br/>
-                        ①　目：Coleoptera<br/>
-                        ②　科：Cerambycidae<br/>
-                        ③　属：Anoplophora<br/></p>
+                    <#list insectCateList as item>
+                    	<p>${item.getCategoryName()}(${item.getLationName()})</p>
+                    </#list>
+                       
+                    </p>
+                    
+                    <#if insectQuery.getIsPest()==1>
                     <p>7.害虫种类：蛀干害虫</p>
                     <p>8.种类细分：天牛类</p>
-                    <p>9.形态特征：${insect.getFeatures()}</p>
-                    <p>10.寄主：${insect.getHost()}</p>
-                    <p>11.分布：${insect.getDistribution()}</p>
-                    <p>12.采集地：${insect.getGatherPlace()}</p>
+                    </#if>
+                    
+                    <#if insectQuery.getFeatures()??>
+                    <p>9.形态特征：${insectQuery.getFeatures()}</p>
+                    </#if> 
+                    
+                    <#if insectQuery.getHost()??>
+                    <p>10.寄主：${insectQuery.getHost()}</p>
+                    </#if>
+                    
+                    <#if insectQuery.getDistribution()??>
+                    <p>11.分布：${insectQuery.getDistribution()}</p>
+                    </#if>
+                    
+                    <#if insectQuery.getGatherPlace()??>
+                    <p>12.采集地：${insectQuery.getGatherPlace()}</p>
+                    </#if>
                 </div>
         </div>
 
