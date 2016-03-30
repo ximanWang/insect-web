@@ -19,7 +19,7 @@ public interface InsectCategoryService {
 	 * @param insectCategory
 	 * @return
 	 */
-	Integer insertCategory(InsectCategory insectCategory);
+	Integer insertCategory(InsectCategory insectCategory, Integer parentId);
 	
 	/**
 	 * 获取族谱

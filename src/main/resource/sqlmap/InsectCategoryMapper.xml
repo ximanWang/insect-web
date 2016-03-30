@@ -185,6 +185,11 @@
       update_time = #{updateTime,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <update id="updateRightData" parameterType="java.lang.Integer">
+  	update insect_category
+  	set rgt = rgt + 2
+  	where rgt >= #{rgt,jdbcType=INTEGER}
+  </update>
   <resultMap id="PlusResultMap"
 		type="com.nwsuaf.insect.model.query.InsectCategoryQuery" extends="BaseResultMap">
 	</resultMap>

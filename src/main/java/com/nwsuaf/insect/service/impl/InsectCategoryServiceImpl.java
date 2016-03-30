@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.mapper.InsectCategoryMapper;
@@ -32,10 +33,14 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 		return categories;
 	}
 	
-	public Integer insertCategory(InsectCategory insectCategory) {
-		if(insectCategory == null){
-			throw new InsectException("插入不能为空！");
-		}
+	@Transactional
+	public Integer insertCategory(InsectCategory insectCategory, Integer parentId) {
+		InsectCategory insectParent = insectCategoryMapper.selectByPrimaryKey(parentId);
+		insectCategory.setParentId(parentId);
+		insectCategory.setLft(insectParent.getRgt());
+		insectCategory.setRgt(insectParent.getRgt()+1);
+		insectCategory.setCategoryLevel(insectParent.getCategoryLevel()+1);
+		insectCategoryMapper.updateRightData(insectParent.getRgt());
 		Integer result = insectCategoryMapper.insert(insectCategory);
 		return result;
 	}
