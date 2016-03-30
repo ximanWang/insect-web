@@ -68,8 +68,8 @@
     <p class="p-insect" style="color: #fafafa">Insect</p>
 </div>
 <div class="lead-second" style="height: 80px">sdfv</div>
-<div class="row m-t-20 m-b-20">
-    <div class="col-sm-3 col-sm-offset-1 mm-box form-horizontal filter-pan">
+<div class="row m-t-10 m-b-10">
+    <div class="col-sm-5 col-sm-offset-1 mm-box form-horizontal filter-pan">
         <div class="row-fluid">
             <h3 class="text-success text-center">Insect Tree</h3>
             <div id="search_box">
@@ -93,34 +93,7 @@
             <div class="divider divider-default"></div>
         </div>
     </div>
-    <div class="col-sm-7 col-sm-offset-0 mm-box form-horizontal filter-pan">
-            <div class="easy-tree2" >
-                <div class="main-content">
-                    <p>1.学名（中文）：${insect.getChineseName()}</p>
-                    <p>2.学名（拉丁文）：${insect.getLationName()}</p>
-                    <p>3.学名（英文）：${insect.getEnglishName()}</p>
-                    <p>4.别名：${insect.getAlias()}</p>
-                    <p>5.分类地位（中文）：<br/>
-                        ①　目：鞘翅目<br/>
-                        ②　科：天牛科<br/>
-                        ③　属：星天牛属<br/><br/>
-                        6.分类地位（拉丁文）：<br/>
-                        ①　目：Coleoptera<br/>
-                        ②　科：Cerambycidae<br/>
-                        ③　属：Anoplophora<br/></p>
-                    <p>7.害虫种类：蛀干害虫</p>
-                    <p>8.种类细分：天牛类</p>
-                    <p>9.形态特征：${insect.getFeatures()}</p>
-                    <p>10.寄主：${insect.getHost()}</p>
-                    <p>11.分布：${insect.getDistribution()}</p>
-                    <#if insect.getGatherPlace()??>
-                    <p>12.采集地：${insect.getGatherPlace()}</p>
-                    </#if>
-                </div>
 
-        </div>
-
-    </div>
 </div>
     <!-- script block -->
     <script type="text/javascript">
