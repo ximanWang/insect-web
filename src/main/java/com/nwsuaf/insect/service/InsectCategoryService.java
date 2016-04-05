@@ -14,8 +14,18 @@ public interface InsectCategoryService {
 	
 	List<InsectCategoryQuery> getInsectCategoryTree(List<Integer> categoryIds, boolean isRoot);
 	
-	Integer insertCategory(InsectCategory insectCategory);
+	/**
+	 * 添加类目
+	 * @param insectCategory
+	 * @return
+	 */
+	Integer insertCategory(InsectCategory insectCategory, Integer parentId);
 	
-//	List<InsectCategoryQuery> getParents(Integer id);
+	/**
+	 * 获取族谱
+	 * @param id
+	 * @return
+	 */
+	List<InsectCategory> getParents(Integer id);
 
 }

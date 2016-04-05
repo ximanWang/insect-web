@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import com.nwsuaf.insect.mapper.InsectCategoryMapper;
 import com.nwsuaf.insect.mapper.InsectMapper;
 import com.nwsuaf.insect.model.Insect;
-import com.nwsuaf.insect.model.InsectCategory;
-import com.nwsuaf.insect.model.query.InsectQuery;
 import com.nwsuaf.insect.service.InsectService;
 
 @Service("InsectService")

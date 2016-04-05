@@ -6,5 +6,4 @@ public interface InsectService {
 	
 	public Insect selectById(Integer id);
 	
-	
 }

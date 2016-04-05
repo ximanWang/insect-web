@@ -26,7 +26,8 @@ public class TestInsectCategoryMapper {
 	@Test
 	public void testGet(){
 //		insectCategoryMapper.selectByPrimaryKey(1);
-		areaMapper.selectByPrimaryKey(10);
+//		areaMapper.selectByPrimaryKey(10);
+		insectCategoryMapper.getParents(43);
 	}
 	
 	@Test
