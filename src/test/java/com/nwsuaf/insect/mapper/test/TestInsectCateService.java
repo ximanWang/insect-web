@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.nwsuaf.insect.model.InsectCategory;
+import com.nwsuaf.insect.service.InsectCategoryBizService;
 import com.nwsuaf.insect.service.InsectCategoryService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -15,14 +16,15 @@ import com.nwsuaf.insect.service.InsectCategoryService;
 public class TestInsectCateService {
 
 	@Autowired
-	private InsectCategoryService insectCategoryService;
+	private InsectCategoryBizService insectCategoryBizService;
+	
 	@Test
 	public void testInsert(){
 		InsectCategory insectCategory = new InsectCategory();
-		insectCategory.setCategoryName("缨尾目 ");
-		insectCategory.setLationName("Thysanura");
-		insectCategory.setIsLeaf(0);
-		insectCategory.setCategoryId(46);
-		insectCategoryService.insertCategory(insectCategory, 1);
+		insectCategory.setCategoryName("纺足目 ");
+		insectCategory.setLationName("Embioptera");
+		insectCategory.setIsLeaf(1);
+		insectCategory.setCategoryId(47);
+		insectCategoryBizService.insertCategory(insectCategory, 1);
 	}
 }

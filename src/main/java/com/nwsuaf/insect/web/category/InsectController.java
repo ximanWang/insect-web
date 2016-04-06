@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.model.InsectCategory;
+import com.nwsuaf.insect.service.InsectCategoryBizService;
 import com.nwsuaf.insect.service.InsectCategoryService;
 import com.nwsuaf.insect.service.InsectService;
 
@@ -19,14 +20,15 @@ public class InsectController {
 	
 	@Autowired
 	private InsectService insectService;
+	
 	@Autowired
-	private InsectCategoryService insectCategoryService;
+	private InsectCategoryBizService insectCategoryBizService;
 	
 	@RequestMapping(value="/showInsect/{id}")
 	public ModelAndView showInsect(@PathVariable Integer id){
 		ModelAndView mv = new ModelAndView();
 		Insect insect = insectService.selectById(id);
-		List<InsectCategory> insectCateList =  insectCategoryService.getParents(insect.getCategoryId());
+		List<InsectCategory> insectCateList =  insectCategoryBizService.getParents(insect.getCategoryId());
 		mv.addObject("insectCateList", insectCateList);
 		mv.addObject("insectQuery", insect);
 		mv.setViewName("backInsect/backinsect");
