@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.nwsuaf.insect.mapper.AreaMapper;
 import com.nwsuaf.insect.mapper.InsectCategoryMapper;
+import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.query.InsectCategoryQuery;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -34,6 +35,13 @@ public class TestInsectCategoryMapper {
 	public void testSelectAll(){
 		List<InsectCategoryQuery> list = insectCategoryMapper.selectAllInsectCategories();
 		System.out.println(list.size());
+	}
+	
+	@Test
+	public void testUpdateS(){
+		InsectCategory insectCategory = insectCategoryMapper.selectByPrimaryKey(47);
+		insectCategory.setCategoryName("纺足目");
+		insectCategoryMapper.updateByPrimaryKeySelective(insectCategory);
 	}
 
 }

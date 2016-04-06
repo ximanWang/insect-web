@@ -204,21 +204,20 @@
     })
 
     $("#opCommitOprConfirm #ok").click(function() {
-    	startloading();
+    	var formData = {};
+        formData.insectOprs = oprCommitList;
+		startloading();
         $.ajax({
             type: "POST",
-            url: 'poiCategory/addProcess',
+            url: 'addProcess',
             contentType: 'application/json',
             dataType: "json",
-            data: JSON.stringify({remark : $('#remark').val(), poiOprs :oprCommitList}),
-            success: function (data) {
+            data: JSON.stringify(formData),
+            success:function(data){
             	closeLoading();
-                toast(data);
-                $("#opCommitOprConfirm").modal("hide");
-                if(data.type == "SUCCESS") {
-                    lego.template.renderTemplateByKey("poiCategory.tree");
-                }
-            }
+                $(".commit-modal-dialog").modal("hide");
+            	window.location = 'tree';
+        	}
         });
     })
 

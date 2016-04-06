@@ -5,6 +5,29 @@
     color: #5b5c5a;
 }
 
+form {
+    margin: 0;
+}
+
+#search_box {
+    width: 201px;
+    height: 31px;
+    background: url(http://files.jb51.net/demoimg/200912/bg_search_box.gif);
+}
+
+#search_box #s {
+    float: left;
+    padding: 0;
+    margin: 6px 0 0 6px;
+    border: 0;
+    width: 159px;
+    background: none;
+    font-size: .8em;
+}
+#search_box #go {
+    float: right;
+    margin: 3px 4px 0 0;
+}
 .lead-title{
     background-color: #676767;
     width: 2000px;

@@ -70,7 +70,7 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 
 	public void validateOprJsonData(InsectOprData insectOprData) throws InsectException {
 		for (InsectOprQuery insectOprQuery : insectOprData.getInsectOprs()) {
-			OprJsonData operJsonData = JSON.parseObject(insectOprQuery.getOprDate(),OprJsonData.class);
+			OprJsonData operJsonData = JSON.parseObject(insectOprQuery.getOprData(),OprJsonData.class);
 			if(insectOprQuery.getOprType().equals(OprTypeEnum.UPD_CATE_NAME.val())){
 				if(operJsonData.getCategoryId() == null)
 					throw new InsectException("需要修改的类目id为空");
@@ -92,12 +92,13 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 		return insectCateList;
 	}
 	
-	@Transactional
+	
 	public void updateCataName(InsectOprQuery insectOprQuery) throws InsectException {
-		OprJsonData oprJsonData = JSON.parseObject(insectOprQuery.getOprDate(),OprJsonData.class);
-		InsectCategory insectCategory = new InsectCategory();
+		OprJsonData oprJsonData = JSON.parseObject(insectOprQuery.getOprData(),OprJsonData.class);
+		InsectCategory insectCategory = insectCategoryMapper.selectByPrimaryKey(oprJsonData.getCategoryId());
 		insectCategory.setCategoryName(oprJsonData.getNewCategoryName());
 		insectCategoryMapper.updateByPrimaryKeySelective(insectCategory);
+		
 		//修改Insect详情表中信息
 		Insect insect = insectMapper.selectByCategoryId(oprJsonData.getCategoryId());
 		if(insect != null){
@@ -105,9 +106,10 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 		}
 		// TODO 修改害虫表中信息
 	}
-
+	
+	@Transactional
 	public List<ErrorLog> delCate(InsectOprQuery insectOprQuery) throws InsectException {
-		// TODO Auto-generated method stub
+		// TODO delCate
 		return null;
 	}
 

@@ -36,7 +36,7 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 		return categories;
 	}
 	
-	public List<ErrorLog> addProcess(InsectOprData insectOprData) throws InsectException {
+	public void addProcess(InsectOprData insectOprData) throws InsectException {
 		
 		// 先校验参数的合法性
 		insectCategoryBizService.validateOprJsonData(insectOprData);
@@ -48,7 +48,6 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 				insectCategoryBizService.delCate(insectOprQuery);
 			}
 		}
-		return null;
 	}
 
 }

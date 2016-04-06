@@ -447,7 +447,7 @@ var EasyTree = function ($) {
                         //修改，更新
                         $(this.options.showMsgSelector).append("<li>将类目“" + oldName+"("+selectItemId+")" + "”名称更改为“" + $(selectedItem).find(" > span > a").html() + "”</li>");
                         oprData = {
-                        	oprType : 'updCateName', 
+                        	oprType : 'updateCateName', 
                         	comment : $(this.options.showMsgSelector).find("li:last-child").html(), 
                         	categoryId : selectItemId, 
                         	oprData : {

@@ -25,5 +25,5 @@ public class InsectOprQuery {
 	private Integer parentId; // 父类目id
 	
 	@JSONField
-	private String oprDate; //json字符串
+	private String oprData; //json字符串
 }

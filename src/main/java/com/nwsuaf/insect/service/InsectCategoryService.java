@@ -31,6 +31,6 @@ public interface InsectCategoryService {
 	 * @return
 	 * @throws InsectException 
 	 */
-	List<ErrorLog> addProcess(InsectOprData insectOprData) throws InsectException;
+	void addProcess(InsectOprData insectOprData) throws InsectException;
 
 }
