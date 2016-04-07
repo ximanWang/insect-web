@@ -72,19 +72,27 @@
             <div class="easy-tree2" >
                 <div class="main-content">
                 	<#if insectQuery.getChineseName()??>
-                    <p>1.学名（中文）：${insectQuery.getChineseName()}</p>
+                	<p>中文名：
+                	<input type="text" name="" value="${insectQuery.getChineseName()}" />
+                	</p>
                 	</#if>
                 	
                 	<#if insectQuery.getLationName()??>
-                    <p>2.学名（拉丁文）：${insectQuery.getLationName()}</p>
+                    <p>学名（拉丁文）：
+                    <input type="text" name="" value="${insectQuery.getLationName()}" />
+                    </p>
                     </#if>
                     
                     <#if insectQuery.getEnglishName()??>
-                    <p>3.学名（英文）：${insectQuery.getEnglishName()}</p>
+                    <p>学名（英文）：
+                    <input type="text" name="" value="${insectQuery.getEnglishName()}" />
+                    </p>
                     </#if>
                     
                     <#if insectQuery.getAlias()??>
-                    <p>4.别名：${insectQuery.getAlias()}</p>
+                    <p>4.别名：
+                    <input type="text" name="" value="${insectQuery.getAlias()}" />
+                    </p>
                     </#if>
                     
                     <p>5.分类地位（中文）：<br/>
@@ -100,19 +108,27 @@
                     </#if>
                     
                     <#if insectQuery.getFeatures()??>
-                    <p>9.形态特征：${insectQuery.getFeatures()}</p>
+                    <p>形态特征：
+                    <textarea rows="3" cols="80">${insectQuery.getFeatures()}</textarea>
+                    </p>
                     </#if> 
                     
                     <#if insectQuery.getHost()??>
-                    <p>10.寄主：${insectQuery.getHost()}</p>
+                    <p>寄主：
+                    <textarea rows="0" cols="80">${insectQuery.getHost()}</textarea>
+                    </p>
                     </#if>
                     
                     <#if insectQuery.getDistribution()??>
-                    <p>11.分布：${insectQuery.getDistribution()}</p>
+                    <p>分布：
+                    <textarea rows="3" cols="80">${insectQuery.getDistribution()}</textarea>
+                    </p>
                     </#if>
                     
                     <#if insectQuery.getGatherPlace()??>
-                    <p>12.采集地：${insectQuery.getGatherPlace()}</p>
+                    <p>采集地：
+                    <input type="text" name="" value="${insectQuery.getGatherPlace()}" />
+                    </p>
                     </#if>
                 </div>
         </div>

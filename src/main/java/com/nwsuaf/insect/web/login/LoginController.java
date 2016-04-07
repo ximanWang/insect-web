@@ -14,15 +14,14 @@ import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.UserService;
 
 @Controller
-@RequestMapping("/loginController")
 public class LoginController extends AbstractController{
 	
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping("/toLogin")
+	@RequestMapping(value = { "/index", "/"})
 	public ModelAndView toLogin(){
-		return new ModelAndView("login");
+		return new ModelAndView("main");
 	}
 	@Override
 	@RequestMapping("/login")
