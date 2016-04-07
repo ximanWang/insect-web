@@ -2,9 +2,9 @@
  * Created by michael on 14-4-24.
  */
 
-var lego = function ($) {
+var insect = function ($) {
 
-    if (!$) throw Error('lego.js required jquery core');
+    if (!$) throw Error('insect.js required jquery core');
 
     //template
     var contextPath = '';
@@ -132,7 +132,7 @@ var lego = function ($) {
          *
          * @param options
          * {
-         *      templateKey : 'lego.template.key'
+         *      templateKey : 'insect.template.key'
          *      listBarSelector : '#listBarSelector'
          * }
          */
@@ -218,7 +218,7 @@ var lego = function ($) {
             this.to = function (pageNum) {
                 var paginationParamName = this.paginationParamName;
                 var thiz = this;
-                lego.template.renderTemplateByKey(this.templateKey, {
+                insect.template.renderTemplateByKey(this.templateKey, {
                     'condition': this.conditions,
                     'sort': this.sorts,
                     'currentPage': pageNum,
@@ -444,7 +444,7 @@ var lego = function ($) {
                  *     html : 'html set to this layer',
                  *     template : {
                  *         //required
-                 *         key : 'key for lego.template',
+                 *         key : 'key for insect.template',
                  *         //not required
                  *         dataParam : {request param json obj},
                  *         //not required
@@ -539,7 +539,7 @@ var lego = function ($) {
                         $layerClose.append('<div style="margin-right: 30px;" class="pull-right m-t-10 m-b-15"></div>');
                         var $layerCloseButton = $('<a href="#" title="关闭" class="btn btn-info btn-circle"><i style="font-size: 24px;" class="icon-cancel-7"></i></a>');
                         $layerCloseButton.click(function(e) {
-                            lego.widgets.layerManager.close({layerKey : layerKey, targetSelector : targetSelector});
+                            insect.widgets.layerManager.close({layerKey : layerKey, targetSelector : targetSelector});
                         });
                         $layerClose.find('>div').append($layerCloseButton);
                         $layer.append($layerClose);
@@ -555,7 +555,7 @@ var lego = function ($) {
                         $layerContent.find('div[data-pup-widgets-layer-key="content"]').append(html);
                         $layer.show();
                     } else {
-                        lego.template.renderTemplateByKey(templateKey, templateParam, {
+                        insect.template.renderTemplateByKey(templateKey, templateParam, {
                             targetSelector : $layerContent.find('div[data-pup-widgets-layer-key="content"]'),
                             beforeRender : templateBefore,
                             afterRender : function() {
