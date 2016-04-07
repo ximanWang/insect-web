@@ -50,9 +50,9 @@ public class InsectCategoryCtrl {
 		List<Integer> categoryIds = new ArrayList<Integer>();
 		categoryIds.add(2);
 		categoryIds.add(3);
-		String poiCategoryHTML = treeBuilderService.buildInsectTree(insectCategoryService
+		String insectCategoryHTML = treeBuilderService.buildInsectTree(insectCategoryService
 				.getInsectCategoryTree(categoryIds, userq.getIsRoot()));
-		model.addAttribute("poiCategoryHTML", poiCategoryHTML);
+		model.addAttribute("insectCategoryHTML", insectCategoryHTML);
 		return "insectCategoryTree/tree";
 	}
 

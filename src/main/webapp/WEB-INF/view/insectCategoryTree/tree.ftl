@@ -98,8 +98,8 @@
 
             <div class="easy-tree" style="display: none">
                 <ul>
-                    <#if poiCategoryHTML??>
-                        ${poiCategoryHTML}
+                    <#if insectCategoryHTML??>
+                        ${insectCategoryHTML}
                     </#if>
                 </ul>
             </div>
