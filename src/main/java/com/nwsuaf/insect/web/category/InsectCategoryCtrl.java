@@ -42,6 +42,7 @@ public class InsectCategoryCtrl {
 	@RequestMapping(value = "/tree")
 	public String getTree(ModelMap model, HttpServletRequest request) {
 		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");
+		userq = userService.findUserByName(userq.getUserName());
 		List<Integer> categoryIds = insectUserRoleService.getBackCategoryIds(userq.getInsectCateUserRoles());
 //		UserQuery userq = new UserQuery();
 //		userq.setIsRoot(true);
