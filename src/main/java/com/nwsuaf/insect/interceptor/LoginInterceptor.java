@@ -11,7 +11,7 @@ import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.web.login.LoginController;
 
 public class LoginInterceptor extends HandlerInterceptorAdapter {
-	private String location = "/insect-web/loginController/toLogin";
+	private String location = "/insect-web/toLogin";
 	@Autowired
 	private LoginController loginController;
 

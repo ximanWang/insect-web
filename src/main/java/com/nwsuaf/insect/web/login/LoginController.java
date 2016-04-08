@@ -19,12 +19,14 @@ public class LoginController extends AbstractController{
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value = { "/index", "/"})
+	@RequestMapping(value = { "/toLogin"})
 	public ModelAndView toLogin(){
-		return new ModelAndView("main");
+		return new ModelAndView("login/login");
 	}
+	
+	
 	@Override
-	@RequestMapping("/login")
+	@RequestMapping("/index")
 	protected ModelAndView handleRequestInternal(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String username = request.getParameter("username");
@@ -32,9 +34,9 @@ public class LoginController extends AbstractController{
 		UserQuery user = getUser(username,password);
 		if(user != null){
 			request.getSession().setAttribute("user", user);
-			return new ModelAndView(new RedirectView("/insect-web/insectCategory/tree"));
+			return new ModelAndView("main");
 		}else{
-			return new ModelAndView("login");
+			return new ModelAndView("login/login");
 		}
 	}
 
@@ -42,7 +44,7 @@ public class LoginController extends AbstractController{
 		UserQuery userQuery = userService.findUserByName(username);
 		if(userQuery!=null){
 			if(password.equals(userQuery.getPassword())){
-				return new UserQuery();
+				return userQuery;
 			}
 		}	
 		return null;

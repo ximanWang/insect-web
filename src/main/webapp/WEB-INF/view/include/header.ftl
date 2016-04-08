@@ -108,12 +108,9 @@
         	<#if Session.user?exists>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a class="dropdown-toggle" href="#", data-toggle="dropdown">${Session.user.realName}</a>
-                        <input type="hidden" id="isRoot" value="${Session.user.isRoot?string("Y","N")}" />
-                        <input type="hidden" id="globalBuId" value="<#if Session.user.buId??>${Session.user.buId}</#if>">
+						<a class="dropdown-toggle" href="#", data-toggle="dropdown">${Session.user.getUserName()}</a>
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUser">
 							<li role="presentation">
-								<#--<a role='menuitem', tabindex="-1", href='/user/setting'>设置</a>-->
 								<a role='menuitem', tabindex="-1", href='logout'>注销</a>
 							</li>
 						</ul>

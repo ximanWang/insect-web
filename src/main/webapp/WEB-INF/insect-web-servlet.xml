@@ -38,16 +38,12 @@
 		</mvc:message-converters>
 	</mvc:annotation-driven>
 
-	<!-- <mvc:interceptors>
+	<mvc:interceptors>
 		<mvc:interceptor>
-			需拦截的地址
-			<mvc:mapping path="/insectCategory/*" />
-			需排除拦截的地址
-			<mvc:exclude-mapping path="/toLogin" />
-			<mvc:exclude-mapping path="/login" />
+			<mvc:mapping path="/index/*" />
 			<bean id="loginInterceptor" class="com.nwsuaf.insect.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
-	</mvc:interceptors> -->
+	</mvc:interceptors>  
 
 	<!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
 	<context:component-scan base-package="com.nwsuaf.insect.web" />
