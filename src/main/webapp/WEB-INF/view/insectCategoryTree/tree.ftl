@@ -140,14 +140,20 @@
 		startloading();
         $.ajax({
             type: "POST",
-            url: 'addProcess',
+            url: 'insectCategory/addProcess',
             contentType: 'application/json',
             dataType: "json",
             data: JSON.stringify(formData),
             success:function(data){
             	closeLoading();
                 $(".commit-modal-dialog").modal("hide");
-            	window.location = 'tree';
+                if(data.extra && data.extra.length > 0){
+			   		logModal.show(data.body, data.extra);
+			    } else {
+				    toast(data);
+			    }
+			    $("#opCommitOprConfirm").modal("hide");
+            	insect.template.renderTemplateByKey("insectCategory.tree");
         	}
         });
     })
