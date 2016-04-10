@@ -92,7 +92,7 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 		return insectCateList;
 	}
 	
-	
+	@Transactional
 	public void updateCataName(InsectOprQuery insectOprQuery) throws InsectException {
 		OprJsonData oprJsonData = JSON.parseObject(insectOprQuery.getOprData(),OprJsonData.class);
 		InsectCategory insectCategory = insectCategoryMapper.selectByPrimaryKey(oprJsonData.getCategoryId());
@@ -110,6 +110,8 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 	@Transactional
 	public List<ErrorLog> delCate(InsectOprQuery insectOprQuery) throws InsectException {
 		// TODO delCate
+		OprJsonData oprJsonData = JSON.parseObject(insectOprQuery.getOprData(),OprJsonData.class);
+		InsectCategory insectCategory = insectCategoryMapper.selectByPrimaryKey(oprJsonData.getCategoryId());
 		return null;
 	}
 

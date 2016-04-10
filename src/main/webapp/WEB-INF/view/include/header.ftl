@@ -63,7 +63,7 @@
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("fbMapping.list")'>条件查询</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectSearch.list")'>条件查询</a></li>
                     </ul>
                 </li>
 

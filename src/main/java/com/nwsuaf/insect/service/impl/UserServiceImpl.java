@@ -44,7 +44,14 @@ public class UserServiceImpl implements UserService{
 			categorys.add(3);
 			insectCateUserRoleQuery.setCategoryIds(categorys);
 		}else {
-			userQuery.setIsRoot(false);
+			userQuery.setIsRoot(true);
+			insectCateUserRoleQuery.setRoleName("ROOT");
+			insectCateUserRoleQuery.setEnableDelete(true);
+			insectCateUserRoleQuery.setEnableEdit(false);
+			List<Integer> categorys = new ArrayList<Integer>();
+			categorys.add(2);
+			categorys.add(3);
+			insectCateUserRoleQuery.setCategoryIds(categorys);
 		}
 		List<InsectCateUserRoleQuery> insectCateUserRoles = new ArrayList<InsectCateUserRoleQuery>();
 		insectCateUserRoles.add(insectCateUserRoleQuery);

@@ -52,25 +52,25 @@
     </template>
     <!--审批流程相关 结束-->
 
-    <!--前后台映射关系相关 开始-->
-    <template key="fbMapping.list">
-        <requestUrl>/fbMapping/list</requestUrl>
+    <!--条件查询 开始-->
+    <template key="insectSearch.list">
+        <requestUrl>/insectSearch/list</requestUrl>
         <loading type="boolean">true</loading>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="fbMapping.listData">
-        <requestUrl>/fbMapping/listData</requestUrl>
+    <template key="insectSearch.listData">
+        <requestUrl>/searchInsect/listData</requestUrl>
         <loading type="boolean">true</loading>
         <targetSelector>#fbMappingListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="fbMapping.loadAdd">
-        <requestUrl>/fbMapping/loadAdd</requestUrl>
+    <template key="insectSearch.loadAdd">
+        <requestUrl>/searchInsect/loadAdd</requestUrl>
         <targetSelector>#addModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="fbMapping.add">
-        <requestUrl>/fbMapping/add</requestUrl>
+    <template key="insectSearch.add">
+        <requestUrl>/searchInsect/add</requestUrl>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="fbMapping.loadModify">
