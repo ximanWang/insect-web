@@ -91,14 +91,7 @@
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
 
-                                <#if isDeveloper || Session.user.isRoot>
-                                    <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("tool.changeLogList")'>查询数据变更日志</a></li>
-                                    <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("tool.loadCatePropAndRule")'>导入前后台类目属性及规则</a></li>
-                                </#if>
-                                <#if isDeveloper>
-                                    <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("tool.fbMappingQuery")'>前后台映射查询</a></li>              
-                                    <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("tool.dataInitialize")'>数据初始化工具</a></li>                 
-                                </#if>
+                               
                             <#--<li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("shopMatch.list")'>点评美团商户人工匹配</a></li>-->
                         </ul>
                     </li>

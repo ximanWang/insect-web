@@ -8,11 +8,11 @@
 	<div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
 		<form id="formQuery" onsubmit="return false;">
             <div class="form-group m-t-10">
-                <label class="control-label col-md-2">前台频道</label>
+                <label class="control-label col-md-2">目名称</label>
                 <div class="col-md-4">
-                    <@frontAncestorSelector class="selectpicker" id="fAncestorId" name="fAncestorId"/>
+                    <@ancestorSelector class="selectpicker" id="fAncestorId" name="fAncestorId"/>
                 </div>
-                <label class="control-label col-md-2">前台类目名称</label>
+                <label class="control-label col-md-2">目名称</label>
                 <div class="col-md-4 text-left">
                     <input class="holo" type="text" name="fCateName" style="display: inline-block;margin-right:10px;width:180px;">
                 </div>
@@ -20,7 +20,7 @@
             <div class="form-group">
                 <label class="control-label col-md-2">后台类目</label>
                 <div class="col-md-4 text-left">
-                	<@backCateSelector class="selectpicker" name="bCateId"/>
+                	<@cateSelector class="selectpicker" name="bCateId"/>
                 </div>
                 <label class="control-label col-md-2">城市</label>
                 <div class="col-md-4 text-left">
@@ -63,13 +63,7 @@
                 <button id="formQueryBtn" class="btn btn-md btn-success">
                     <i class="icon icon-filter-1">查询</i>
                 </button>
-                <#if isRoot==1>
-	                <button id="formRefreshBtn" class="btn btn-md btn-warning"
-	                <#if refreshStatus==1>disabled</#if>
-	                style="margin-left:50px">
-	                    <i class="icon icon-arrows-cw-3"><#if refreshStatus==1>刷新执行中<#else>立即执行</#if></i>
-	                </button>
-	            </#if>
+                
             </div>
 		</form>
 	</div>
@@ -237,9 +231,7 @@ $("#opDelConfirm #ok").click(function() {
 		    }
 		});
 	}
-	<#if refreshStatus==1>
-		setTimeout("refreshStatus();", 3000);
-	</#if>
+	
 	// 执行刷新前后台映射关系缓存
 	$("#opRefreshConfirm #ok").click(function() {
 	    var url = "fbMapping/refresh";

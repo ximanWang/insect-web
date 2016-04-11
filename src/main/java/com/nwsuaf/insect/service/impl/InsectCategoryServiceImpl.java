@@ -5,13 +5,10 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.nwsuaf.insect.enums.OprTypeEnum;
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.mapper.InsectCategoryMapper;
-import com.nwsuaf.insect.model.InsectCategory;
-import com.nwsuaf.insect.model.query.ErrorLog;
 import com.nwsuaf.insect.model.query.InsectCategoryQuery;
 import com.nwsuaf.insect.model.query.InsectOprData;
 import com.nwsuaf.insect.model.query.InsectOprQuery;
@@ -36,6 +33,9 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 		return categories;
 	}
 	
+	/**
+	 * 处理异步操作
+	 */
 	public void addProcess(InsectOprData insectOprData) throws InsectException {
 		
 		// 先校验参数的合法性
@@ -48,6 +48,22 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 				insectCategoryBizService.delCate(insectOprQuery);
 			}
 		}
+	}
+	
+	/**
+	 * 获取频道列表
+	 */
+	public List<InsectCategoryQuery> getAncestorList(Integer parentId) {
+		List<InsectCategoryQuery> ancestorList = insectCategoryMapper.selectByParentId(parentId);
+		return ancestorList;
+	}
+	
+	/**
+	 * 获取类目清单
+	 */
+	public List<InsectCategoryQuery> getFlatCategoryList() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

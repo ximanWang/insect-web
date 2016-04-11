@@ -183,14 +183,6 @@ var insect = function ($) {
                 return this;
             }
 
-//            /**
-//             * 添加Where查询条件
-//             * @param String where
-//             */
-//            this.setWhere = function (where) {
-//                this.where = where;
-//                return this;
-//            }
 
             /**
              * 添加排序条件

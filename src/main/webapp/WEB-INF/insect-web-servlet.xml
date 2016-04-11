@@ -9,7 +9,8 @@
                         http://www.springframework.org/schema/context/spring-context-3.1.xsd    
                         http://www.springframework.org/schema/mvc    
                         http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
-
+	
+	<context:component-scan base-package="com.nwsuaf.insect.web" />
 	<mvc:resources location="/js/" mapping="/js/**" />
 	<mvc:resources location="/font/" mapping="/font/**" />
 	<mvc:resources location="/dist/" mapping="/dist/**" />
@@ -37,14 +38,15 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
-
+	
+	<!-- 定义拦截器 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/index/*" />
 			<bean id="loginInterceptor" class="com.nwsuaf.insect.interceptor.LoginInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>  
-
+	
 	<!-- 自动扫描该包，使SpringMVC认为包下用了@controller注解的类是控制器 -->
 	<context:component-scan base-package="com.nwsuaf.insect.web" />
 	<!-- <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/> -->
@@ -68,13 +70,9 @@
 			</list>
 		</property>
 	</bean>
-	<!-- 定义跳转的文件的前后缀 ，视图模式配置 -->
-	<!-- <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver"> 
-		<property name="ViewClass" value="org.springframework.web.servlet.view.JstlView"></property> 
-		<property name="prefix" value="/WEB-INF/view/" /> <property name="suffix" 
-		value=".jsp" /> </bean> -->
+	
 	<!-- Freemarker配置 -->
-	<bean id="freemarkerConfig"
+<!-- 	<bean id="freemarkerConfig"
 		class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
 		<property name="templateLoaderPath" value="/WEB-INF/view/" />
 		<property name="freemarkerSettings">
@@ -86,6 +84,26 @@
 				<prop key="classic_compatible">true</prop>
 				<prop key="template_exception_handler">ignore</prop>
 			</props>
+		</property>
+	</bean> -->
+	<!-- Freemarker配置 -->
+	<bean id="freemarkerConfig" class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer"
+		p:templateLoaderPath="/WEB-INF/view/" >
+		<property name="freemarkerVariables">  
+			<map>
+                <entry key="ancestorSelector">  
+					<!-- 频道下拉选择组件 -->
+                    <bean class="com.nwsuaf.insect.component.SelecterDirective">
+                    	<property name="type" value="ancestorSelector"/>
+                    </bean>  
+                </entry>
+                <entry key="cateSelector">  
+					<!-- 类目下拉选择组件 -->
+                    <bean class="com.nwsuaf.insect.component.SelecterDirective">
+                    	<property name="type" value="cateSelector"/>
+                    </bean>  
+                </entry>
+			</map>
 		</property>
 	</bean>
 	<!--视图解释器 -->

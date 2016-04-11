@@ -32,5 +32,17 @@ public interface InsectCategoryService {
 	 * @throws InsectException 
 	 */
 	void addProcess(InsectOprData insectOprData) throws InsectException;
+	
+	/**
+	 * 加载频道列表
+	 * @return
+	 */
+	List<InsectCategoryQuery> getAncestorList(Integer parentId);
+	
+	/**
+	 * 获取类目清单
+	 * @return
+	 */
+	List<InsectCategoryQuery> getFlatCategoryList();
 
 }

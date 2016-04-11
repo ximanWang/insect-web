@@ -8,8 +8,6 @@ public class InsectCategoryQuery extends InsectCategory {
 
 	private List<InsectCategoryQuery> children; // 子类目集合
 	
-//	private List<InsectCategoryQuery> parent; //父类目集合
-
 	private boolean privilege; // 是否有操作权限
 
 	public List<InsectCategoryQuery> getChildren() {
@@ -19,14 +17,6 @@ public class InsectCategoryQuery extends InsectCategory {
 	public void setChildern(List<InsectCategoryQuery> children) {
 		this.children = children;
 	}
-
-//	public List<InsectCategoryQuery> getParent() {
-//		return parent;
-//	}
-//
-//	public void setParent(List<InsectCategoryQuery> parent) {
-//		this.parent = parent;
-//	}
 
 	public boolean isPrivilege() {
 		return privilege;

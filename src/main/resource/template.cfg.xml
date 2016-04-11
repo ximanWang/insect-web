@@ -59,7 +59,7 @@
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="insectSearch.listData">
-        <requestUrl>/searchInsect/listData</requestUrl>
+        <requestUrl>/insectSearch/listData</requestUrl>
         <loading type="boolean">true</loading>
         <targetSelector>#fbMappingListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
