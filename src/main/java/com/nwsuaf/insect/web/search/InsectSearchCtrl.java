@@ -1,20 +1,29 @@
 package com.nwsuaf.insect.web.search;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.exception.InsectException;
+import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.query.UserQuery;
+import com.nwsuaf.insect.service.InsectMappingSearchService;
 
 @Controller
 @RequestMapping("/insectSearch")
 public class InsectSearchCtrl {
+	
+	@Autowired
+	private InsectMappingSearchService insectMappingSearchService;
 
 	@RequestMapping(value = "/list")
 	public String loadList(ModelMap model, HttpServletRequest request) {
@@ -36,19 +45,17 @@ public class InsectSearchCtrl {
 
 		if (userq == null)
 			throw new InsectException("未登录");
+        ListResult resultList = insectMappingSearchService.getFBMappings(pagination, userq);
 
-        //pagination.setPageCount(20);
+        @SuppressWarnings("unchecked")
+		List<InsectCategory> fbMappingList = resultList.getResult();
 
-//        ListResult resultList = poifbMappingService.getFBMappings(pagination, user);
-
-//        List<POIFBMappingQuery> fbMappingList = (List<POIFBMappingQuery>) resultList.getRoot();
-
-//        model.addAttribute("fbMappingList", fbMappingList);
+        model.addAttribute("fbMappingList", fbMappingList);
 
         // 设置总条数
-//        pagination.setTotal(resultList.getTotalItem());
+        pagination.setTotal(resultList.getTotalItem());
 
-//        model.addAttribute("pagination", pagination);
+        model.addAttribute("pagination", pagination);
 
         return "searchInsect/listData";
     }

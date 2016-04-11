@@ -239,4 +239,28 @@
 		#{id,jdbcType=INTEGER}
 		ORDER BY node.lft
 	</select>
+	
+	<select id="getChildern"  resultMap="BaseResultMap" parameterType="com.nwsuaf.insect.model.InsectCategory">
+		select
+		children.*
+		FROM insect_category node, insect_category children
+		WHERE
+		children.lft BETWEEN node.lft AND node.rgt 
+		and children.rgt BETWEEN node.lft AND node.rgt
+		AND node.id =
+		#{id,jdbcType=INTEGER}
+		<if test="addUser != null and '' != addUser">
+			<![CDATA[and children.add_user = #{addUser,jdbcType=VARCHAR} ]]>
+		</if>
+		<if test="addTime != null">
+			<![CDATA[and children.add_time >= #{addTime,jdbcType=TIMESTAMP} ]]>
+		</if>
+		<if test="updateUser != null and '' != updateUser">
+			<![CDATA[and children.update_user = #{updateUser,jdbcType=VARCHAR} ]]>
+		</if>
+		<if test="updateTime != null">
+			<![CDATA[and children.update_time <= #{updateTime,jdbcType=TIMESTAMP}  ]]>
+		</if>
+		ORDER BY node.lft
+	</select>
 </mapper>

@@ -60,8 +60,8 @@
 	</div>
 </div>
 
-<#include "addModal.ftl"/>
-<#include "modifyModal.ftl"/>
+<#include "searchInsect/addModal.ftl"/>
+<#include "searchInsect/modifyModal.ftl"/>
 
 <div class="row m-t-25">
     <div class="col-sm-10 col-sm-offset-1">

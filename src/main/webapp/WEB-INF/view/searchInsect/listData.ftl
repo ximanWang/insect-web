@@ -1,9 +1,9 @@
 <table class="table mm-box">
 	<tr class="th-inverse">
 		<#--<th>映射关系ID</th>-->
-		<th>前台类目ID</th>
-		<th>目名称</th>
-		<th>关联后台类目</th>
+		<th>类目ID</th>
+		<th>中文名称</th>
+		<th>拉丁名称</th>
 		<th class="text-center" style="width: 120px;">操作</th>
 	</tr>
 	<tbody id="tbodyData">
@@ -11,34 +11,20 @@
             <#list fbMappingList as fbMapping>
                 <tr>
                     <td>
-                        <#if fbMapping.fCateId??>
-                            ${fbMapping.fCateId?c}
+                        <#if fbMapping.getCategoryId()??>
+                            ${fbMapping.getCategoryId()}
                         </#if>
                     </td>
                     <td style="font-weight: bold; font-size: 13px">
-                        <#if fbMapping.fCatename??>
-                            ${fbMapping.fCatename}
+                        <#if fbMapping.getCategoryName()??>
+                            ${fbMapping.getCategoryName()}
                         </#if>
                     </td>
                     <td>
-                        <#if fbMapping.bCateShowList??>
-                            <#list fbMapping.bCateShowList as bCateShow>
-                            	<#if bCateShow??>
-			                        <#if bCateShow_index lte 9 >
-			                        	<#if (bCateShow_index % 2) == 0>
-			                            	${bCateShow.labelName}
-			                            <#else>
-			                            	, ${bCateShow.labelName}<br>
-			                            </#if>
-			                        <#elseif bCateShow_index == 10>
-			                            ...
-			                        <#else>
-			                        </#if>
-		                        </#if>
-                            </#list>
+                        <#if fbMapping.getLationName()??>
+                            ${fbMapping.getLationName()}
                         </#if>
                     </td>
-                    
                    
                     <td>
                         <div class="text-center">
@@ -69,7 +55,7 @@
         var params = {};
         params.mid = parseInt($(this).attr("name"));
 
-        lego.template.renderTemplateByKey("fbMapping.loadModify", params);
+        insect.template.renderTemplateByKey("fbMapping.loadModify", params);
 
         $("#modifyModal").modal("show");
         $("#formModify").validate_popover({onsubmit: false, popoverPosition: "top"});

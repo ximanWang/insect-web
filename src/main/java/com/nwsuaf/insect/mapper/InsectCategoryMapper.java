@@ -25,6 +25,8 @@ public interface InsectCategoryMapper {
 	
 	List<InsectCategory> getParents(Integer id);
 	
+	List<InsectCategory> getChildern(InsectCategory insectCategory);
+	
 	int updateRightData(Integer rgt);
 
 	InsectCategoryQuery selectByCategoryId(Integer categoryId);

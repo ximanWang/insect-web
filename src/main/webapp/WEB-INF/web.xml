@@ -31,6 +31,10 @@
 			classpath*:spring-mybatis.xml
 		</param-value>
 	</context-param>
+	<context-param>
+		<param-name>log4jConfigLocation</param-name>
+		<param-value>/WEB-INF/log4j.properties</param-value>
+	</context-param>
 	<servlet>
 		<servlet-name>insect-web</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
