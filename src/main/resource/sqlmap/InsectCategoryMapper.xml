@@ -223,7 +223,12 @@
 		select * from
 		insect_category where parent_id = #{parentId,jdbcType=INTEGER}
 	</select>
-
+	
+	<select id="selectByCategoryId" resultMap="PlusResultMap">
+		select * from
+		insect_category where category_id = #{categoryId,jdbcType=INTEGER}
+	</select>
+	
 	<select id="getParents" resultMap="BaseResultMap" parameterType="java.lang.Integer">
 		select
 		parent.*

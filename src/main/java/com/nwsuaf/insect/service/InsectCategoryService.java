@@ -3,11 +3,8 @@ package com.nwsuaf.insect.service;
 import java.util.List;
 
 import com.nwsuaf.insect.exception.InsectException;
-import com.nwsuaf.insect.model.InsectCategory;
-import com.nwsuaf.insect.model.query.ErrorLog;
 import com.nwsuaf.insect.model.query.InsectCategoryQuery;
 import com.nwsuaf.insect.model.query.InsectOprData;
-import com.sun.tools.internal.xjc.reader.xmlschema.bindinfo.BIConversion.User;
 
 /**
  * 昆虫类目服务接口
@@ -37,12 +34,25 @@ public interface InsectCategoryService {
 	 * 加载频道列表
 	 * @return
 	 */
-	List<InsectCategoryQuery> getAncestorList(Integer parentId);
+	List<InsectCategoryQuery> getAncestorList();
 	
 	/**
-	 * 获取类目清单
+     * 获取类目清单
+     * @return
+     */
+	List<InsectCategoryQuery> getFlatCategoryList();
+	
+	/**
+	 * 根据频道类目ID获取类目清单
 	 * @return
 	 */
-	List<InsectCategoryQuery> getFlatCategoryList();
-
+	List<InsectCategoryQuery> getFlatCategoryList(Integer ancestorId);
+	
+	/**
+     * 根据频道类目ID获取该频道下的扁平类目清单
+     * @param ancestorId
+     * @return
+     */
+    public List<InsectCategoryQuery> getFlatCategoryLisByAncestorId(int ancestorId, boolean isRootUser)  throws InsectException;
+    
 }

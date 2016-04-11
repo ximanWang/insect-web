@@ -39,7 +39,7 @@ public class SelecterDirective implements TemplateDirectiveModel {
 		case ancestorSelector:
 			new SelectFilterWriter(type, params) {
 				protected void writeOptions(StringBuilder sb) {
-					List<InsectCategoryQuery> insectCates = insectCategoryService.getAncestorList(1);
+					List<InsectCategoryQuery> insectCates = insectCategoryService.getAncestorList();
 					for (InsectCategoryQuery cate : insectCates) {
 						if (isCheckPrivilege() && cate.getIsLeaf() == 1) {
 							continue;
@@ -51,22 +51,22 @@ public class SelecterDirective implements TemplateDirectiveModel {
 			}.write(env.getOut());
 			break;
 
-//		case cateSelector:
-//			new SelectFilterWriter(type, params) {
-//				protected void writeOptions(StringBuilder sb) {
-//					List<InsectCategoryQuery> insectCates = insectCategoryService
-//							.getFlatCategoryList();
-//					for (InsectCategoryQuery cate : insectCates) {
-//						OptionWraper option = new OptionWraper(cate.getCategoryName(), cate
-//								.getCategoryId().toString());
-//						if (this.isCheckPrivilege() && cate.getIsLeaf() == 1) {
-//							option.addField("disabled", "true");
-//						}
-//						option.writeHtml(sb);
-//					}
-//				};
-//			}.write(env.getOut());
-//			break;
+		case cateSelector:
+			new SelectFilterWriter(type, params) {
+				protected void writeOptions(StringBuilder sb) {
+					List<InsectCategoryQuery> insectCates = insectCategoryService
+							.getFlatCategoryList();
+					for (InsectCategoryQuery cate : insectCates) {
+						OptionWraper option = new OptionWraper(cate.getCategoryName(), cate
+								.getCategoryId().toString());
+						if (this.isCheckPrivilege() && cate.getIsLeaf() == 1) {
+							option.addField("disabled", "true");
+						}
+						option.writeHtml(sb);
+					}
+				};
+			}.write(env.getOut());
+			break;
 		default:
 			new SelectFilterWriter(type, params).write(env.getOut());
 			break;

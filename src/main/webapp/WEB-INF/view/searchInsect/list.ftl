@@ -12,21 +12,12 @@
                 <div class="col-md-4">
                     <@ancestorSelector class="selectpicker" id="fAncestorId" name="fAncestorId"/>
                 </div>
-                <label class="control-label col-md-2">目名称</label>
-                <div class="col-md-4 text-left">
-                    <input class="holo" type="text" name="fCateName" style="display: inline-block;margin-right:10px;width:180px;">
-                </div>
-            </div>
-            <div class="form-group">
                 <label class="control-label col-md-2">后台类目</label>
                 <div class="col-md-4 text-left">
                 	<@cateSelector class="selectpicker" name="bCateId"/>
                 </div>
-                <label class="control-label col-md-2">城市</label>
-                <div class="col-md-4 text-left">
-                    <input class="holo" type="text" name="cityName" style="display: inline-block;margin-right:10px;width:180px;">
-                </div>
             </div>
+            
             <div class="form-group">
                 <label class="control-label col-md-2">创建人</label>
                 <div class="col-md-4">

@@ -1,5 +1,6 @@
 package com.nwsuaf.insect.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -67,4 +68,14 @@ public interface InsectCategoryBizService {
      * @throws InsectException
      */
     public List<ErrorLog> delCate(InsectOprQuery insectOprQuery) throws InsectException;
+
+    /**
+     * 根据频道类目获取扁平的子类目清单
+     * @param ancestorId
+     * @param arrayList
+     * @param isRootUser
+     * @return
+     */
+	public List<InsectCategoryQuery> getFlatCategoryListByAncestor(int ancestorId,
+			ArrayList<Integer> arrayList, boolean isRootUser);
 }
