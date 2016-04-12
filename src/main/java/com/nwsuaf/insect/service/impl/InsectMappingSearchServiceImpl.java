@@ -7,6 +7,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.github.pagehelper.PageHelper;
 import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.exception.InsectException;
@@ -14,6 +15,7 @@ import com.nwsuaf.insect.mapper.InsectCategoryMapper;
 import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectMappingSearchService;
+import com.nwsuaf.insect.util.PaginationUtil;
 
 @Service("InsectMappingSearchService")
 public class InsectMappingSearchServiceImpl implements InsectMappingSearchService{
@@ -34,6 +36,10 @@ public class InsectMappingSearchServiceImpl implements InsectMappingSearchServic
 		String addUser = (String)pagination.getCondition().get("addUserName");
 		String updateUser = (String)pagination.getCondition().get("updateUserName");
 		
+		PaginationUtil.initDateQueryCondition(pagination);
+		//设置分页区间，并设置第三个参数为true，计算总记录数
+	    PageHelper.startPage(pagination.getCurrentPage(), pagination.getPageCount(), true);
+	    
 		InsectCategory ancestorCate = toInsectCategory(fAncestorId,addTime,updateTime,addUser,updateUser);
 		List<InsectCategory> ancestorChilds =  insectCategoryMapper.getChildern(ancestorCate);
 		

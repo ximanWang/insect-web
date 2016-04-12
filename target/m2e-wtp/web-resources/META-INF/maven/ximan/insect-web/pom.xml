@@ -39,6 +39,12 @@
 			<version>1.2.5</version>
 		</dependency>
 
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper</artifactId>
+			<version>3.2.3</version>
+		</dependency>
+
 		<!-- spring -->
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -177,7 +183,7 @@
 			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.2</version>
 		</dependency>
-		
+
 		<!-- servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
