@@ -40,15 +40,20 @@ public class InsectMappingSearchServiceImpl implements InsectMappingSearchServic
 		InsectCategory bCate = toInsectCategory(bCateId,addTime,updateTime,addUser,updateUser);
 		List<InsectCategory> bCateChilds = insectCategoryMapper.getChildern(bCate);
 		
-		List<InsectCategory> realChilds = new ArrayList<InsectCategory>();
-		if(ancestorChilds != null){
+		List<InsectCategory> realChilds = null;
+		if(ancestorChilds.size()>0 && bCateChilds.size()>0){
 			for(InsectCategory ancestorChild : ancestorChilds){
 				if(ancestorChild.getId()==bCateId){
 					realChilds = bCateChilds;
-				}else{
-					realChilds = ancestorChilds;
+					break;
 				}
 			}
+		}else if(ancestorChilds.size()==0 && bCateChilds.size()>0) {
+			realChilds = bCateChilds;
+		}else if(ancestorChilds.size()>0 && bCateChilds.size()==0){
+			realChilds = ancestorChilds;
+		}else{
+			realChilds = new ArrayList<InsectCategory>();
 		}
 		
 		ListResult listResult = new ListResult(realChilds, ancestorChilds.size());
