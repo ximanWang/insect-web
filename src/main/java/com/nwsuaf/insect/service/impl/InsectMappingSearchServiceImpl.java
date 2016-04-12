@@ -56,7 +56,7 @@ public class InsectMappingSearchServiceImpl implements InsectMappingSearchServic
 			realChilds = new ArrayList<InsectCategory>();
 		}
 		
-		ListResult listResult = new ListResult(realChilds, ancestorChilds.size());
+		ListResult listResult = new ListResult(realChilds, realChilds.size());
 		return listResult;
 	}
 	/**
