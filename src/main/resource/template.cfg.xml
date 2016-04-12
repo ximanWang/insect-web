@@ -65,19 +65,20 @@
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="insectSearch.loadAdd">
-        <requestUrl>/searchInsect/loadAdd</requestUrl>
+        <requestUrl>/insectSearch/loadAdd</requestUrl>
         <targetSelector>#addModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="insectSearch.add">
-        <requestUrl>/searchInsect/add</requestUrl>
+    <template key="insectSearch.modify">
+        <requestUrl>/insectSearch/modify</requestUrl>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="fbMapping.loadModify">
-        <requestUrl>/fbMapping/loadModify</requestUrl>
+    <template key="insectSearch.loadModify">
+        <requestUrl>/insectSearch/loadModify</requestUrl>
         <targetSelector>#modifyModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
+    
     <!--前后台映射关系相关 结束-->
 
 

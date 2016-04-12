@@ -1,6 +1,7 @@
 package com.nwsuaf.insect.web.search;
 
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -13,17 +14,23 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
+import com.nwsuaf.insect.enums.ToastMessageType;
 import com.nwsuaf.insect.exception.InsectException;
+import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.model.InsectCategory;
+import com.nwsuaf.insect.model.ToastMessage;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectMappingSearchService;
+import com.nwsuaf.insect.service.InsectService;
 
 @Controller
 @RequestMapping("/insectSearch")
 public class InsectSearchCtrl {
-	
+
 	@Autowired
 	private InsectMappingSearchService insectMappingSearchService;
+	@Autowired
+	private InsectService insectService;
 
 	@RequestMapping(value = "/list")
 	public String loadList(ModelMap model, HttpServletRequest request) {
@@ -36,36 +43,63 @@ public class InsectSearchCtrl {
 
 		return "searchInsect/list";
 	}
-	
-    @RequestMapping(value = "/listData", method = RequestMethod.POST)
-    public String qryListData(@RequestBody Pagination pagination, ModelMap model,
-            HttpServletRequest request) {
+
+	@RequestMapping(value = "/listData", method = RequestMethod.POST)
+	public String qryListData(@RequestBody Pagination pagination, ModelMap model,
+			HttpServletRequest request) {
 
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
 			throw new InsectException("未登录");
-        ListResult resultList = insectMappingSearchService.getFBMappings(pagination, userq);
+		ListResult resultList = insectMappingSearchService.getFBMappings(pagination, userq);
 
-        @SuppressWarnings("unchecked")
+		@SuppressWarnings("unchecked")
 		List<InsectCategory> fbMappingList = resultList.getResult();
 
-        model.addAttribute("fbMappingList", fbMappingList);
+		model.addAttribute("fbMappingList", fbMappingList);
 
-        // 设置总条数
-        pagination.setTotal(resultList.getTotalItem());
+		// 设置总条数
+		pagination.setTotal(resultList.getTotalItem());
 
-        model.addAttribute("pagination", pagination);
+		model.addAttribute("pagination", pagination);
 
-        return "searchInsect/listData";
-    }
-	
+		return "searchInsect/listData";
+	}
+
 	@RequestMapping("/loadAdd")
-	public String loadAdd(HttpServletRequest request){
+	public String loadAdd(HttpServletRequest request) {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
 			throw new InsectException("未登录");
 		return "searchInsect/addModalData";
+	}
+
+	@RequestMapping("/loadModify")
+	public String loadModify(@RequestBody Map<String, Object> requestMap, ModelMap model,
+			HttpServletRequest request) {
+		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
+
+		if (userq == null)
+			throw new InsectException("未登录");
+		int cateId = (Integer) requestMap.get("mid");
+		Insect insect = insectService.selectByCategotyId(cateId);
+		model.addAttribute("insect", insect);
+		return "searchInsect/modifyModalData";
+	}
+
+	@RequestMapping("/modify")
+	public ToastMessage modify(HttpServletRequest request) {
+		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
+		if (userq == null)
+			throw new InsectException("未登录");
+		Insect insect = new Insect();
+		String chineseName = request.getParameter("chineseName");
+		String lationName = request.getParameter("lationName");
+		
+		insectService.updateSelective(insect);
+		return new ToastMessage(ToastMessageType.SUCCESS, "操作已生效成功!");
+
 	}
 }

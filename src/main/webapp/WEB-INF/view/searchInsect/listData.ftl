@@ -12,26 +12,26 @@
                 <tr>
                     <td>
                         <#if fbMapping.getCategoryId()??>
-                            ${fbMapping.getCategoryId()}
+                            ${fbMapping.categoryId}
                         </#if>
                     </td>
                     <td style="font-weight: bold; font-size: 13px">
                         <#if fbMapping.getCategoryName()??>
-                            ${fbMapping.getCategoryName()}
+                            ${fbMapping.categoryName}
                         </#if>
                     </td>
                     <td>
                         <#if fbMapping.getLationName()??>
-                            ${fbMapping.getLationName()}
+                            ${fbMapping.lationName}
                         </#if>
                     </td>
                    
                     <td>
                         <div class="text-center">
-                            <span class="icon-btn loadModify" name="${fbMapping.mid?c}" title="编辑">
+                            <span class="icon-btn loadModify" name="${fbMapping.id?c}" title="编辑">
                             	<i class="icon icon-edit-3"></i>
                             </span>
-                            <span class="icon-btn delete" name="${fbMapping.mid?c}" title="删除">
+                            <span class="icon-btn delete" name="${fbMapping.id?c}" title="删除">
                             	<i class="icon icon-trash"></i>
                             </span>
                         </div>
@@ -55,7 +55,7 @@
         var params = {};
         params.mid = parseInt($(this).attr("name"));
 
-        insect.template.renderTemplateByKey("fbMapping.loadModify", params);
+        insect.template.renderTemplateByKey("insectSearch.loadModify", params);
 
         $("#modifyModal").modal("show");
         $("#formModify").validate_popover({onsubmit: false, popoverPosition: "top"});

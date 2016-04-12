@@ -59,6 +59,15 @@ public class InsectMappingSearchServiceImpl implements InsectMappingSearchServic
 		ListResult listResult = new ListResult(realChilds, ancestorChilds.size());
 		return listResult;
 	}
+	/**
+	 * 条件查找
+	 * @param id
+	 * @param addTime
+	 * @param updateTime
+	 * @param addUser
+	 * @param updateUser
+	 * @return
+	 */
 	private InsectCategory toInsectCategory(Integer id,String addTime, String updateTime, String addUser, String updateUser) {
 		InsectCategory insectCategory = new InsectCategory();
 		if(id!=null){
