@@ -1,5 +1,5 @@
 <div class="modal fade" tabindex="-1"  data-width="960"  id="modifyModal"  style="display: none;">
-    <form id="formModify" action="insectSearch/modify" method="post"  >
+    <form id="formModify" action="insectSearch/modify" onsubmit="return false" >
         <div class="modal-header">
             <button class="close"type="button" data-dismiss="modal" aria-hidden="true"> &times</button>
             <div class="row">
@@ -23,24 +23,23 @@
 
 <script type="text/javascript">
     $("#formModify #submitBtn").click(function(){
-    //	insect.template.renderTemplateByKey("insectSearch.loadModify")
-     //  var formData = $("#formModify").serializeObject();
+       var formData = $("#formModify").serializeObject();
 		
-		//formData.
         //保存修改数据
-        submitModifyWithoutUpload();
+        submitModify(formData);
     });
     
     
-    function submitModifyWithoutUpload() {
+    function submitModify(formData) {
     	startloading();
 		$.ajax({
   			type: "POST",
      		url: $("#formModify").attr("action"),
-       		
+     		contentType: 'application/json',
+       		dataType: "json",
+       		data: JSON.stringify(formData),
           	success: function (data) {
         		closeLoading();
-        		data.type == "SUCCESS"
            		if(data.type == "SUCCESS") {
               		$("#formModify")[0].reset();
                  	$("#modifyModal").modal("hide");

@@ -11,6 +11,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
@@ -19,6 +20,7 @@ import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.ToastMessage;
+import com.nwsuaf.insect.model.query.InsectUpdateOprData;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectMappingSearchService;
 import com.nwsuaf.insect.service.InsectService;
@@ -90,15 +92,22 @@ public class InsectSearchCtrl {
 	}
 
 	@RequestMapping("/modify")
-	public ToastMessage modify(HttpServletRequest request) {
+	@ResponseBody
+	public ToastMessage modify(@RequestBody InsectUpdateOprData updateData,HttpServletRequest request) {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 		if (userq == null)
 			throw new InsectException("未登录");
-		Insect insect = new Insect();
-		String chineseName = request.getParameter("chineseName");
-		String lationName = request.getParameter("lationName");
-		
-		insectService.updateSelective(insect);
+		Insect insectq = new Insect();
+		insectq.setId(updateData.getMid());
+		insectq.setChineseName(updateData.getChineseName());
+		insectq.setAlias(updateData.getAlias());
+		insectq.setDistribution(updateData.getDistribution());
+		insectq.setEnglishName(updateData.getEnglishName());
+		insectq.setLationName(updateData.getLationName());
+		insectq.setHost(updateData.getHost());
+		insectq.setFeatures(updateData.getFeatures());
+		insectq.setGatherPlace(updateData.getGatherPlace());
+		insectService.updateSelective(insectq);
 		return new ToastMessage(ToastMessageType.SUCCESS, "操作已生效成功!");
 
 	}
