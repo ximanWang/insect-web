@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.exception.InsectException;
@@ -61,8 +62,8 @@ public class InsectMappingSearchServiceImpl implements InsectMappingSearchServic
 		}else{
 			realChilds = new ArrayList<InsectCategory>();
 		}
-		
-		ListResult listResult = new ListResult(realChilds, realChilds.size());
+		PageInfo page = new PageInfo(realChilds);
+		ListResult listResult = new ListResult(realChilds,page.getTotal());
 		return listResult;
 	}
 	/**
