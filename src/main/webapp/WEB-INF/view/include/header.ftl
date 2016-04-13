@@ -34,53 +34,22 @@
                 
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                    POI属性管理
+                    	图片管理
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <#if Session.user.buId??  || Session.user.isRoot>
-                            <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("poiProperty.list")'>通用属性管理</a></li>
-                            <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("poiCateProperty.list")'>类目属性管理</a></li>
-                        </#if>
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("poiPropCategory.list")'>属性类目管理</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("searchPictures.list")'>昆虫图片管理</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("poiPropCategory.list")'>昆虫图片上传</a></li>
                     </ul>
                 </li>
 
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                    我的任务
-                    <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("checkProcess.list")'>审批流程</a></li>
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("oprBranch.list")'>仲裁流程</a></li>
-                    </ul>
-                </li>
-
-                <li class="dropdown">
-                    <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                    条件查询
+                  	  条件查询
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectSearch.list")'>条件查询</a></li>
-                    </ul>
-                </li>
-
-				<li class="dropdown">
-                    <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-	                    商户类目管理<span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <#if Session.user.buId?? || Session.user.isRoot>
-                            <li role="presentation">
-                                <a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("poiShopCate.list")'>商户类目属性管理</a>
-                            </li>
-                            <li role="presentation">
-                                <a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("poiImportTask.list")'>批量导入商户类目及属性</a>
-                            </li>
-                        </#if>
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("shopCatePropLog.list")'>查看商户修改日志</a></li>
                     </ul>
                 </li>
                 <#if Session.user.buId?? || Session.user.isRoot>
@@ -90,9 +59,7 @@
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-
                                
-                            <#--<li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("shopMatch.list")'>点评美团商户人工匹配</a></li>-->
                         </ul>
                     </li>
                 </#if>

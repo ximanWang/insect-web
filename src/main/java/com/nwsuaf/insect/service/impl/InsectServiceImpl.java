@@ -1,5 +1,7 @@
 package com.nwsuaf.insect.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -42,6 +44,12 @@ public class InsectServiceImpl implements InsectService{
 		insectq.setDistribution(insect.getDistribution());
 		insectMapper.updateByPrimaryKeySelective(insectq);
 		return insect.getId();
+	}
+
+	@Override
+	public List<Insect> selectAllInsects() {
+		List<Insect> insectList = insectMapper.selectAllInsects();
+		return insectList;
 	}
 
 }

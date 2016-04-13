@@ -2,9 +2,9 @@
 
 <templates class="array">
 
-    <!--POI类目权限管理相关 开始-->
-    <template key="userRole.list">
-        <requestUrl>/userRole/list</requestUrl>
+    <!--图片管理开始-->
+    <template key="searchPictures.list">
+        <requestUrl>/searchPictures/list</requestUrl>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="userRole.listData">

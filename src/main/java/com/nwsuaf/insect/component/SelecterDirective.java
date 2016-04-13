@@ -9,11 +9,12 @@ import java.util.Map;
 
 import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import com.nwsuaf.insect.enums.SelectType;
+import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.model.query.InsectCategoryQuery;
 import com.nwsuaf.insect.service.InsectCategoryService;
+import com.nwsuaf.insect.service.InsectService;
 
 import freemarker.core.Environment;
 import freemarker.template.TemplateDirectiveBody;
@@ -28,6 +29,8 @@ public class SelecterDirective implements TemplateDirectiveModel {
 
 	@Autowired
 	private InsectCategoryService insectCategoryService;
+	@Autowired
+	private InsectService insectService;
 	
 	@Override
 	public void execute(Environment env, Map params, TemplateModel[] loopVars,
@@ -50,7 +53,20 @@ public class SelecterDirective implements TemplateDirectiveModel {
 				};
 			}.write(env.getOut());
 			break;
-
+//		case insectSelector:
+//			new SelectFilterWriter(type, params) {
+//				protected void writeOptions(StringBuilder sb) {
+//					List<Insect> insects = insectService.selectAllInsects();
+//					for (Insect insect : insects) {
+//						if (isCheckPrivilege() && insect.getIsLeaf() == 1) {
+//							continue;
+//						}
+//						new OptionWraper(cate.getCategoryName(), cate.getCategoryId().toString())
+//								.writeHtml(sb);
+//					}
+//				};
+//			}.write(env.getOut());
+//			break;
 		case cateSelector:
 			new SelectFilterWriter(type, params) {
 				protected void writeOptions(StringBuilder sb) {
