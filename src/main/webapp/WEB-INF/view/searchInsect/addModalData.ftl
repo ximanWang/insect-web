@@ -1,14 +1,8 @@
 <div class="row-fluid m-t-20">
-<#include "selectFCate.ftl">
+<#include "searchInsect/addSelectFCate.ftl">
 </div>
 <div class="row-fluid m-t-20">
-<#include "selectCate.ftl">
-</div>
-<#--<div class="row-fluid m-t-20">
-<#include "selectProvalue.ftl">
-</div>-->
-<div class="row-fluid m-t-20">
-<#include "addCityRange.ftl">
+<#include "searchInsect/addDetail.ftl">
 </div>
 
 <script type="text/javascript">

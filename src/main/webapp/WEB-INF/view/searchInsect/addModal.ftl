@@ -4,7 +4,7 @@
             <button class="close"type="button" data-dismiss="modal" aria-hidden="true"> &times</button>
             <div class="row">
                 <div class="col-md-3">
-                    <h4 class="modal-title">添加前后台类目映射关系</h4>
+                    <h4 class="modal-title">昆虫新增</h4>
                 </div>
             </div>
         </div>
@@ -36,35 +36,10 @@ $("#formAdd #submitBtn").click(function(){
     formData.tCityId = tCityId;
     console.log(tCityId)
 
-    //获取前台类目ID
-    var fCateId ='';
-    $.each($("#formAdd .addfcate-label").find("span"), function(index, value){
-        fCateId = $(value).attr("id");
-    });
-    if( fCateId == '' || fCateId == undefined ) {toast(new msgObject("WARNING", "请选择前台类目！")); return;}
-    formData.fCateId = parseInt(fCateId);
+    
 
-    //获取后台类目ID列表
-    var bCateIdList = [];
-    $.each($("#formAdd .addcate-label").find("span"), function(index, value){
-        var bCateId = $(value).attr("id");
-        if( bCateId != null){
-            bCateIdList.push(parseInt(bCateId));
-        }
-    });
     formData.bCateIdList  = bCateIdList.toString();
 
-    //获取后台属性值ID列表(包含)
-    var inProvalueIdList = [];
-    formData.inProvalueIdList  = inProvalueIdList.toString();
-
-    //获取后台属性值ID列表(排除)
-    var outProvalueIdList = [];
-    formData.outProvalueIdList  = outProvalueIdList.toString();
-    if((formData.bCateIdList==null || formData.bCateIdList=='')){
-        toast(new msgObject("WARNING", "请选择后台类目！"));
-        return;
-    }
 
     //获取城市范围信息
     var cityRangType = $("#formAdd #cityRangType > .btn.active").val();
@@ -73,34 +48,9 @@ $("#formAdd #submitBtn").click(function(){
         return;
     }
     formData.cityRangType = parseInt(cityRangType)
-	var isImportCity = false; // 是否是上传城市方式
-    if(cityRangType == '0'){
-    	var selectOrUpload = $("#formAdd .select-keyword button.active").val();
-    	if(selectOrUpload == '0'){
-    		if($.isEmptyObject($('#formAdd .selectWrapper #selectCityId').val())){
-	    		toast(new msgObject("WARNING", "请选择城市！"));
-	            return;
-            }
-    	} else if(selectOrUpload == '1'){
-    		var cityRange = $("#formAdd #addCityRange").val();
-	        if(cityRange == null || cityRange == ''){
-	            toast(new msgObject("WARNING", "请上传城市范围Excel！"));
-	            return;
-	        }
-	        isImportCity = true;
-    	}
-    }
-
-    delete formData.bCategoryId;
-    delete formData.bProvalueId;
-
-    if(isImportCity == true) {
-        //上传文件和表单内容
-        submitAddWithUpload(formData);
-    } else {
-        //不上传文件
-        submitAddWithoutUpload(formData);
-    }
+	
+    submitAddWithoutUpload(formData);
+    
 });
 
 function submitAddWithUpload(formData){
