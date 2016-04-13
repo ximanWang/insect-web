@@ -221,4 +221,10 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 		
 		return prefix.toString();
 	}
+
+	@Override
+	public void addCate(InsectOprQuery insectOprQuery) {
+		// TODO Auto-generated method stub
+		
+	}
 }

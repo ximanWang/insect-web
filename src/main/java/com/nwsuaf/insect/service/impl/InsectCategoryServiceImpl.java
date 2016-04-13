@@ -51,6 +51,9 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 			if (insectOprQuery.getOprType().equals(OprTypeEnum.DEL_CATE.val())) {
 				insectCategoryBizService.delCate(insectOprQuery);
 			}
+			if(insectOprQuery.getOprType().equals(OprTypeEnum.ADD_CATE.val())){
+				insectCategoryBizService.addCate(insectOprQuery);
+			}
 		}
 	}
 

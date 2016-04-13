@@ -78,4 +78,10 @@ public interface InsectCategoryBizService {
      */
 	public List<InsectCategoryQuery> getFlatCategoryListByAncestor(int ancestorId,
 			ArrayList<Integer> arrayList, boolean isRootUser);
+	
+	/**
+	 * 在类目树上新增类目
+	 * @param insectOprQuery
+	 */
+	public void addCate(InsectOprQuery insectOprQuery);
 }
