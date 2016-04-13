@@ -89,6 +89,7 @@
     var treeLoader = new EasyTree.TreeLoader(".easy-tree");
 
     treeLoader.buildTree({
+    	addable: true,
         editable: true,
         deletable: true,
         showMsg: true,

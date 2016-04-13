@@ -11,7 +11,7 @@ var EasyTree = function ($) {
         TreeLoader : function(treeSelector) {
 
             this.defaults = {
-                selectable: true,
+            	selectable: true,
                 adjustable: false,
                 deletable: false,
                 editable: false,
@@ -131,9 +131,6 @@ var EasyTree = function ($) {
                         	$(this).find('span.glyphicon').append('<span class="primary">(主)</span>');
                         }
 
-//                        $(".easy-tree li.disabled").find("a:first").click(function(e) {
-//                            e.stopImmediatePropagation();
-//                        });
                         $(this).find(' > span').append('<span style="margin-left:-3px">('+$(this).attr('id')+')</span>');
                     });
 
@@ -721,7 +718,7 @@ var EasyTree = function ($) {
                     if (actionType == ADD_TYPE) {
                         //新增
                         if($(selectedItem).length == 0) {
-                            $(this.options.showMsgSelector).append("<li>创建新频道“" + $(targetNode).find(" > span > a").html() + "”</li>");
+                            $(this.options.showMsgSelector).append("<li>创建新类目“" + $(targetNode).find(" > span > a").html() + "”</li>");
                             oprData = {
                             	oprType : 'addCate', 
                             	comment : $(this.options.showMsgSelector).find("li:last-child").html(), 
