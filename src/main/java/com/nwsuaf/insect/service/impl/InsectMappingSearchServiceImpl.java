@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -13,9 +14,14 @@ import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.mapper.InsectCategoryMapper;
+import com.nwsuaf.insect.mapper.InsectMapper;
+import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.model.InsectCategory;
+import com.nwsuaf.insect.model.query.InsectAddOprData;
 import com.nwsuaf.insect.model.query.UserQuery;
+import com.nwsuaf.insect.service.InsectCategoryService;
 import com.nwsuaf.insect.service.InsectMappingSearchService;
+import com.nwsuaf.insect.service.InsectService;
 import com.nwsuaf.insect.util.PaginationUtil;
 
 @Service("InsectMappingSearchService")
@@ -23,6 +29,11 @@ public class InsectMappingSearchServiceImpl implements InsectMappingSearchServic
 	
 	@Autowired
 	private InsectCategoryMapper insectCategoryMapper;
+	@Autowired
+	private InsectCategoryService insectCategoryService;
+	@Autowired
+	private InsectMapper insectMapper;
+	
 	@Override
 	public ListResult getFBMappings(Pagination pagination, UserQuery userq) throws InsectException {
 		
@@ -93,6 +104,42 @@ public class InsectMappingSearchServiceImpl implements InsectMappingSearchServic
 			insectCategory.setUpdateUser(updateUser);	
 		}
 		return insectCategory;
+	}
+	@Override
+	@Transactional
+	public void addInsect(InsectAddOprData addOprData) throws InsectException {
+		Integer parentId = addOprData.getFCateId();
+		InsectCategory insectCategory = new InsectCategory();
+		insectCategory.setCategoryName(addOprData.getChineseName());
+		insectCategory.setLationName(addOprData.getLationName());
+		insectCategory.setAddUser(addOprData.getAddUser());
+		insectCategory.setUpdateUser(addOprData.getUpdateUser());
+		// 类目表中添加
+		insectCategoryService.addCategory(insectCategory, parentId);
+		
+		// TODO 在害虫表中添加
+		Integer pestParentId = addOprData.getFPestId();
+		
+		// 种表中添加
+		Insect insect = new Insect();
+		insect.setChineseName(addOprData.getChineseName());
+		insect.setLationName(addOprData.getLationName());
+		insect.setEnglishName(addOprData.getEnglishName());
+		insect.setAlias(addOprData.getAlias());
+		insect.setFeatures(addOprData.getFeatures());
+		insect.setGatherPlace(addOprData.getGatherPlace());
+		insect.setDistribution(addOprData.getDistribution());
+		insect.setHost(addOprData.getHost());
+		InsectCategory category = insectCategoryMapper.selectByCategoryName(addOprData.getChineseName());
+		insect.setCategoryId(category.getId());
+		if(pestParentId != null){
+			insect.setIsPest(1);
+		}else{
+			insect.setIsPest(0);
+		}
+		// TODO 设置pestId
+		
+		insectMapper.insertSelective(insect);
 	}
 
 }

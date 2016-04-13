@@ -19,14 +19,33 @@
     <label class="control-label col-md-2 text-right"></label>
     <label class="control-label col-md-1 text-right">父类目</label>
     <div class="col-md-3">
-        <select class="citySelectpicker" id="tCityId" name="tCityId" data-live-search="true">
-            <option value="">请选择</option>
-            <#if cities??>
-                <#list cities as city>
-                    <option sortField="${city.sortField}" value="${city.cityID?c}">${city.cityName}</option>
-                </#list>
-            </#if>
-        </select>
+        <@cateSelector class="selectpicker" name="fCateId"/>
+    </div>
+    
+</div>
+
+<div class="row m-t-20 addfcate-lable-div">
+    <label class="control-label col-md-2 text-right">
+        <span class="icon-btn btn-showfcate" title="开始配置"><i class="icon icon-expand-right" style="color: #5cb85c;float: left"></i></span>
+        <span class="icon-btn btn-hiddenfcate" title="隐藏" style="display: none"><i class="icon icon-expand" style="color: #5cb85c;float: left"></i></span>
+        <span >害虫类目</span>
+    </label>
+    <div class="col-md-10" >
+        <div class="m-b-20 addfcate-label" style="display: none;">
+            <div class="tag label label-info">
+                <span></span>
+                <a class="btn-delfcate"><i class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row m-t-20 addfcate-select-div" style="display: none">
+    <label class="control-label col-md-2 text-right"></label>
+    <label class="control-label col-md-1 text-right">父类目</label>
+    <div class="col-md-3">
+        <@cateSelector class="selectpicker" name="fPestId"/>
     </div>
     
 </div>
@@ -35,9 +54,6 @@
 
 <!-- script block -->
 <script type="text/javascript">
-    $(".citySelectpicker").select2({width : 180, sorter: legoSorter});
-
-    initAFCDOMEvent();
 
     //初始化样式和事件
     function initAFCDOMEvent() {
@@ -53,27 +69,6 @@
     });
 
     $(".btn-hiddenfcate").click(function (){
-        hideFCate();
-    });
-
-    //切换城市，加载类目清单
-    $(".addfcate-select-div #tCityId").change(function (){
-        changeCateByCityId(".addfcate-select-div");
-    });
-    
-<#if selectCityId??>
-	setSelectValue($('.addfcate-select-div #tCityId'), '${selectCityId?c}');
-	$(".addfcate-select-div #tCityId").trigger('change');
-</#if>
-
-    //切换类目，新增类目标签
-    $(".addfcate-select-div #fCateId").unbind("change").change(function (){
-        var formId = $(this).parents("form").attr("id");
-        formId = "#" + formId;
-
-        //只能选择一个，故先删除已有的标签
-        delAllFCateLabel(formId);
-        addFCateLabel(formId);
         hideFCate();
     });
 

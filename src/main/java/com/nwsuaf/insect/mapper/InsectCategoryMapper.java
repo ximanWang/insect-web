@@ -14,6 +14,8 @@ public interface InsectCategoryMapper {
     int insertSelective(InsectCategory record);
 
     InsectCategory selectByPrimaryKey(Integer id);
+    
+    InsectCategory selectByCategoryName(String categoryName);
 
     int updateByPrimaryKeySelective(InsectCategory record);
 

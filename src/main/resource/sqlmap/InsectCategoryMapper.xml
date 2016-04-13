@@ -32,6 +32,12 @@
 		from insect_category
 		where id = #{id,jdbcType=INTEGER}
 	</select>
+	<select id="selectByCategoryName" resultMap="BaseResultMap" parameterType="java.lang.String">
+		select
+		<include refid="Base_Column_List" />
+		from insect_category
+		where category_name = #{categoryName,jdbcType=VARCHAR}
+	</select>
 	<delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
 		delete from
 		insect_category

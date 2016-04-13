@@ -246,35 +246,5 @@ $("#opDelConfirm #ok").click(function() {
 	});
 </#if>
 
-$("#formQuery #cityId").change(function (){
-    changeCateByCityId("#formQuery");
-    toast(new msgObject("INFO", "成功加载前台类目清单"));
-});
 
-function changeCateByCityId(parentId){
-    var cityId = parseInt($(parentId+" #tCityId").val())
-    var fCateElement = $(parentId+" #fCateId");
-    $(fCateElement).empty();
-    $.getJSON("dpCategory/selectFlagDpCategoriesByCityId",{cityId : cityId},
-            function (data){
-                if( data.ex != null){
-                    toast(data.ex);
-                    return;
-                }
-                var dpCategories = data.dpCategories;
-                $(fCateElement).append("<option value=''>请选择</option>");
-                for(var i=0; i<dpCategories.length; i++){
-                    if( dpCategories[i].privilege ){
-                        //if( dpCategories[i].isLeaf ){
-                            $(fCateElement).append("<option  value=" + dpCategories[i].categoryID + ">" + dpCategories[i].categoryName + "</option>");
-                        //}else{
-                            //$(fCateElement).append("<option  value=" + dpCategories[i].categoryID + " disabled>" + dpCategories[i].categoryName + "</option>");
-                        //}
-                    }
-                }
-                //刷新使select生效
-                //$(".selectpicker").selectpicker("refresh");
-            }
-    );
-}
 </script>

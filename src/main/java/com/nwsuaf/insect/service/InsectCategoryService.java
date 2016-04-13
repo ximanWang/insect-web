@@ -3,6 +3,7 @@ package com.nwsuaf.insect.service;
 import java.util.List;
 
 import com.nwsuaf.insect.exception.InsectException;
+import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.query.InsectCategoryQuery;
 import com.nwsuaf.insect.model.query.InsectOprData;
 
@@ -29,6 +30,14 @@ public interface InsectCategoryService {
 	 * @throws InsectException 
 	 */
 	void addProcess(InsectOprData insectOprData) throws InsectException;
+	
+	/**
+	 * 添加一个类目
+	 * @param insectCategory
+	 * @param parentId
+	 * @throws InsectException
+	 */
+	void addCategory(InsectCategory insectCategory, Integer parentId) throws InsectException;
 	
 	/**
 	 * 加载频道列表

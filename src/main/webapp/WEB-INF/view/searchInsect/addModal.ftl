@@ -1,5 +1,7 @@
 <div class="modal fade" tabindex="-1"  data-width="960"  id="addModal"  style="display: none;">
-    <form id="formAdd" action="fbMapping/add" onsubmit="return false">
+    <form id="formAdd" action="insectSearch/add" onsubmit="return false">
+    	<input name="addUser"  type="hidden" value="${Session.user.getUserName()}"/>
+		<input name="updateUser"  type="hidden" value="${Session.user.getUserName()}"/>
         <div class="modal-header">
             <button class="close"type="button" data-dismiss="modal" aria-hidden="true"> &times</button>
             <div class="row">
@@ -30,26 +32,8 @@ $(".selectpicker").select2({width : 180});
 $("#formAdd #submitBtn").click(function(){
 
     var formData = $("#formAdd").serializeObject();
-
-    //模版城市ID
-    var tCityId = $("#formAdd #tCityId").val();
-    formData.tCityId = tCityId;
-    console.log(tCityId)
-
-    
-
-    formData.bCateIdList  = bCateIdList.toString();
-
-
-    //获取城市范围信息
-    var cityRangType = $("#formAdd #cityRangType > .btn.active").val();
-    if(cityRangType==null || cityRangType==''){
-        toast(new msgObject("WARNING", "请选择城市范围类型"));
-        return;
-    }
-    formData.cityRangType = parseInt(cityRangType)
 	
-    submitAddWithoutUpload(formData);
+    submitAdd(formData);
     
 });
 
@@ -85,13 +69,14 @@ function submitAddWithUpload(formData){
 	});
 }
 
-function submitAddWithoutUpload(formData){
+function submitAdd(formData){
 	startloading();
 	$.ajax({
 		type: "POST",
 		url: $("#formAdd").attr("action"),
+		contentType: 'application/json',
 		dataType: "json",
-		data: formData,
+		data: JSON.stringify(formData),
 		success: function (data) {
 			closeLoading();
    			if(data.type == "SUCCESS") {

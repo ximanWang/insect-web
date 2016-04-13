@@ -6,10 +6,12 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.nwsuaf.insect.enums.OprTypeEnum;
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.mapper.InsectCategoryMapper;
+import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.query.InsectCategoryQuery;
 import com.nwsuaf.insect.model.query.InsectOprData;
 import com.nwsuaf.insect.model.query.InsectOprQuery;
@@ -83,6 +85,28 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 				1, new ArrayList<Integer>(), false);
 
 		return flatCateList;
+	}
+
+	@Override
+	@Transactional
+	public void addCategory(InsectCategory insectCategory, Integer parentId) throws InsectException {
+		InsectCategory insectCategoryParent = insectCategoryMapper.selectByPrimaryKey(parentId);
+		if(insectCategoryParent.getIsLeaf() == 1){
+			insectCategoryParent.setIsLeaf(0);
+			insectCategoryMapper.updateByPrimaryKeySelective(insectCategoryParent);
+		}
+		
+		insectCategory.setParentId(parentId);
+		insectCategory.setLft(insectCategoryParent.getRgt());
+		insectCategory.setRgt(insectCategoryParent.getRgt()+1);
+		insectCategoryMapper.updateRightData(insectCategoryParent.getRgt());
+		insectCategory.setCategoryLevel(insectCategoryParent.getCategoryLevel()+1);
+		insectCategory.setIsLeaf(1);
+		insectCategoryMapper.insert(insectCategory);
+		InsectCategory newInsectCategory = insectCategoryMapper.selectByCategoryName(insectCategory.getCategoryName());
+		newInsectCategory.setCategoryId(newInsectCategory.getId());
+		insectCategoryMapper.updateByPrimaryKeySelective(newInsectCategory);
+		
 	}
 
 }

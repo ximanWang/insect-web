@@ -20,6 +20,7 @@ import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.ToastMessage;
+import com.nwsuaf.insect.model.query.InsectAddOprData;
 import com.nwsuaf.insect.model.query.InsectUpdateOprData;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectMappingSearchService;
@@ -78,6 +79,17 @@ public class InsectSearchCtrl {
 		return "searchInsect/addModalData";
 	}
 
+	@RequestMapping("/add")
+	@ResponseBody
+	public ToastMessage add(@RequestBody InsectAddOprData addOprData, HttpServletRequest request) {
+		
+		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
+		if (userq == null)
+			throw new InsectException("未登录");
+		insectMappingSearchService.addInsect(addOprData);
+		return new ToastMessage(ToastMessageType.SUCCESS, "操作已生效成功!");
+	}
+
 	@RequestMapping("/loadModify")
 	public String loadModify(@RequestBody Map<String, Object> requestMap, ModelMap model,
 			HttpServletRequest request) {
@@ -93,7 +105,8 @@ public class InsectSearchCtrl {
 
 	@RequestMapping("/modify")
 	@ResponseBody
-	public ToastMessage modify(@RequestBody InsectUpdateOprData updateData,HttpServletRequest request) {
+	public ToastMessage modify(@RequestBody InsectUpdateOprData updateData,
+			HttpServletRequest request) {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 		if (userq == null)
 			throw new InsectException("未登录");
