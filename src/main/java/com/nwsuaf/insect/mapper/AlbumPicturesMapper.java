@@ -1,5 +1,7 @@
 package com.nwsuaf.insect.mapper;
 
+import java.util.List;
+
 import com.nwsuaf.insect.model.AlbumPictures;
 
 public interface AlbumPicturesMapper {
@@ -10,6 +12,8 @@ public interface AlbumPicturesMapper {
     int insertSelective(AlbumPictures record);
 
     AlbumPictures selectByPrimaryKey(Integer id);
+    
+    List<AlbumPictures> getPictures(Integer albumId);
 
     int updateByPrimaryKeySelective(AlbumPictures record);
 

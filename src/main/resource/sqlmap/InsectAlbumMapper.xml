@@ -17,7 +17,9 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="selectByInsectId" resultMap="BaseResultMap" parameterType="java.lang.Integer"  >
-  	select * from insect_album where zhong_id = #{zhongId,jdbcType=INTEGER}
+  	select * from insect_album 
+  	where zhong_id = #{zhongId,jdbcType=INTEGER}
+  	order by album_type desc
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from insect_album

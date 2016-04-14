@@ -15,6 +15,10 @@
     from insect_album_pictures
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getPictures" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  	select * from insect_album_pictures 
+  	where album_id = #{albumId,jdbcType=INTEGER}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from insect_album_pictures
     where id = #{id,jdbcType=INTEGER}

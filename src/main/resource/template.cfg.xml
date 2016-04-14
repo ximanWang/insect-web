@@ -10,7 +10,7 @@
     <template key="searchPictures.listData">
         <requestUrl>/searchPictures/listData</requestUrl>
         <loading type="boolean">true</loading>
-        <targetSelector>#userRoleData</targetSelector>
+        <targetSelector>#fbMappingListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="userRole.add">
@@ -23,34 +23,6 @@
         <templateRequestType>POST</templateRequestType>
     </template>
     <!--POI类目权限管理相关 结束-->
-
-
-    <!--审批流程相关 开始-->
-    <template key="checkProcess.list">
-        <requestUrl>/checkProcess/list</requestUrl>
-        <templateRequestType>POST</templateRequestType>
-    </template>
-    <template key="checkProcess.listData">
-        <requestUrl>/checkProcess/listData</requestUrl>
-        <loading type="boolean">true</loading>
-        <targetSelector>#checkProcessListData</targetSelector>
-        <templateRequestType>POST</templateRequestType>
-    </template>
-    <template key="checkProcess.loadCheck">
-        <requestUrl>/checkProcess/loadCheck</requestUrl>
-        <targetSelector>#checkModalData</targetSelector>
-        <loading type="boolean">true</loading>
-        <autoCloseLoading type="boolean">false</autoCloseLoading>
-        <templateRequestType>POST</templateRequestType>
-    </template>
-    <template key="checkProcess.view">
-        <requestUrl>/checkProcess/view</requestUrl>
-        <targetSelector>#checkModalData</targetSelector>
-        <loading type="boolean">true</loading>
-        <autoCloseLoading type="boolean">false</autoCloseLoading>
-        <templateRequestType>POST</templateRequestType>
-    </template>
-    <!--审批流程相关 结束-->
 
     <!--条件查询 开始-->
     <template key="insectSearch.list">

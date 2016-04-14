@@ -61,7 +61,7 @@ public class SelecterDirective implements TemplateDirectiveModel {
 						if (isCheckPrivilege()) {
 							continue;
 						}
-						new OptionWraper(insect.getChineseName(), insect.getCategoryId().toString())
+						new OptionWraper(insect.getChineseName(), insect.getId().toString())
 								.writeHtml(sb);
 					}
 				};
