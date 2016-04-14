@@ -53,20 +53,20 @@ public class SelecterDirective implements TemplateDirectiveModel {
 				};
 			}.write(env.getOut());
 			break;
-//		case insectSelector:
-//			new SelectFilterWriter(type, params) {
-//				protected void writeOptions(StringBuilder sb) {
-//					List<Insect> insects = insectService.selectAllInsects();
-//					for (Insect insect : insects) {
-//						if (isCheckPrivilege() && insect.getIsLeaf() == 1) {
-//							continue;
-//						}
-//						new OptionWraper(cate.getCategoryName(), cate.getCategoryId().toString())
-//								.writeHtml(sb);
-//					}
-//				};
-//			}.write(env.getOut());
-//			break;
+		case insectSelector:
+			new SelectFilterWriter(type, params) {
+				protected void writeOptions(StringBuilder sb) {
+					List<Insect> insects = insectService.selectAllInsects();
+					for (Insect insect : insects) {
+						if (isCheckPrivilege()) {
+							continue;
+						}
+						new OptionWraper(insect.getChineseName(), insect.getCategoryId().toString())
+								.writeHtml(sb);
+					}
+				};
+			}.write(env.getOut());
+			break;
 		case cateSelector:
 			new SelectFilterWriter(type, params) {
 				protected void writeOptions(StringBuilder sb) {

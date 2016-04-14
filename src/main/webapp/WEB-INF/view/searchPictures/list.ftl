@@ -8,9 +8,9 @@
 	<div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
 		<form id="formQuery" onsubmit="return false;">
             <div class="form-group m-t-10">
-                <label class="control-label col-md-2">后台类目</label>
+                <label class="control-label col-md-2">选择昆虫</label>
                 <div class="col-md-4 text-left">
-                	<@cateSelector class="selectpicker" name="bCateId"/>
+                	<@insectSelector class="selectpicker" name="insectId"/>
                 </div>
             </div>
             
@@ -47,14 +47,6 @@ var startDateDiv = $('#startDateDiv').datepicker({
     format: "yyyy-mm-dd"
 }).on('changeDate', function(ev) {
     startDateDiv.hide();
-    //设置结束日期的一些条件
-//    var newDate = startDateDiv.getDate();
-//    if(newDate!="Invalid Date") {
-//        newDate.setDate(newDate.getDate() + 1);
-//        endDateDiv.setStartDate(newDate);
-//        endDateDiv.setDate(newDate);
-//        $('#endDate')[0].focus();
-//    }
 }).data('datepicker');
 
 //设置日期控件的一些默认条件

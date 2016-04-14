@@ -19,6 +19,9 @@
     id, chinese_name, english_name, lation_name, alias, category_id, is_pest, pestcate_id, 
     host, distribution, gather_place, features
   </sql>
+  <select id="selectAllInsects" resultMap="BaseResultMap">
+  	select * from insect_zhong;
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />

@@ -7,8 +7,8 @@
         <requestUrl>/searchPictures/list</requestUrl>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="userRole.listData">
-        <requestUrl>/userRole/listData</requestUrl>
+    <template key="searchPictures.listData">
+        <requestUrl>/searchPictures/listData</requestUrl>
         <loading type="boolean">true</loading>
         <targetSelector>#userRoleData</targetSelector>
         <templateRequestType>POST</templateRequestType>
