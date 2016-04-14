@@ -2,6 +2,7 @@ package com.nwsuaf.insect.component;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -12,7 +13,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.nwsuaf.insect.enums.SelectType;
 import com.nwsuaf.insect.model.Insect;
+import com.nwsuaf.insect.model.InsectAlbum;
 import com.nwsuaf.insect.model.query.InsectCategoryQuery;
+import com.nwsuaf.insect.service.InsectAlbumService;
 import com.nwsuaf.insect.service.InsectCategoryService;
 import com.nwsuaf.insect.service.InsectService;
 
@@ -31,7 +34,9 @@ public class SelecterDirective implements TemplateDirectiveModel {
 	private InsectCategoryService insectCategoryService;
 	@Autowired
 	private InsectService insectService;
-	
+	@Autowired
+	private InsectAlbumService insectAlbumService;
+
 	@Override
 	public void execute(Environment env, Map params, TemplateModel[] loopVars,
 			TemplateDirectiveBody body) throws TemplateException, IOException {
@@ -63,6 +68,21 @@ public class SelecterDirective implements TemplateDirectiveModel {
 						}
 						new OptionWraper(insect.getChineseName(), insect.getId().toString())
 								.writeHtml(sb);
+					}
+				};
+			}.write(env.getOut());
+			break;
+		case albmTypeSelector:
+			new SelectFilterWriter(type, params) {
+				protected void writeOptions(StringBuilder sb) {
+					List<String> albumTypeList = new ArrayList<String>();
+					albumTypeList.add("typeA");
+					albumTypeList.add("typeB");
+					for (String type : albumTypeList) {
+						if (isCheckPrivilege()) {
+							continue;
+						}
+						new OptionWraper(type.toString(),type.toString()).writeHtml(sb);
 					}
 				};
 			}.write(env.getOut());

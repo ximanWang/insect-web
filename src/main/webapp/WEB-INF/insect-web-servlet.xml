@@ -104,6 +104,12 @@
                     	<property name="type" value="insectSelector"/>
                     </bean>  
                 </entry>
+                <entry key="albmTypeSelector">  
+					<!-- 相册类型下拉选择组件 -->
+                    <bean class="com.nwsuaf.insect.component.SelecterDirective">
+                    	<property name="type" value="albmTypeSelector"/>
+                    </bean>  
+                </entry>
 			</map>
 		</property>
 	</bean>

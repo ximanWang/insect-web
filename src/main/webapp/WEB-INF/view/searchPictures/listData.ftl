@@ -7,25 +7,25 @@
 		<th class="text-center" style="width: 120px;">操作</th>
 	</tr>
 	<tbody id="tbodyData">
-        <#if typeApictures??>
-            <#list typeApictures as typeApicture>
+        <#if pictures??>
+            <#list pictures as picture>
                 <tr>
                     <td>
-                        <#if typeApicture.id??>
-                            ${typeApicture.id}
+                        <#if picture.id??>
+                            ${picture.id}
                         </#if>
                     </td>
                     <td>
-                        <#if typeApicture.url??>
-                            ${typeApicture.url}
+                        <#if picture.url??>
+                            ${picture.url}
                         </#if>
                     </td>
                     <td>
-                        <#if typeApicture.url??>
+                        <#if picture.url??>
                         	<div class="row">
-  								<div class="col-xs-6 col-md-8">
+  								<div class="col-xs-6 col-md-6">
     								<a href="#" class="thumbnail">
-     							 		<img src="${typeApicture.url}" /> 
+     							 		<img src="${picture.url}" /> 
     								</a>
   								</div>
 							</div>
@@ -33,7 +33,7 @@
                     </td>
                     <td>
                         <div class="text-center">
-                            <span class="icon-btn delete" name="${typeApicture.id?c}" title="删除">
+                            <span class="icon-btn delete" name="${picture.id?c}" title="删除">
                             	<i class="icon icon-trash"></i>
                             </span>
                         </div>

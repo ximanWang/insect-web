@@ -16,6 +16,13 @@
     from insect_album
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByTypeAndId"  resultMap="BaseResultMap" parameterType="java.util.Map" >
+  	select 
+    <include refid="Base_Column_List" />
+    from insect_album
+    where zhong_id = #{zhongId,jdbcType=INTEGER}
+    and album_type = #{albumType,jdbcType=INTEGER}
+  </select>
   <select id="selectByInsectId" resultMap="BaseResultMap" parameterType="java.lang.Integer"  >
   	select * from insect_album 
   	where zhong_id = #{zhongId,jdbcType=INTEGER}

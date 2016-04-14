@@ -1,5 +1,6 @@
 package com.nwsuaf.insect.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.mapper.AlbumPicturesMapper;
+import com.nwsuaf.insect.mapper.InsectAlbumMapper;
 import com.nwsuaf.insect.model.AlbumPictures;
 import com.nwsuaf.insect.model.InsectAlbum;
 import com.nwsuaf.insect.service.InsectAlbumService;
@@ -23,10 +25,12 @@ public class InsectPicturesSearchServiceImpl implements InsectPicturesSearchServ
 	@Autowired
 	private InsectAlbumService insectAlbumService;
 	@Autowired
-	AlbumPicturesMapper albumPicturesMapper;
+	InsectAlbumMapper albumMapper;
+	@Autowired
+	AlbumPicturesMapper pictureMapper;
+	
 	@Override
 	public ListResult getAlbums(Pagination pagination) throws InsectException {
-		
 		Integer insectId = (Integer)pagination.getCondition().get("insectId");
 		List albumList = insectAlbumService.getAlbmList(insectId);
 		
@@ -40,10 +44,41 @@ public class InsectPicturesSearchServiceImpl implements InsectPicturesSearchServ
 	}
 
 	@Override
-	public ListResult getPictures(InsectAlbum album) throws InsectException {
-		Integer albumId = album.getId();
-		List<AlbumPictures> pictureList = albumPicturesMapper.getPictures(albumId);
-		ListResult result = new ListResult(pictureList,pictureList.size());
+	public ListResult getPictures(Pagination pagination) throws InsectException {
+		Integer insectId = (Integer)pagination.getCondition().get("insectId");
+		String type = (String) pagination.getCondition().get("typeName");
+		
+		PaginationUtil.initDateQueryCondition(pagination);
+		//设置分页区间，并设置第三个参数为true，计算总记录数
+	    PageHelper.startPage(pagination.getCurrentPage(), pagination.getPageCount(), true);
+	    
+		Integer typeNum = null;
+		InsectAlbum album = null;
+		List<AlbumPictures> pictures = null;
+		if(type == null || type.equals("")){
+			List<InsectAlbum> albumList = insectAlbumService.getAlbmList(insectId);
+			if(albumList != null && albumList.size()>0){
+				List<AlbumPictures> pictures2 = null;
+				pictures= new ArrayList<AlbumPictures>();
+				for(int i=0; i<albumList.size(); i++){
+					pictures2 = pictureMapper.getPictures(albumList.get(i).getId());
+					pictures.addAll(pictures2);
+				}
+			}
+		}else{
+			if(type.equals("typeA")){
+				typeNum = 1;
+				album = albumMapper.selectByTypeAndId(insectId, typeNum);
+				pictures = pictureMapper.getPictures(album.getId());
+			}else if(type.equals("typeB")){
+				typeNum = 0;
+				album = albumMapper.selectByTypeAndId(insectId, typeNum);
+				pictures = pictureMapper.getPictures(album.getId());
+			}
+		}
+		
+		PageInfo page = new PageInfo(pictures);
+		ListResult result = new ListResult(pictures,page.getTotal());
 		return result;
 	}
 

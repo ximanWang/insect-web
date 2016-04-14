@@ -7,6 +7,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.nwsuaf.insect.mapper.AreaMapper;
+import com.nwsuaf.insect.mapper.InsectAlbumMapper;
 import com.nwsuaf.insect.model.Area;
 import com.nwsuaf.insect.service.AreaService;
 
@@ -19,11 +20,17 @@ public class AreaServiceTest {
 	private AreaService areaService;
 	@Autowired
 	private AreaMapper areaMapper;
-	
+	@Autowired
+	private InsectAlbumMapper albumMapper;
 	@Test
 	public void testInsert(){
 		Area area = new Area();
 		area.setName("保定");
 		areaService.insectArea(area, 10);
+	}
+	
+	@Test
+	public void testSearchByCondition(){
+		albumMapper.selectByTypeAndId(1001, 0);
 	}
 }

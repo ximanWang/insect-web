@@ -11,5 +11,5 @@ public interface InsectPicturesSearchService {
 	
 	ListResult getAlbums(Pagination pagination) throws InsectException;
 	
-	ListResult getPictures(InsectAlbum album) throws InsectException;
+	ListResult getPictures(Pagination pagination) throws InsectException;
 }

@@ -12,6 +12,10 @@
                 <div class="col-md-4 text-left">
                 	<@insectSelector class="selectpicker" name="insectId"/>
                 </div>
+                <label class="control-label col-md-2">选择相册</label>
+                <div class="col-md-4 text-left">
+                	<@albmTypeSelector class="selectpicker" name="typeName"/>
+                </div>
             </div>
             
             <div class="form-group text-center m-t-20">

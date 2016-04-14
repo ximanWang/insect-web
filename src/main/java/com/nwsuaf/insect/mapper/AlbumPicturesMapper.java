@@ -2,6 +2,8 @@ package com.nwsuaf.insect.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
+
 import com.nwsuaf.insect.model.AlbumPictures;
 
 public interface AlbumPicturesMapper {

@@ -49,22 +49,8 @@ public class InsectPicturesCtrl {
 		if (userq == null)
 			throw new InsectException("未登录");
 
-		Integer insectId = (Integer) pagination.getCondition().get("insectId");
-		ListResult result = insectPiceturesSearchService.getAlbums(pagination);
-		if(insectId != null){
-			List<InsectAlbum> albumList = insectAlbumService.getAlbmList(insectId);
-			if (albumList.get(0) != null) {
-				ListResult result1 = insectPiceturesSearchService.getPictures((InsectAlbum) result.getResult().get(0));
-				List<AlbumPictures> typeApictures = result1.getResult();
-				modelMap.addAttribute("typeApictures", typeApictures);
-			}
-			
-			if (albumList.get(1) != null) {
-				ListResult result2 = insectPiceturesSearchService.getPictures(albumList.get(1));
-				List<AlbumPictures> typeBpictures = result2.getResult();
-				modelMap.addAttribute("typeBpictures", typeBpictures);
-			}
-		}
+		ListResult result = insectPiceturesSearchService.getPictures(pagination);
+		modelMap.addAttribute("pictures",result.getResult());
 		pagination.setTotal(result.getTotalItem());
 		modelMap.addAttribute("pagination", pagination);
 

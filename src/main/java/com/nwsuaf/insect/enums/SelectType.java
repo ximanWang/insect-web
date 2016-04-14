@@ -6,5 +6,7 @@ public enum SelectType {
 	
 	cateSelector, // 类目下拉框
 	
-	insectSelector;// 昆虫下拉框
+	insectSelector,// 昆虫下拉框
+	
+	albmTypeSelector; //相册类型下拉框
 }
