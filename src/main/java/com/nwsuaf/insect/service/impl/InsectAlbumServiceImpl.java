@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.mapper.InsectAlbumMapper;
+import com.nwsuaf.insect.model.InsectAlbum;
 import com.nwsuaf.insect.service.InsectAlbumService;
 
 @Service("InsectAlbumService")
@@ -16,8 +17,8 @@ public class InsectAlbumServiceImpl implements InsectAlbumService{
 	private InsectAlbumMapper insectAlbumMapper;
 	
 	@Override
-	public List getAlbmList(Integer insectId) throws InsectException {
-		List albmList = insectAlbumMapper.selectByInsectId(insectId);
+	public List<InsectAlbum> getAlbmList(Integer insectId) throws InsectException {
+		List<InsectAlbum> albmList = insectAlbumMapper.selectByInsectId(insectId);
 		return albmList;
 	}
 

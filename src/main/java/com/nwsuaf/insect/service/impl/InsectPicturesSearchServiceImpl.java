@@ -57,23 +57,28 @@ public class InsectPicturesSearchServiceImpl implements InsectPicturesSearchServ
 		List<AlbumPictures> pictures = null;
 		if(type == null || type.equals("")){
 			List<InsectAlbum> albumList = insectAlbumService.getAlbmList(insectId);
+			pictures = new ArrayList<AlbumPictures>();
 			if(albumList != null && albumList.size()>0){
 				List<AlbumPictures> pictures2 = null;
-				pictures= new ArrayList<AlbumPictures>();
 				for(int i=0; i<albumList.size(); i++){
 					pictures2 = pictureMapper.getPictures(albumList.get(i).getId());
 					pictures.addAll(pictures2);
 				}
 			}
 		}else{
-			if(type.equals("typeA")){
-				typeNum = 1;
-				album = albumMapper.selectByTypeAndId(insectId, typeNum);
-				pictures = pictureMapper.getPictures(album.getId());
-			}else if(type.equals("typeB")){
-				typeNum = 0;
-				album = albumMapper.selectByTypeAndId(insectId, typeNum);
-				pictures = pictureMapper.getPictures(album.getId());
+			if(insectId != null){
+				if(type.equals("typeA")){
+					typeNum = 1;
+					album = albumMapper.selectByTypeAndId(insectId, typeNum);
+				}else if(type.equals("typeB")){
+					typeNum = 0;
+					album = albumMapper.selectByTypeAndId(insectId, typeNum);
+				}
+				if(album != null){
+					pictures = pictureMapper.getPictures(album.getId());
+				}
+			}else{
+				 pictures = new ArrayList<AlbumPictures>();
 			}
 		}
 		

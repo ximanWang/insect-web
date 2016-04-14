@@ -25,6 +25,7 @@
 <link rel="stylesheet", href="<@c.url value='/css/easyTree.css'/>" >
 <link rel="stylesheet", href="<@c.url value='/css/waitMe.min.css'/>" >
 <link rel="stylesheet", href="<@c.url value='/css/finalstyle.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/picturestyle.css'/>" >
 
 <script type="text/javascript" src="<@c.url value='/js/jquery-1.11.2.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.validate.min.js'/>" ></script>
