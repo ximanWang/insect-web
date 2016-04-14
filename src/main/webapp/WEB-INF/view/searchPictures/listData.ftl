@@ -1,8 +1,9 @@
 <table class="table mm-box">
 	<tr class="th-inverse">
 		<#--<th>映射关系ID</th>-->
-		<th>图片ID</th>
-		<th>图片</th>
+		<th width="20%">图片ID</th>
+		<th width="30%">地址</th>
+		<th width="40%">图片</th>
 		<th class="text-center" style="width: 120px;">操作</th>
 	</tr>
 	<tbody id="tbodyData">
@@ -14,9 +15,20 @@
                             ${typeApicture.id}
                         </#if>
                     </td>
-                    <td style="font-weight: bold; font-size: 13px">
+                    <td>
                         <#if typeApicture.url??>
-                            <img src="${typeApicture.url}" /> 
+                            ${typeApicture.url}
+                        </#if>
+                    </td>
+                    <td>
+                        <#if typeApicture.url??>
+                        	<div class="row">
+  								<div class="col-xs-6 col-md-8">
+    								<a href="#" class="thumbnail">
+     							 		<img src="${typeApicture.url}" /> 
+    								</a>
+  								</div>
+							</div>
                         </#if>
                     </td>
                     <td>
