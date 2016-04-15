@@ -13,8 +13,9 @@
         <targetSelector>#fbMappingListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="userRole.add">
-        <requestUrl>/userRole/add</requestUrl>
+    <template key="searchPictures.loadAdd">
+        <requestUrl>/searchPictures/loadAdd</requestUrl>
+        <targetSelector>#addModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="userRole.loadModify">

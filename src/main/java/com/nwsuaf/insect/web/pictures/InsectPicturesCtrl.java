@@ -55,6 +55,15 @@ public class InsectPicturesCtrl {
 		modelMap.addAttribute("pagination", pagination);
 
 		return "searchPictures/listData";
+	}
+	
+	@RequestMapping(value= "/loadAdd")
+	public String loadAdd(HttpServletRequest request){
+		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
+		if (userq == null)
+			throw new InsectException("未登录");
+		
+		return "searchPictures/addPicturesData";
 	}
 }

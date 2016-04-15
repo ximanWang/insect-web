@@ -69,40 +69,6 @@
     </div>
 </div>
 
-<div class="modal fade" id="opDelConfirm" tabindex="-1"  style="display: none;">
-	<div class="modal-body">
-		<p id="confirmMsg"><label style="color: #b81900">确认删除所有生效城市下的此条映射关系？</label>
-	</div>
-	<div class="modal-footer">
-		<div class="text-center">
-			<button class="cancel btn btn-default" style="margin-right: 40px;"  data-dismiss="modal">取消</button>
-			<button id="ok" class="btn btn-danger">确定</button>
-		</div>
-	</div>
-</div>
-
-<div class="modal fade" id="opRefreshConfirm" tabindex="-1"  style="display: none;">
-	<div class="modal-body">
-		<p id="confirmMsg"><label style="color: #b81900">确认刷新前后台映射关系缓存以及相关类目的POI到前台类目？</label>
-	</div>
-	<div class="modal-footer">
-		<div class="text-center">
-			<button class="cancel btn btn-default" style="margin-right: 40px;"  data-dismiss="modal">取消</button>
-			<button id="ok" class="btn btn-danger">确定</button>
-		</div>
-	</div>
-</div>
-<div class="modal fade" id="refreshStatusMessage" tabindex="-1"  style="display: none;">
-	<div class="modal-body">
-		<p id="statusMessage" class="text-center"></p>
-	</div>
-	<div class="modal-footer">
-		<div class="text-center">
-			<button id="ok" class="btn btn-success" data-dismiss="modal">确定</button>
-		</div>
-	</div>
-</div>
-
 <!-- script block -->
 <script type="text/javascript">
 
