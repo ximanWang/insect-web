@@ -49,7 +49,6 @@ public class InsectPicturesSearchServiceImpl implements InsectPicturesSearchServ
 		String type = (String) pagination.getCondition().get("typeName");
 		
 		PaginationUtil.initDateQueryCondition(pagination);
-		//设置分页区间，并设置第三个参数为true，计算总记录数
 	    PageHelper.startPage(pagination.getCurrentPage(), pagination.getPageCount(), true);
 	    
 		Integer typeNum = null;
