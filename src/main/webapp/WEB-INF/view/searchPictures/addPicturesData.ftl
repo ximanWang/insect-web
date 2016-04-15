@@ -1,7 +1,8 @@
 <div class="row-fluid m-t-20">
-<#include "searchInsect/addSelectFCate.ftl">
+<#include "searchPictures/addSelectFCate.ftl">
 </div>
 <div class="row-fluid m-t-20">
+<#include "searchPictures/addDetail.ftl">
 </div>
 
 <script type="text/javascript">
