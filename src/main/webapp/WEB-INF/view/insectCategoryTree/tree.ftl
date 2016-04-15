@@ -148,13 +148,19 @@
             success:function(data){
             	closeLoading();
                 $(".commit-modal-dialog").modal("hide");
+                alert(data+"success");
                 if(data.extra && data.extra.length > 0){
 			   		logModal.show(data.body, data.extra);
+			   		$("#opCommitOprConfirm").modal("hide");
 			    } else {
 				    toast(data);
+			    	$("#opCommitOprConfirm").modal("hide");
 			    }
-			    $("#opCommitOprConfirm").modal("hide");
             	insect.template.renderTemplateByKey("insectCategory.tree");
+            	$("#opCommitOprConfirm").modal("hide");
+        	},
+        	error:function(data){
+        		alert(data);
         	}
         });
     })

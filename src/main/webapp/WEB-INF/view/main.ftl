@@ -9,6 +9,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet", href="<@c.url value='/css/jq/jquery-ui-1.10.4.custom.min.css'/>">
 <link rel="stylesheet", href="<@c.url value='/css/bootstrap.css'/>">
+<link rel="stylesheet", href="<@c.url value='/css/diyUpload.css'/>">
+<link rel="stylesheet", href="<@c.url value='/css/webuploader.css'/>">
 <link rel="stylesheet", href="<@c.url value='/font-css/fontello.css'/>" >
 <link rel="stylesheet", href="<@c.url value='/css/select2/select2.min.css'/>" >
 <link rel="stylesheet", href="<@c.url value='/css/style.css'/>" >
@@ -27,10 +29,12 @@
 <link rel="stylesheet", href="<@c.url value='/css/finalstyle.css'/>" >
 <link rel="stylesheet", href="<@c.url value='/css/picturestyle.css'/>" >
 
+<script type="text/javascript" src="<@c.url value='/js/jquery.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/jquery.fileupload.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery-1.11.2.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.validate.min.js'/>" ></script>
-<script type="text/javascript" src="<@c.url value='/js/messages_cn.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.validate.bootstrap.popover.min.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/messages_cn.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/select2/select2.full.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/runtime.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery-ui-1.10.4.custom.min.js'/>" ></script>
@@ -38,11 +42,12 @@
 <script type="text/javascript" src="<@c.url value='/js/toastr.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/highcharts.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/insect.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/diyUpload.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/webuploader.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/utils.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.pagination.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/template.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-tagsinput.js'/>" ></script>
-<script type="text/javascript" src="<@c.url value='/js/jquery.fileupload.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.iframe-transport.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.ui.widget.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/easyTree.js'/>" ></script>

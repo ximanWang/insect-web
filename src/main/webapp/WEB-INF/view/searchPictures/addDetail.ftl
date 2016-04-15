@@ -1,12 +1,18 @@
-<div class="row m-t-20">
-    <input type="file" class="btn btn-default btn-lg">
- 	  <span class="glyphicon glyphicon-camera" aria-hidden="true">添加</span> 
-	</input>
+<div id="box">
+	<div id="test" ></div>
 </div>
 
 
 <script type="text/javascript">
-    //生成bootstrap的select样式
-    $(".selectpicker").select2({width : 180});
+    
+$("#test").diyUpload({
+	url:'insectPictures/upload',
+	success:function( data ) {
+		console.info( data );
+	},
+	error:function( err ) {
+		console.info( err );	
+	}
+});
 
 </script>

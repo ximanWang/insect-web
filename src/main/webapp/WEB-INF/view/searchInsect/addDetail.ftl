@@ -62,8 +62,6 @@
         />
     </div>
 </div>
-<#include "searchInsect/upload.ftl">
-
 <script type="text/javascript">
     //生成bootstrap的select样式
     $(".selectpicker").select2({width : 180});

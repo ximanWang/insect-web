@@ -23,12 +23,14 @@ import com.nwsuaf.insect.model.query.InsectOprData;
 import com.nwsuaf.insect.model.query.InsectOprQuery;
 import com.nwsuaf.insect.model.query.OprJsonData;
 import com.nwsuaf.insect.service.InsectCategoryBizService;
+import com.nwsuaf.insect.service.InsectCategoryService;
 
 @Service("InsectCategoryBizService")
 public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 
 	@Autowired
 	private InsectCategoryMapper insectCategoryMapper;
+	@Autowired InsectCategoryService insectCategoryService;
 
 	@Autowired
 	private InsectMapper insectMapper;
@@ -223,8 +225,13 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 	}
 
 	@Override
+	@Transactional
 	public void addCate(InsectOprQuery insectOprQuery) {
-		// TODO Auto-generated method stub
+		OprJsonData oprJsonData = JSON.parseObject(insectOprQuery.getOprData(), OprJsonData.class);
+		Integer parentId = oprJsonData.getCategoryId();
+		InsectCategory insectCategory = new InsectCategory();
+		insectCategory.setCategoryName(oprJsonData.getNewCategoryName());
+		insectCategoryService.addCategory(insectCategory, parentId);
 		
 	}
 }

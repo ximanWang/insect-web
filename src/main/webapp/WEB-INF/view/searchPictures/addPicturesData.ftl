@@ -11,8 +11,5 @@
 $(".selectpicker").select2({width : 180});
 
 fCateSelect.init();
-cateSelect.init();
-//provalueSelect.init();
-cityRange.init();
 
 </script>

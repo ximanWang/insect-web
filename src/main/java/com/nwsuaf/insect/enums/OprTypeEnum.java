@@ -10,7 +10,7 @@ public enum OprTypeEnum {
 
 	DEL_CATE("delCate", "删除类目"),
 	
-	UPD_CATE_NAME("updateCateName","更新类目名字"),
+	UPD_CATE_NAME("updCateName","更新类目名字"),
 	
 	ADD_CATE("addCate","新增类目");
 
