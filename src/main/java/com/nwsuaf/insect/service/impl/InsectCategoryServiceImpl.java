@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -40,19 +42,19 @@ public class InsectCategoryServiceImpl implements InsectCategoryService {
 	/**
 	 * 处理异步操作
 	 */
-	public void addProcess(InsectOprData insectOprData) throws InsectException {
+	public void addProcess(InsectOprData insectOprData, HttpServletRequest request) throws InsectException {
 
 		// 先校验参数的合法性
 		insectCategoryBizService.validateOprJsonData(insectOprData);
 		for (InsectOprQuery insectOprQuery : insectOprData.getInsectOprs()) {
 			if (insectOprQuery.getOprType().equals(OprTypeEnum.UPD_CATE_NAME.val())) {
-				insectCategoryBizService.updateCataName(insectOprQuery);
+				insectCategoryBizService.updateCataName(insectOprQuery, request);
 			}
 			if (insectOprQuery.getOprType().equals(OprTypeEnum.DEL_CATE.val())) {
 				insectCategoryBizService.delCate(insectOprQuery);
 			}
 			if(insectOprQuery.getOprType().equals(OprTypeEnum.ADD_CATE.val())){
-				insectCategoryBizService.addCate(insectOprQuery);
+				insectCategoryBizService.addCate(insectOprQuery ,request);
 			}
 		}
 	}

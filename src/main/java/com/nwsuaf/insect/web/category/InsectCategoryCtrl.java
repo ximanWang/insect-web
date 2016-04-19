@@ -52,10 +52,13 @@ public class InsectCategoryCtrl {
 
 	@RequestMapping(value = "/addProcess")
 	@ResponseBody
-	public ToastMessage addProcess(@RequestBody InsectOprData insectOprData) {
-
+	public ToastMessage addProcess(@RequestBody InsectOprData insectOprData ,HttpServletRequest request) {
+		
+		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");
+		userq = userService.findUserByName(userq.getUserName());
+		
 		try {
-			insectCategoryService.addProcess(insectOprData);
+			insectCategoryService.addProcess(insectOprData ,request);
 			return new ToastMessage(ToastMessageType.SUCCESS, "操作已生效成功!");
 		} catch (InsectException e) {
 			return new ToastMessage(ToastMessageType.ERROR, e.getErrMsg());

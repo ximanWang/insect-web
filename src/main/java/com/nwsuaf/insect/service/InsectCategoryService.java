@@ -2,6 +2,8 @@ package com.nwsuaf.insect.service;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.query.InsectCategoryQuery;
@@ -29,7 +31,7 @@ public interface InsectCategoryService {
 	 * @return
 	 * @throws InsectException 
 	 */
-	void addProcess(InsectOprData insectOprData) throws InsectException;
+	void addProcess(InsectOprData insectOprData, HttpServletRequest request) throws InsectException;
 	
 	/**
 	 * 添加一个类目

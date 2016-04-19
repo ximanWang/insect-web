@@ -58,8 +58,8 @@
 		#{parentId,jdbcType=INTEGER}, #{categoryLevel,jdbcType=INTEGER},
 		#{isLeaf,jdbcType=INTEGER},
 		#{addUser,jdbcType=VARCHAR},
-		#{addTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR},
-		#{updateTime,jdbcType=TIMESTAMP})
+		now(), #{updateUser,jdbcType=VARCHAR},
+		now())
 	</insert>
 	<insert id="insertSelective" parameterType="com.nwsuaf.insect.model.InsectCategory">
 		insert into insect_category
@@ -136,13 +136,13 @@
 				#{addUser,jdbcType=VARCHAR},
 			</if>
 			<if test="addTime != null">
-				#{addTime,jdbcType=TIMESTAMP},
+				now(),
 			</if>
 			<if test="updateUser != null">
 				#{updateUser,jdbcType=VARCHAR},
 			</if>
 			<if test="updateTime != null">
-				#{updateTime,jdbcType=TIMESTAMP},
+				now(),
 			</if>
 		</trim>
 	</insert>
@@ -182,9 +182,9 @@
 			<if test="updateUser != null">
 				update_user = #{updateUser,jdbcType=VARCHAR},
 			</if>
-			<if test="updateTime != null">
-				update_time = #{updateTime,jdbcType=TIMESTAMP},
-			</if>
+			
+			update_time = now(),
+			
 		</set>
 		where id = #{id,jdbcType=INTEGER}
 	</update>
@@ -207,7 +207,7 @@
 		update_user =
 		#{updateUser,jdbcType=VARCHAR},
 		update_time =
-		#{updateTime,jdbcType=TIMESTAMP}
+		now()
 		where id = #{id,jdbcType=INTEGER}
 	</update>
 	<update id="updateRightData" parameterType="java.lang.Integer">

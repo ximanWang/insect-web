@@ -30,7 +30,6 @@
 <link rel="stylesheet", href="<@c.url value='/css/picturestyle.css'/>" >
 
 <script type="text/javascript" src="<@c.url value='/js/jquery.js'/>" ></script>
-<script type="text/javascript" src="<@c.url value='/js/public.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.fileupload.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery-1.11.2.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.validate.min.js'/>" ></script>

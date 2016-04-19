@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.model.InsectCategory;
 import com.nwsuaf.insect.model.query.ErrorLog;
@@ -59,7 +61,7 @@ public interface InsectCategoryBizService {
      * @param insectOprQuery
      * @throws InsectException
      */
-    public void updateCataName(InsectOprQuery insectOprQuery) throws InsectException;
+    public void updateCataName(InsectOprQuery insectOprQuery, HttpServletRequest request) throws InsectException;
     
     /**
      * 删除类目
@@ -83,5 +85,5 @@ public interface InsectCategoryBizService {
 	 * 在类目树上新增类目
 	 * @param insectOprQuery
 	 */
-	public void addCate(InsectOprQuery insectOprQuery);
+	public void addCate(InsectOprQuery insectOprQuery, HttpServletRequest request);
 }
