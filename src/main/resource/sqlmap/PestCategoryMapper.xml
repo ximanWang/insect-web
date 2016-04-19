@@ -38,7 +38,7 @@
     values (#{id,jdbcType=INTEGER}, #{categoryId,jdbcType=INTEGER}, #{categoryName,jdbcType=VARCHAR}, 
       #{lft,jdbcType=INTEGER}, #{rgt,jdbcType=INTEGER}, #{parentId,jdbcType=INTEGER}, 
       #{categoryLevel,jdbcType=INTEGER}, #{isLeaf,jdbcType=INTEGER}, #{addUser,jdbcType=VARCHAR}, 
-      #{addTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, #{updateTime,jdbcType=TIMESTAMP}
+      now(), #{updateUser,jdbcType=VARCHAR}, now()
       )
   </insert>
   <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.PestCategory" >
@@ -153,9 +153,7 @@
       <if test="updateUser != null" >
         update_user = #{updateUser,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
-      </if>
+        update_time = now()
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -171,7 +169,7 @@
       add_user = #{addUser,jdbcType=VARCHAR},
       add_time = #{addTime,jdbcType=TIMESTAMP},
       update_user = #{updateUser,jdbcType=VARCHAR},
-      update_time = #{updateTime,jdbcType=TIMESTAMP}
+      update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>
