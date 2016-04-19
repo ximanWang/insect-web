@@ -4,22 +4,22 @@
 
     <!--图片管理开始-->
     <template key="searchPictures.list">
-        <requestUrl>/searchPictures/list</requestUrl>
+        <requestUrl>/admin/searchPictures/list</requestUrl>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="searchPictures.listData">
-        <requestUrl>/searchPictures/listData</requestUrl>
+        <requestUrl>/admin/searchPictures/listData</requestUrl>
         <loading type="boolean">true</loading>
         <targetSelector>#fbMappingListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="searchPictures.loadAdd">
-        <requestUrl>/searchPictures/loadAdd</requestUrl>
+        <requestUrl>/admin/searchPictures/loadAdd</requestUrl>
         <targetSelector>#addModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="userRole.loadModify">
-        <requestUrl>/userRole/loadModify</requestUrl>
+        <requestUrl>/admin/userRole/loadModify</requestUrl>
         <targetSelector>#modifyModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
@@ -27,27 +27,27 @@
 
     <!--条件查询 开始-->
     <template key="insectSearch.list">
-        <requestUrl>/insectSearch/list</requestUrl>
+        <requestUrl>/admin/insectSearch/list</requestUrl>
         <loading type="boolean">true</loading>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="insectSearch.listData">
-        <requestUrl>/insectSearch/listData</requestUrl>
+        <requestUrl>/admin/insectSearch/listData</requestUrl>
         <loading type="boolean">true</loading>
         <targetSelector>#fbMappingListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="insectSearch.loadAdd">
-        <requestUrl>/insectSearch/loadAdd</requestUrl>
+        <requestUrl>/admin/insectSearch/loadAdd</requestUrl>
         <targetSelector>#addModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="insectSearch.modify">
-        <requestUrl>/insectSearch/modify</requestUrl>
+        <requestUrl>/admin/insectSearch/modify</requestUrl>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="insectSearch.loadModify">
-        <requestUrl>/insectSearch/loadModify</requestUrl>
+        <requestUrl>/admin/insectSearch/loadModify</requestUrl>
         <targetSelector>#modifyModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
@@ -56,23 +56,23 @@
 
 
 	<template key="categoryMapping.list">
-		<requestUrl>/categoryMapping/list</requestUrl>
+		<requestUrl>/admin/categoryMapping/list</requestUrl>
 		<templateRequestType>POST</templateRequestType>
 	</template>
 	<template key="categoryMapping.listData">
-		<requestUrl>/categoryMapping/listData</requestUrl>
+		<requestUrl>/admin/categoryMapping/listData</requestUrl>
 		<targetSelector>#categoryMappingsData</targetSelector>
 		<templateRequestType>POST</templateRequestType>
 	</template>
 
     <!--类目树管理 开始-->
     <template key="insectCategory.tree">
-        <requestUrl>/insectCategory/tree</requestUrl>
+        <requestUrl>/admin/insectCategory/tree</requestUrl>
         <loading type="boolean">true</loading>
     </template>
 
     <template key="poiCategory.selectPOICategory">
-        <requestUrl>/poiCategory/selectPOICategory</requestUrl>
+        <requestUrl>/admin/poiCategory/selectPOICategory</requestUrl>
         <loading type="boolean">true</loading>
         <templateRequestType>POST</templateRequestType>
         <targetSelector>#selectPOICategory</targetSelector>
@@ -81,14 +81,14 @@
 
 
     <template key="dpCategory.treeData">
-        <requestUrl>/dpCategory/treeData</requestUrl>
+        <requestUrl>/admin/dpCategory/treeData</requestUrl>
         <targetSelector>#dpTreeData</targetSelector>
         <templateRequestType>POST</templateRequestType>
         <loading type="boolean">true</loading>
     </template>
 
     <template key="dpCategory.selectDPCategory">
-        <requestUrl>/dpCategory/selectDPCategory</requestUrl>
+        <requestUrl>/admin/dpCategory/selectDPCategory</requestUrl>
         <loading type="boolean">true</loading>
         <templateRequestType>POST</templateRequestType>
         <targetSelector>#selectDPCategory</targetSelector>
@@ -97,30 +97,30 @@
 
     <!--操作仲裁管理 开始-->
     <template key="oprBranch.list">
-        <requestUrl>/oprBranch/list</requestUrl>
+        <requestUrl>/admin/oprBranch/list</requestUrl>
     </template>
 
     <template key="oprBranch.listData">
-        <requestUrl>/oprBranch/listData</requestUrl>
+        <requestUrl>/admin/oprBranch/listData</requestUrl>
         <targetSelector>#oprBranchListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
         <loading type="boolean">true</loading>
     </template>
 
     <template key="oprBranch.loadCheckOprBranch">
-        <requestUrl>/oprBranch/loadCheckOprBranch</requestUrl>
+        <requestUrl>/admin/oprBranch/loadCheckOprBranch</requestUrl>
         <targetSelector>#checkOprBranchData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="oprBranch.loadCategoryTree">
-        <requestUrl>/oprBranch/loadCategoryTree</requestUrl>
+        <requestUrl>/admin/oprBranch/loadCategoryTree</requestUrl>
         <targetSelector>#checkCategoryTree</targetSelector>
         <loading type="boolean">true</loading>
         <autoCloseLoading type="boolean">false</autoCloseLoading>
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="oprBranch.checkOprBranch">
-        <requestUrl>/oprBranch/checkOprBranch</requestUrl>
+        <requestUrl>/admin/oprBranch/checkOprBranch</requestUrl>
         <targetSelector>#checkOprBranchData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
@@ -128,19 +128,19 @@
 	
 	 <!-- 属性管理开始-->
 	<template key="propertyname.list">
-		<requestUrl>/propertyname/plist</requestUrl>
+		<requestUrl>/admin/propertyname/plist</requestUrl>
 		<templateRequestType>POST</templateRequestType>
 	</template>
 	
 	<template key="propertyname.listData">
-		<requestUrl>/propertyname/listData</requestUrl>
+		<requestUrl>/admin/propertyname/listData</requestUrl>
 		<targetSelector>#propertyListData</targetSelector>
 		<templateRequestType>POST</templateRequestType>
         <loading type="boolean">true</loading>
 	</template>
 
     <template key="propertyname.loadModify">
-        <requestUrl>/propertyname/loadModify</requestUrl>
+        <requestUrl>/admin/propertyname/loadModify</requestUrl>
         <targetSelector>#modifyModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
@@ -376,6 +376,5 @@
         <targetSelector>#shopMatchListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <!-- 美团点评商户人工匹配结束 -->
 
 </templates>

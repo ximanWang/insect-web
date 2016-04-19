@@ -27,7 +27,7 @@ import com.nwsuaf.insect.service.InsectMappingSearchService;
 import com.nwsuaf.insect.service.InsectService;
 
 @Controller
-@RequestMapping("/insectSearch")
+@RequestMapping("/admin/insectSearch")
 public class InsectSearchCtrl {
 
 	@Autowired

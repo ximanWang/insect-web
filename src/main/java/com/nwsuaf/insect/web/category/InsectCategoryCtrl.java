@@ -24,7 +24,7 @@ import com.nwsuaf.insect.service.TreeBuilderService;
 import com.nwsuaf.insect.service.UserService;
 
 @Controller
-@RequestMapping("/insectCategory")
+@RequestMapping("/admin/insectCategory")
 public class InsectCategoryCtrl {
 
 	@Autowired

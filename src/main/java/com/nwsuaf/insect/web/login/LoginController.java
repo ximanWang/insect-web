@@ -26,7 +26,7 @@ public class LoginController extends AbstractController{
 	
 	
 	@Override
-	@RequestMapping("/index")
+	@RequestMapping("/admin/index")
 	protected ModelAndView handleRequestInternal(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String username = request.getParameter("username");

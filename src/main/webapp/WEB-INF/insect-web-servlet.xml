@@ -16,7 +16,7 @@
 	<mvc:resources location="/dist/" mapping="/dist/**" />
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/font-css/" mapping="/font-css/**" />
-	<mvc:resources location="/images/" mapping="/images/**" />
+	<mvc:resources location="/admin/images/" mapping="/admin/images/**" />
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
 			<bean

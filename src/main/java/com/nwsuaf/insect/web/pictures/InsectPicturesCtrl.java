@@ -21,7 +21,7 @@ import com.nwsuaf.insect.service.InsectAlbumService;
 import com.nwsuaf.insect.service.InsectPicturesSearchService;
 
 @Controller
-@RequestMapping("/searchPictures")
+@RequestMapping("/admin/searchPictures")
 public class InsectPicturesCtrl {
 
 	@Autowired

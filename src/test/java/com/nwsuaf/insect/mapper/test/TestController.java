@@ -1,25 +1,14 @@
 package com.nwsuaf.insect.mapper.test;
 
-import static org.junit.Assert.assertEquals;
-
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 
 import org.junit.Test;
-import org.springframework.web.servlet.ModelAndView;
-
-import com.nwsuaf.insect.web.category.UserTestCtrl;
 
 public class TestController {
 	
-	@Test
-	public void testCtrl(){
-		UserTestCtrl userCtrl = new UserTestCtrl();
-		ModelAndView mv = userCtrl.getUser();
-		assertEquals("/view/hello",mv.getViewName());
-	}
 	@Test
 	public void testIsNull(){
 		Str str = new Str();
