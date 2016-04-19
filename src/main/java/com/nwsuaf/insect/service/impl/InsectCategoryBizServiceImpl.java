@@ -33,7 +33,8 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 
 	@Autowired
 	private InsectCategoryMapper insectCategoryMapper;
-	@Autowired InsectCategoryService insectCategoryService;
+	@Autowired
+	InsectCategoryService insectCategoryService;
 
 	@Autowired
 	private InsectMapper insectMapper;
@@ -97,13 +98,14 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 	}
 
 	@Transactional
-	public void updateCataName(InsectOprQuery insectOprQuery, HttpServletRequest request) throws InsectException {
+	public void updateCataName(InsectOprQuery insectOprQuery, HttpServletRequest request)
+			throws InsectException {
 		OprJsonData oprJsonData = JSON.parseObject(insectOprQuery.getOprData(), OprJsonData.class);
 		InsectCategory insectCategory = insectCategoryMapper.selectByPrimaryKey(oprJsonData
 				.getCategoryId());
 		insectCategory.setCategoryName(oprJsonData.getNewCategoryName());
-		
-		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");
+
+		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 		insectCategory.setUpdateUser(userq.getUserName());
 		insectCategoryMapper.updateByPrimaryKeySelective(insectCategory);
 
@@ -150,7 +152,8 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 
 		// 非root节点，需要加上当前频道类目信息
 		if (ancestorId != 0 && ancestorId != -1) {
-			InsectCategoryQuery insectCategory = insectCategoryMapper.selectByCategoryId(ancestorId);
+			InsectCategoryQuery insectCategory = insectCategoryMapper
+					.selectByCategoryId(ancestorId);
 			if (insectCategory == null) {
 				throw new InsectException("The ancestor isn't exist. ancestorId:" + ancestorId);
 			}
@@ -161,43 +164,45 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 			// 修改类目名称，用于页面展示
 			flatCateList.add(updCategory(insectCategory, privilege));
 		}
-		flatCateList.addAll(buildFlatCateList(getAllInsectCategoriesGroupByParentId(), ancestorId, categoryRangIds, privilege));
+		flatCateList.addAll(buildFlatCateList(getAllInsectCategoriesGroupByParentId(), ancestorId,
+				categoryRangIds, privilege));
 		return flatCateList;
 	}
 
-	private  List<InsectCategoryQuery> buildFlatCateList(
-			Map<Integer, List<InsectCategoryQuery>> allCateMap,
-			int parentId, ArrayList<Integer> categoryRangIds, boolean flag) {
-		//显示的子类目清单
-				List<InsectCategoryQuery> flatChildrenCateList = new ArrayList<InsectCategoryQuery>();
-				
-				//处理前的子类目清单
-				List<InsectCategoryQuery> childrenCateList = allCateMap.get(parentId);
-				
-				//判断处理前的子类目清单是否为空
-				if(childrenCateList!=null && !childrenCateList.isEmpty()){
-					
-					for(InsectCategoryQuery childrenCate : childrenCateList){
-						
-						boolean privilege =  flag;
-						if(!privilege) {
-							privilege = categoryRangIds.contains(childrenCate.getCategoryId());
-						}
-						
-						//将修改后的类目添加到显示清单中
-						flatChildrenCateList.add(updCategory(childrenCate, privilege));
-						
-						//递归获取该子类目的子类目显示清单，即孙子类目显示清单
-						List<InsectCategoryQuery> flatGrandChildrenCateList = buildFlatCateList(allCateMap, childrenCate.getCategoryId(), categoryRangIds, privilege);
-						
-						//如果不为空，则添加到总的显示清单中
-						if(flatGrandChildrenCateList!=null && !flatGrandChildrenCateList.isEmpty()){
-							
-							flatChildrenCateList.addAll(flatGrandChildrenCateList);
-						}
-					}
+	private List<InsectCategoryQuery> buildFlatCateList(
+			Map<Integer, List<InsectCategoryQuery>> allCateMap, int parentId,
+			ArrayList<Integer> categoryRangIds, boolean flag) {
+		// 显示的子类目清单
+		List<InsectCategoryQuery> flatChildrenCateList = new ArrayList<InsectCategoryQuery>();
+
+		// 处理前的子类目清单
+		List<InsectCategoryQuery> childrenCateList = allCateMap.get(parentId);
+
+		// 判断处理前的子类目清单是否为空
+		if (childrenCateList != null && !childrenCateList.isEmpty()) {
+
+			for (InsectCategoryQuery childrenCate : childrenCateList) {
+
+				boolean privilege = flag;
+				if (!privilege) {
+					privilege = categoryRangIds.contains(childrenCate.getCategoryId());
 				}
-				return flatChildrenCateList;
+
+				// 将修改后的类目添加到显示清单中
+				flatChildrenCateList.add(updCategory(childrenCate, privilege));
+
+				// 递归获取该子类目的子类目显示清单，即孙子类目显示清单
+				List<InsectCategoryQuery> flatGrandChildrenCateList = buildFlatCateList(allCateMap,
+						childrenCate.getCategoryId(), categoryRangIds, privilege);
+
+				// 如果不为空，则添加到总的显示清单中
+				if (flatGrandChildrenCateList != null && !flatGrandChildrenCateList.isEmpty()) {
+
+					flatChildrenCateList.addAll(flatGrandChildrenCateList);
+				}
+			}
+		}
+		return flatChildrenCateList;
 	}
 
 	private InsectCategoryQuery updCategory(InsectCategoryQuery category, boolean privilege) {
@@ -215,34 +220,35 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 
 	/**
 	 * 获取类目名称显示前缀
+	 * 
 	 * @param level
 	 * @return
 	 */
-	private static String getPrefix(int level){
-		
+	private static String getPrefix(int level) {
+
 		StringBuffer prefix = new StringBuffer();
-		
-		for(int i=0; i<level; i++){
-			
+
+		for (int i = 0; i < level; i++) {
+
 			prefix.append(" — ");
 		}
-		
+
 		return prefix.toString();
 	}
 
 	@Override
 	@Transactional
-	public void addCate(InsectOprQuery insectOprQuery , HttpServletRequest request) {
+	public void addCate(InsectOprQuery insectOprQuery, HttpServletRequest request) {
 		OprJsonData oprJsonData = JSON.parseObject(insectOprQuery.getOprData(), OprJsonData.class);
 		Integer parentId = oprJsonData.getCategoryId();
 		InsectCategory insectCategory = new InsectCategory();
 		insectCategory.setCategoryName(oprJsonData.getNewCategoryName());
-		
-		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");
+
+		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 		insectCategory.setAddUser(userq.getUserName());
 		insectCategory.setUpdateUser(userq.getUserName());
-		
+
 		insectCategoryService.addCategory(insectCategory, parentId);
-		
+
 	}
 }
