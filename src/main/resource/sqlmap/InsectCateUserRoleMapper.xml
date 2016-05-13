@@ -26,6 +26,18 @@
     from insect_cateuserrole
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="selectByCondition" resultMap="BaseResultMap" parameterType="com.nwsuaf.insect.model.InsectCateUserRole">
+  	select * from insect_cateuserrole r where 1=1
+  	 <if test="roleCode != null and '' != roleCode">
+			<![CDATA[and r.role_code = #{roleCode,jdbcType=VARCHAR} ]]>
+		</if>
+		<if test="userName != null and '' != userName">
+			<![CDATA[and r.user_name >= #{userName,jdbcType=TIMESTAMP} ]]>
+		</if>
+		<if test="userCode != null and '' != userCode">
+			<![CDATA[and r.user_code = #{userCode,jdbcType=VARCHAR} ]]>
+		</if>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from insect_cateuserrole
     where id = #{id,jdbcType=INTEGER}

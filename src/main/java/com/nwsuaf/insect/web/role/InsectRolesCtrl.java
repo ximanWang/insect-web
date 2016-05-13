@@ -43,7 +43,7 @@ public class InsectRolesCtrl {
 			throw new InsectException("未登录");
 
 		ListResult result = userRoleService.getUsers(pagination);
-		modelMap.addAttribute("pictures",result.getResult());
+		modelMap.addAttribute("userRoleList",result.getResult());
 		pagination.setTotal(result.getTotalItem());
 		modelMap.addAttribute("pagination", pagination);
 

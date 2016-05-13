@@ -48,9 +48,11 @@
 	</div>
 </div>
 
-<#include "addModal.ftl"/>
-<#include "modifyModal.ftl"/>
-
+<div class="row m-t-25">
+    <div class="col-sm-10 col-sm-offset-1">
+        <div class="row" id="fbMappingListData"></div>
+    </div>
+</div>
 
 <div class="modal fade" id="opDelConfirm" tabindex="-1"  style="display: none;">
 	<div class="modal-body">

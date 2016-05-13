@@ -23,9 +23,10 @@
      <!-- 权限管理开始 -->
     <template key="userRole.list">
         <requestUrl>/admin/userRole/list</requestUrl>
+        <loading type="boolean">true</loading>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="searchPictures.listData">
+    <template key="userRole.listData">
         <requestUrl>/admin/userRole/listData</requestUrl>
         <loading type="boolean">true</loading>
         <targetSelector>#fbMappingListData</targetSelector>

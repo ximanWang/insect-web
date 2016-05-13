@@ -3,7 +3,6 @@
 		<th>工号</th>
 		<th>姓名</th>
 		<th>电子邮箱</th>
-		<th>所属BU</th>
 		<th>权限类型</th>
         <th>权限范围</th>
 		<th>备注信息</th>
@@ -28,28 +27,15 @@
                             ${userRole.userEmail}
                         </#if>
                     </td>
+                    
                     <td>
-                        <#if userRole.buName??>
-                            ${userRole.buName}
-                        <#else>
-                            无
+                        <#if userRole.roleType??>
+                            ${userRole.roleType}
                         </#if>
                     </td>
                     <td>
-                        <#if userRole.roleName??>
-                            ${userRole.roleName}
-                        </#if>
-                    </td>
-                    <td>
-                        <#if userRole.cateRangList??>
-                            <#list userRole.cateRangList as cateRange>
-                                <#if cateRange_index lte 1 >
-                                    ${cateRange.labelName}<br>
-                                <#elseif cateRange_index == 2>
-                                    ...
-                                <#else>
-                                </#if>
-                            </#list>
+                        <#if userRole.roleCode??>
+                            ${userRole.roleCode}
                         </#if>
                     </td>
                     <td>
