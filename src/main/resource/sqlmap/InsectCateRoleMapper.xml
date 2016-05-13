@@ -26,6 +26,9 @@
     from insect_cateuserrole
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="findAll" resultMap="BaseResultMap">
+  	select * from insect_cateuserrole;
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from insect_cateuserrole
     where id = #{id,jdbcType=INTEGER}

@@ -26,7 +26,7 @@
         <templateRequestType>POST</templateRequestType>
     </template>
     <template key="searchPictures.listData">
-        <requestUrl>/admin/searchPictures/listData</requestUrl>
+        <requestUrl>/admin/userRole/listData</requestUrl>
         <loading type="boolean">true</loading>
         <targetSelector>#fbMappingListData</targetSelector>
         <templateRequestType>POST</templateRequestType>

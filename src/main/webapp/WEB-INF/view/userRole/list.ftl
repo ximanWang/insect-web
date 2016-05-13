@@ -8,15 +8,18 @@
 	<div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
 		<form id="formQuery" onsubmit="return false;">
             <div class="form-group">
-                <label class="control-label col-md-2">关键词</label>
-                <div class='col-md-4 query-keyword'>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="fCategoryName" title="前台类目"><span>ROOT</span>
-                    </label>
-                    <label class="checkbox-inline">
-                        <input type="checkbox" value="bCategoryName" title="后台类目"><span>BACK</span>
-                    </label>
-                </div>
+            	<label class="control-label col-md-2">权限类型</label>
+				<div class="col-md-4">
+					<select class="selectpicker" name="roleCode" data-live-search="true">
+						<option value="">全部</option>
+                        <#if cateRoleList??>
+                            <#list cateRoleList as cateRole>
+                                <option value="${cateRole.roleCode}">${cateRole.roleType}</option>
+                            </#list>
+                        </#if>
+                    </select>
+				</div>
+                
                 <div class="keyword-div" style="display: none">
                     <label class="control-label col-md-2 keyword-label" style="color: indianred"></label>
                     <div class="col-md-4 text-left">
@@ -35,30 +38,7 @@
                     <input class="holo" type="text" name="userName" id="name" style="display: inline-block;margin-right:10px;width:180px;">
                 </div>
 			</div>
-			<div class="form-group">
-                <label class="control-label col-md-2 text-right">所属BU</label>
-                <div class="col-md-4">
-                    <select class="selectpicker" id="buId" name="buId" data-live-search="true">
-                        <option value="">全部</option>
-                        <#if buList??>
-                            <#list buList as buInfo>
-                                <option value="${buInfo.code}">${buInfo.name}</option>
-                            </#list>
-                        </#if>
-                    </select>
-                </div>
-				<label class="control-label col-md-2">权限类型</label>
-				<div class="col-md-4">
-					<select class="selectpicker" name="roleCode" data-live-search="true">
-						<option value="">全部</option>
-                        <#if cateRoleList??>
-                            <#list cateRoleList as cateRole>
-                                <option value="${cateRole.roleCode}">${cateRole.roleName}</option>
-                            </#list>
-                        </#if>
-                    </select>
-				</div>
-			</div>
+		
             <div class="form-group text-center m-t-20">
                 <button id="formQueryBtn" class="btn btn-md btn-success">
                     <i class="icon icon-filter-1">查询</i>

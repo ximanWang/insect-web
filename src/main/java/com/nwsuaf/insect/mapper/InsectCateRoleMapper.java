@@ -1,5 +1,7 @@
 package com.nwsuaf.insect.mapper;
 
+import java.util.List;
+
 import com.nwsuaf.insect.model.InsectCateRole;
 
 public interface InsectCateRoleMapper {
@@ -14,4 +16,6 @@ public interface InsectCateRoleMapper {
     int updateByPrimaryKeySelective(InsectCateRole record);
 
     int updateByPrimaryKey(InsectCateRole record);
+    
+    List<InsectCateRole> findAll();
 }
