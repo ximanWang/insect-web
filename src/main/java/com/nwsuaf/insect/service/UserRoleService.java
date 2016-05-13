@@ -8,7 +8,6 @@ import com.nwsuaf.insect.model.InsectCateRole;
 
 public interface UserRoleService {
 	
-	public List<InsectCateRole> getUserRoleList();
 
 	public ListResult getUsers(Pagination pagination);
 }

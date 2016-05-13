@@ -18,15 +18,9 @@ public class UserRoleServiceImpl implements UserRoleService{
 	private InsectCateRoleMapper insectCateRoleMapper;
 	
 	@Override
-	public List<InsectCateRole> getUserRoleList() {
-
-		List<InsectCateRole> roleList = insectCateRoleMapper.findAll();
-		return roleList;
-	}
-
-	@Override
 	public ListResult getUsers(Pagination pagination) {
-		// TODO Auto-generated method stub
+
+		
 		return null;
 	}
 	

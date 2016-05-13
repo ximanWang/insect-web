@@ -14,7 +14,7 @@
 						<option value="">全部</option>
                         <#if cateRoleList??>
                             <#list cateRoleList as cateRole>
-                                <option value="${cateRole.roleCode}">${cateRole.roleType}</option>
+                                <option value="${cateRole.roleCode}">${cateRole.roleName}</option>
                             </#list>
                         </#if>
                     </select>

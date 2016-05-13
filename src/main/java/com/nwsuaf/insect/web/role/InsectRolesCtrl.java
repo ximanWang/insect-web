@@ -13,6 +13,7 @@ import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.model.query.UserQuery;
+import com.nwsuaf.insect.service.CateRoleService;
 import com.nwsuaf.insect.service.UserRoleService;
 
 @Controller
@@ -22,10 +23,13 @@ public class InsectRolesCtrl {
 	@Autowired
 	private UserRoleService userRoleService;
 	
+	@Autowired
+	private CateRoleService roleService;
+	
 	@RequestMapping(value="/list")
 	public String loadList(ModelMap model){
 		
-		model.addAttribute("cateRoleList", userRoleService.getUserRoleList());
+		model.addAttribute("cateRoleList", roleService.getAllCates());
 
 		return "userRole/list";
 	}
