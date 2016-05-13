@@ -18,12 +18,20 @@
         <targetSelector>#addModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <template key="userRole.loadModify">
-        <requestUrl>/admin/userRole/loadModify</requestUrl>
-        <targetSelector>#modifyModalData</targetSelector>
+     <!--图片管理结束-->
+     
+     <!-- 权限管理开始 -->
+    <template key="userRole.list">
+        <requestUrl>/admin/userRole/list</requestUrl>
         <templateRequestType>POST</templateRequestType>
     </template>
-    <!--POI类目权限管理相关 结束-->
+    <template key="searchPictures.listData">
+        <requestUrl>/admin/searchPictures/listData</requestUrl>
+        <loading type="boolean">true</loading>
+        <targetSelector>#fbMappingListData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <!--权限管理相关 结束-->
 
     <!--条件查询 开始-->
     <template key="insectSearch.list">

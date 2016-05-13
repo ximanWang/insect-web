@@ -3,6 +3,7 @@ package com.nwsuaf.insect.mapper;
 import com.nwsuaf.insect.model.Area;
 
 public interface AreaMapper {
+	
     int deleteByPrimaryKey(Integer id);
 
     int insert(Area record);

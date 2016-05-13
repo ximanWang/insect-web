@@ -30,7 +30,6 @@
 <link rel="stylesheet", href="<@c.url value='/css/picturestyle.css'/>" >
 
 <script type="text/javascript" src="<@c.url value='/js/jquery.js'/>" ></script>
-<script type="text/javascript" src="<@c.url value='/js/jquery.fileupload.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery-1.11.2.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.validate.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.validate.bootstrap.popover.min.js'/>" ></script>
@@ -62,6 +61,7 @@
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-switch.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-filestyle.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.fileDownload.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/webuploader.js'/>" ></script>
 <script type="text/javascript">
 $(function() {
 	insect.template.setup({contextPath : "${rc.contextPath}"});

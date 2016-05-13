@@ -9,7 +9,11 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.web.login.LoginController;
-
+/**
+ * 登录拦截器
+ * @author ximan
+ *
+ */
 public class LoginInterceptor extends HandlerInterceptorAdapter {
 	private String location = "/insect-web/toLogin";
 	@Autowired
