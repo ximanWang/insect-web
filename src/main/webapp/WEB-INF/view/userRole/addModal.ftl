@@ -53,10 +53,10 @@
                 <span class="col-md-1 text-left text-muted small"></span>
             </div>
             <div id="bCateRange" style="display: none">
-                <#include "bCateRange.ftl"/>
+                <#include "userRole/bCateRange.ftl"/>
             </div>
             <div id="fCateRange" style="display: none">
-                <#include "fCateRange.ftl"/>
+                <#include "userRole/fCateRange.ftl"/>
             </div>
             <div class="row m-t-20">
                 <label class="control-label col-md-2 text-right">人员备注</label>

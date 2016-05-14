@@ -60,7 +60,7 @@
 <!-- script block -->
 <script type="text/javascript">
 
-    $("#userRoleData .loadModify").click(function(ev) {
+    $("#fbMappingListData .loadModify").click(function(ev) {
 
         var params = {};
         params.userroleId = parseInt($(this).attr("name"));

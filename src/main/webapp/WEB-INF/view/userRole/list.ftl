@@ -14,7 +14,7 @@
 						<option value="">全部</option>
                         <#if cateRoleList??>
                             <#list cateRoleList as cateRole>
-                                <option value="${cateRole.roleCode}">${cateRole.roleName}</option>
+                                <option value="${cateRole.roleName}">${cateRole.roleName}</option>
                             </#list>
                         </#if>
                     </select>
@@ -53,6 +53,9 @@
         <div class="row" id="fbMappingListData"></div>
     </div>
 </div>
+
+<#include "userRole/addModal.ftl"/>
+<#include "userRole/modifyModal.ftl"/>
 
 <div class="modal fade" id="opDelConfirm" tabindex="-1"  style="display: none;">
 	<div class="modal-body">

@@ -52,6 +52,19 @@ public class UserRoleServiceImpl implements UserRoleService{
 		
 		return userRole;
 	}
+
+	@Override
+	public InsectCateUserRole findById(Integer id) {
+		
+		InsectCateUserRole userRole = userRoleMapper.selectByPrimaryKey(id);
+		return userRole;
+	}
+
+	@Override
+	public void updateSelective(InsectCateUserRole userRole) {
+		
+		userRoleMapper.updateByPrimaryKeySelective(userRole);
+	}
 	
 	
 	

@@ -31,7 +31,7 @@
         if($("#formModify").validate().form()) {
 
             var url = $(this).attr("action");
-            var formData = $(this).serializeObject();
+            var formData = $("#formModify").serializeObject();
 
             //转换ID的类型
             formData.userroleId = parseInt(formData.userroleId);
@@ -58,8 +58,9 @@
             $.ajax({
                 type: "POST",
                 url: url,
+                contentType: 'application/json',
                 dataType: "json",
-                data: formData,
+                data: JSON.stringify(formData),
                 success: function (data) {
                     if(data.type == "SUCCESS") {
                         $("#formModify")[0].reset();

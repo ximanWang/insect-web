@@ -32,6 +32,15 @@
         <targetSelector>#fbMappingListData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
+    <template key="userRole.modify">
+        <requestUrl>/admin/userRole/modify</requestUrl>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="userRole.loadModify">
+        <requestUrl>/admin/userRole/loadModify</requestUrl>
+        <targetSelector>#modifyModalData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
     <!--权限管理相关 结束-->
 
     <!--条件查询 开始-->
