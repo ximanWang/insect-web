@@ -65,7 +65,7 @@ public class InsectCategoryBizServiceImpl implements InsectCategoryBizService {
 			}
 			category.setPrivilege(flag);
 			if (category.getIsLeaf() == 0) {
-				category.setChildern(buildCategoryTree(category.getCategoryId(), categoryIds,
+				category.setChildren(buildCategoryTree(category.getCategoryId(), categoryIds,
 						caegoryMap, flag, isRoot));
 			}
 		}

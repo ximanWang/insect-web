@@ -1,6 +1,5 @@
 package com.nwsuaf.insect.web.category;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.nwsuaf.insect.enums.ToastMessageType;
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.model.ToastMessage;
-import com.nwsuaf.insect.model.query.ErrorLog;
 import com.nwsuaf.insect.model.query.InsectOprData;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectCategoryService;

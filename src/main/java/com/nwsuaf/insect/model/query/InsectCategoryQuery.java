@@ -2,6 +2,8 @@ package com.nwsuaf.insect.model.query;
 
 import java.util.List;
 
+import lombok.Data;
+
 import com.nwsuaf.insect.model.InsectCategory;
 
 public class InsectCategoryQuery extends InsectCategory {
@@ -14,7 +16,7 @@ public class InsectCategoryQuery extends InsectCategory {
 		return children;
 	}
 
-	public void setChildern(List<InsectCategoryQuery> children) {
+	public void setChildren(List<InsectCategoryQuery> children) {
 		this.children = children;
 	}
 
