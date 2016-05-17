@@ -28,7 +28,7 @@
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectCategory.tree")'>昆虫类目树管理</a></li>
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("poiCategory.tree")'>害虫类目树管理</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("pestCategory.tree")'>害虫类目树管理</a></li>
                     </ul>
                 </li>
                 

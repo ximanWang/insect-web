@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectUserRoleService;
-import com.nwsuaf.insect.service.TreeBuilderService;
+import com.nwsuaf.insect.service.PestTreeBuilderService;
 import com.nwsuaf.insect.service.UserService;
 import com.nwsuaf.insect.service.pest.PestCategoryService;
 
@@ -24,7 +24,7 @@ public class PestCategoryCtrl {
 	@Autowired
 	private InsectUserRoleService insectUserRoleService;
 	@Autowired
-	private TreeBuilderService treeBuilderService;
+	private PestTreeBuilderService treeBuilderService;
 	@Autowired
 	private PestCategoryService pestCategoryService;	
 	
@@ -33,9 +33,9 @@ public class PestCategoryCtrl {
 		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");
 		userq = userService.findUserByName(userq.getUserName());
 		List<Integer> categoryIds = insectUserRoleService.getBackCategoryIds(userq.getInsectCateUserRoles());
-		String insectCategoryHTML = treeBuilderService.buildInsectTree(pestCategoryService
+		String pestCategoryHTML = treeBuilderService.buildPestTree(pestCategoryService
 				.getInsectCategoryTree(categoryIds, userq.getIsRoot()));
-		model.addAttribute("insectCategoryHTML", insectCategoryHTML);
-		return "insectCategoryTree/tree";
+		model.addAttribute("pestCategoryHTML", pestCategoryHTML);
+		return "pestCategoryTree/tree";
 	}
 }
