@@ -52,7 +52,7 @@
                         <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectSearch.list")'>条件查询</a></li>
                     </ul>
                 </li>
-                <#if Session.user.isRoot>
+                <#if isRoot>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
                         工具
@@ -69,7 +69,7 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a class="dropdown-toggle" href="#", data-toggle="dropdown">${Session.user.getUserName()}</a>
-						<input type="hidden" id="isRoot" value="${Session.user.isRoot?string("Y","N")}" />
+						<input type="hidden" id="isRoot" value="${isRoot?string("Y","N")}" />
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUser">
 							<li role="presentation">
 								<a role='menuitem', tabindex="-1", href='logout'>注销</a>

@@ -33,6 +33,7 @@ public class UserServiceImpl implements UserService{
 		userQuery.setPassword(user.getUserPasswd());
 		userQuery.setEmail(user.getUserEmail());
 		userQuery.setRealName(user.getUserName());
+		userQuery.setRoleType(user.getRoleType());
 		InsectCateUserRoleQuery insectCateUserRoleQuery = new InsectCateUserRoleQuery();
 		if("ROOT".equals(user.getRoleCode())){
 			userQuery.setIsRoot(true);

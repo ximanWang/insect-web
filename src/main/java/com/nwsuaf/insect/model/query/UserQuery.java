@@ -14,6 +14,8 @@ public class UserQuery {
 	private String realName; // 用户姓名
 
 	private String email; // Email
+	
+	private String roleType;
 
 	private List<InsectCateUserRoleQuery> insectCateUserRoles; // 系统当前所拥有角色
 
