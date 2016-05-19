@@ -1,6 +1,5 @@
 <table class="table mm-box">
 	<tr class="th-inverse">
-		<#--<th>映射关系ID</th>-->
 		<th>类目ID</th>
 		<th>中文名称</th>
 		<th>拉丁名称</th>

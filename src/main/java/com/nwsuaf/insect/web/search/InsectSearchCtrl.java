@@ -40,7 +40,7 @@ public class InsectSearchCtrl {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
-			throw new InsectException("未登录");
+			return "login/login";
 
 		model.addAttribute("isRoot", userq.getIsRoot() ? 1 : 0);
 
@@ -54,7 +54,8 @@ public class InsectSearchCtrl {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
-			throw new InsectException("未登录");
+			return "login/login";
+		
 		ListResult resultList = insectMappingSearchService.getFBMappings(pagination, userq);
 
 		@SuppressWarnings("unchecked")
@@ -75,7 +76,7 @@ public class InsectSearchCtrl {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
-			throw new InsectException("未登录");
+			return "login/login";
 		return "searchInsect/addModalData";
 	}
 
@@ -96,7 +97,7 @@ public class InsectSearchCtrl {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
-			throw new InsectException("未登录");
+			return "login/login";
 		int cateId = (Integer) requestMap.get("mid");
 		Insect insect = insectService.selectByCategotyId(cateId);
 		model.addAttribute("insect", insect);

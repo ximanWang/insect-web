@@ -55,11 +55,11 @@
                 <#if isRoot>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                        工具
+                       前台系统
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                               
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/index">前台主页面</a></li>
                         </ul>
                     </li>
                 </#if>
