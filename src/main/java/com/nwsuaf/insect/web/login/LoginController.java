@@ -1,5 +1,8 @@
 package com.nwsuaf.insect.web.login;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -8,29 +11,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
 
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.UserService;
 
 @Controller
-public class LoginController extends AbstractController {
+@RequestMapping("/")
+public class LoginController{
 
 	@Autowired
 	private UserService userService;
 
-	@RequestMapping(value = { "/toLogin" })
+	@RequestMapping(value = "/toLogin" )
 	public ModelAndView toLogin() {
 		return new ModelAndView("login/login");
 	}
 
-	@Override
-	@RequestMapping("/admin/index")
-	protected ModelAndView handleRequestInternal(HttpServletRequest request,
+	@RequestMapping(value = "/admin/index")
+	public ModelAndView handleRequest(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		UserQuery user = getUser(username, password);
+		if(username==null && password==null){
+			return new ModelAndView("login/login");
+		}
 		if (user != null) {
 			request.getSession().setAttribute("user", user);
 			String roleType = user.getRoleType();
@@ -43,10 +48,13 @@ public class LoginController extends AbstractController {
 			request.getSession().setAttribute("isRoot", isRoot);
 			return new ModelAndView("main");
 		} else {
-			return new ModelAndView("login/login");
+			 Map map = new HashMap(); 
+			 map.put("error", "用户名或密码不正确，请重新输入！");
+			return new ModelAndView("login/login","map",map);
 		}
 	}
-
+	
+	
 	private UserQuery getUser(String username, String password) {
 		UserQuery userQuery = userService.findUserByName(username);
 		if (userQuery != null) {

@@ -15,6 +15,9 @@ body a {
   background-size: cover;
   min-height: 650px;
 }
+.errmsg{
+	color: red;
+}
 .banner-grids {
   padding-top: 5em;
 }
