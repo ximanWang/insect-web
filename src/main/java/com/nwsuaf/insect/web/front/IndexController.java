@@ -10,6 +10,10 @@ public class IndexController {
 	
 	@RequestMapping(value = "/index")
 	public ModelAndView showIndex(){
-		return new ModelAndView("front/main");
+		return new ModelAndView("frontIndex");
+	}
+	@RequestMapping(value = "/detail")
+	public ModelAndView showDetail(){
+		return new ModelAndView("front/insectDetail");
 	}
 }

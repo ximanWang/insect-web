@@ -3,9 +3,14 @@ body {
   height: 100%;
   color: #666;
   /* The html and body elements cannot have any padding or margin. */
+  
+}
+.easy-tree{
+	background-color: #400040;
 }
 body {
-  background-color: #eeeeee;
+  
+  background: url(../frontimage/666.jpg) no-repeat 400px 70px;
 }
 .hipi-nav {
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.15);

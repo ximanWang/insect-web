@@ -4,10 +4,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Birds Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template, 
-Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
 <title>Insect</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,9 +12,31 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet", href="<@c.url value='/frontcss/swipebox.css'/>" >
 <link href='http://fonts.useso.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,800,700,600' rel='stylesheet' type='text/css'>
 <link href='http://fonts.useso.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet", href="<@c.url value='/css/jq/jquery-ui-1.10.4.custom.min.css'/>">
+<link rel="stylesheet", href="<@c.url value='/css/bootstrap.css'/>">
+<link rel="stylesheet", href="<@c.url value='/css/diyUpload.css'/>">
+<link rel="stylesheet", href="<@c.url value='/css/webuploader.css'/>">
+<link rel="stylesheet", href="<@c.url value='/font-css/fontello.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/select2/select2.min.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/style.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/fullcalendar.css'/>" >
+<link href="<@c.url value='/css/fullcalendar.print.css'/>", rel="stylesheet", media="print" />
+<link rel="stylesheet", href="<@c.url value='/css/bootstrap-modal-bs3patch.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/bootstrap-modal.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/bootstrap-switch.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/bootstrap-tagsinput.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/toastr.min.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/pagination.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/bootstrap-tagsinput.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/datepicker.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/easyTree.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/waitMe.min.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/finalstyle.css'/>" >
+<link rel="stylesheet", href="<@c.url value='/css/picturestyle.css'/>" >
+
+<script type="text/javascript" src="<@c.url value='/frontjs/jquery.swipebox.min.js'/>" ></script> 
 <script type="text/javascript" src="<@c.url value='/frontjs/jquery.min.js'/>" ></script>
-<script type="text/javascript" src="<@c.url value='/js/insect.js'/>" ></script>
-<script type="text/javascript" src="<@c.url value='/js/bootstrap-tagsinput.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery-1.11.2.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.validate.min.js'/>" ></script>
@@ -52,18 +70,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-filestyle.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.fileDownload.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/webuploader.js'/>" ></script>
-
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-
-<script type="text/javascript">
-
-</script>
 <script type="text/javascript" src="<@c.url value='/frontjs/jquery.swipebox.min.js'/>" ></script> 
-<script type="text/javascript">
-	jQuery(function($) {
-		$(".swipebox").swipebox();
-	});
-</script>
 <script type="text/javascript">
 $(function() {
 	insect.template.setup({contextPath : "${rc.contextPath}"});
@@ -74,13 +82,16 @@ $(function() {
       $(this).find('.dropdown-menu').stop(true, true).hide();
       $(this).removeClass('open');
     });
+    $(".swipebox").swipebox();
 });
 </script>
 </head>
 <body>
-    <#include "/front/include/header.ftl"/>
-	<!-- gallery -->
-	<div class="gallery">
+	<div id="wrap">
+        <#include "/include/frontheader.ftl"/>
+        <#include "/include/fheader.ftl"/>
+		
+		<div class="gallery">
 		<!-- container -->
 		<div class="container">
 			<div class="gallery-info">
@@ -217,8 +228,7 @@ $(function() {
 		</div>
 		<!-- //container -->
 	</div>
-	<!-- //gallery -->
-	 <#include "/front/include/footer.ftl"/>
+	</div>
 
 </body>
 </html>

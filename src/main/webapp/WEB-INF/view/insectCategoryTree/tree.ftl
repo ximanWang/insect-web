@@ -1,6 +1,6 @@
 <!-- html block -->
 <div class="row m-t-20 m-b-20">
-    <div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
+    <div class="col-sm-7 col-sm-offset-1 mm-box form-horizontal filter-pan">
         <div class="row-fluid">
             <h3 class="text-success text-center">Insect Tree</h3>
            

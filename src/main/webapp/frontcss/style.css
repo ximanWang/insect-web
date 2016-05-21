@@ -568,7 +568,6 @@ div#portfoliolist {
 }
 /*-- about --*/
 .about{
-	background: url(../images/p.jpg) repeat;
 	padding: 5em 0;
 }
 .about-banner{
@@ -623,7 +622,7 @@ font-size: 36px;
 }
 /*-- blog --*/
 .blog{
-	background: url(../images/p.jpg) repeat;
+	background: url(../frontimage/p.jpg) repeat;
 	padding: 3em 0;
 }
 .blog-left a{

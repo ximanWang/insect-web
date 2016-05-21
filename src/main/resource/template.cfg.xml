@@ -96,9 +96,9 @@
     <!--类目树管理 结束-->
     
     <!-- 前台系统 -->
-    <template key="user.index">
-    	<requestUrl>/index</requestUrl>
-        <loading type="boolean">true</loading>
+    <template key="user.detail">
+    	<requestUrl>/detail</requestUrl>
+        <templateRequestType>POST</templateRequestType>
     </template>
 
 </templates>
