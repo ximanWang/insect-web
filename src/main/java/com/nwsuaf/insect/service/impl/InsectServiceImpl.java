@@ -6,10 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
+import com.nwsuaf.insect.dto.ListResult;
+import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.mapper.InsectCategoryMapper;
 import com.nwsuaf.insect.mapper.InsectMapper;
 import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.service.InsectService;
+import com.nwsuaf.insect.util.PaginationUtil;
 
 @Service("InsectService")
 public class InsectServiceImpl implements InsectService{
@@ -50,6 +55,20 @@ public class InsectServiceImpl implements InsectService{
 	public List<Insect> selectAllInsects() {
 		List<Insect> insectList = insectMapper.selectAllInsects();
 		return insectList;
+	}
+
+	@Override
+	public ListResult<Insect> getAllInsect(Pagination pagination) {
+		PaginationUtil.initDateQueryCondition(pagination);
+		//设置分页区间，并设置第三个参数为true，计算总记录数
+	    PageHelper.startPage(pagination.getCurrentPage(), pagination.getPageCount(), true);
+		
+		List<Insect> list = insectMapper.selectAllInsects();
+		
+		PageInfo page = new PageInfo(list);
+		ListResult listResult = new ListResult(list,page.getTotal());
+		
+		return listResult;
 	}
 
 }

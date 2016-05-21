@@ -100,5 +100,15 @@
     	<requestUrl>/detail</requestUrl>
         <templateRequestType>POST</templateRequestType>
     </template>
-
+	
+	<template key="user.search">
+		<requestUrl>/search</requestUrl>
+		<templateRequestType>POST</templateRequestType>
+	</template>
+	<template key="user.insectSearch">
+        <requestUrl>/insectSearch</requestUrl>
+        <loading type="boolean">true</loading>
+        <targetSelector>#fbMappingListData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
 </templates>

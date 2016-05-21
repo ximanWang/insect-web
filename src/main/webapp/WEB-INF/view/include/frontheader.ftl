@@ -28,7 +28,7 @@
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/detail'>条件查询</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/insectSearch'>条件查询</a></li>
                     </ul>
                
                     <li class="dropdown">
@@ -37,8 +37,8 @@
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                               <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("user.detail")'>问题浏览</a></li>
-                                 <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("user.detail")'>我要提问</a></li>
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/talkAbout'>问题浏览</a></li>
+                                 <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/talkAsk'>我要提问</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

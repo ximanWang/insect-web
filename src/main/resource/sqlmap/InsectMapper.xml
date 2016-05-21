@@ -20,7 +20,7 @@
     host, distribution, gather_place, features
   </sql>
   <select id="selectAllInsects" resultMap="BaseResultMap">
-  	select * from insect_zhong ;
+  	select * from insect_zhong 
   </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 

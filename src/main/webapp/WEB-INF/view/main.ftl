@@ -81,7 +81,9 @@ $(function() {
 		<div class="container">
 			<div id="main"></div>
 		</div>
+		
 	</div>
+	
 
 </body>
 </html>
