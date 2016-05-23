@@ -2,7 +2,6 @@ package com.nwsuaf.insect.web.front;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 
@@ -11,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class TalkController {
 
 	@RequestMapping(value = "/talkList")
-	public String loadList(@PathVariable Integer id, ModelMap model) {
+	public String loadList(Integer id, ModelMap model) {
 		
 		
-		return "frontSearch/insectDetail";
+		return "frontTalk/talkList";
 	}
 }

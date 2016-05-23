@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.nwsuaf.insect.mapper.InsectTalkMapper" >
+  <resultMap id="BaseResultMap" type="com.nwsuaf.insect.model.InsectTalk" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ask_content" property="askContent" jdbcType="VARCHAR" />
+    <result column="add_user" property="addUser" jdbcType="VARCHAR" />
+    <result column="add_time" property="addTime" jdbcType="TIMESTAMP" />
+    <result column="answer" property="answer" jdbcType="VARCHAR" />
+    <result column="answer_user" property="answerUser" jdbcType="VARCHAR" />
+    <result column="answer_time" property="answerTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ask_content, add_user, add_time, answer, answer_user, answer_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from insect_talk
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from insect_talk
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.nwsuaf.insect.model.InsectTalk" >
+    insert into insect_talk (id, ask_content, add_user, 
+      add_time, answer, answer_user, 
+      answer_time)
+    values (#{id,jdbcType=INTEGER}, #{askContent,jdbcType=VARCHAR}, #{addUser,jdbcType=VARCHAR}, 
+      #{addTime,jdbcType=TIMESTAMP}, #{answer,jdbcType=VARCHAR}, #{answerUser,jdbcType=VARCHAR}, 
+      #{answerTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.InsectTalk" >
+    insert into insect_talk
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="askContent != null" >
+        ask_content,
+      </if>
+      <if test="addUser != null" >
+        add_user,
+      </if>
+      <if test="addTime != null" >
+        add_time,
+      </if>
+      <if test="answer != null" >
+        answer,
+      </if>
+      <if test="answerUser != null" >
+        answer_user,
+      </if>
+      <if test="answerTime != null" >
+        answer_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="askContent != null" >
+        #{askContent,jdbcType=VARCHAR},
+      </if>
+      <if test="addUser != null" >
+        #{addUser,jdbcType=VARCHAR},
+      </if>
+      <if test="addTime != null" >
+        #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="answer != null" >
+        #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="answerUser != null" >
+        #{answerUser,jdbcType=VARCHAR},
+      </if>
+      <if test="answerTime != null" >
+        #{answerTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.nwsuaf.insect.model.InsectTalk" >
+    update insect_talk
+    <set >
+      <if test="askContent != null" >
+        ask_content = #{askContent,jdbcType=VARCHAR},
+      </if>
+      <if test="addUser != null" >
+        add_user = #{addUser,jdbcType=VARCHAR},
+      </if>
+      <if test="addTime != null" >
+        add_time = #{addTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="answer != null" >
+        answer = #{answer,jdbcType=VARCHAR},
+      </if>
+      <if test="answerUser != null" >
+        answer_user = #{answerUser,jdbcType=VARCHAR},
+      </if>
+      <if test="answerTime != null" >
+        answer_time = #{answerTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.nwsuaf.insect.model.InsectTalk" >
+    update insect_talk
+    set ask_content = #{askContent,jdbcType=VARCHAR},
+      add_user = #{addUser,jdbcType=VARCHAR},
+      add_time = #{addTime,jdbcType=TIMESTAMP},
+      answer = #{answer,jdbcType=VARCHAR},
+      answer_user = #{answerUser,jdbcType=VARCHAR},
+      answer_time = #{answerTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

@@ -71,7 +71,18 @@
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-filestyle.min.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.fileDownload.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/webuploader.js'/>" ></script>
-
+<script type="text/javascript" >
+$(function() {
+	insect.template.setup({contextPath : "${rc.contextPath}/css"});
+    $('ul.nav li.dropdown').hover(function() {
+      $(this).find('.dropdown-menu').stop(true, true).show();
+      $(this).addClass('open');
+    }, function() {
+      $(this).find('.dropdown-menu').stop(true, true).hide();
+      $(this).removeClass('open');
+    });
+});
+</script>
 
 
 </head>
