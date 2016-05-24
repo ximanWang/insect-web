@@ -59,7 +59,7 @@
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                               <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("user.detail")'>前台主页面</a></li>
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectTalk.list")'>问题列表</a></li>
                         </ul>
                     </li>
                 </#if>

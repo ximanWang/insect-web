@@ -4,7 +4,7 @@
             <button class="close"type="button" data-dismiss="modal" aria-hidden="true"> &times</button>
             <div class="row">
                 <div class="col-md-3">
-                    <h4 class="modal-title">编辑</h4>
+                    <h4 class="modal-title">编辑用户权限</h4>
                 </div>
             </div>
         </div>

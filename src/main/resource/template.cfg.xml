@@ -73,16 +73,6 @@
     <!--前后台映射关系相关 结束-->
 
 
-	<template key="categoryMapping.list">
-		<requestUrl>/admin/categoryMapping/list</requestUrl>
-		<templateRequestType>POST</templateRequestType>
-	</template>
-	<template key="categoryMapping.listData">
-		<requestUrl>/admin/categoryMapping/listData</requestUrl>
-		<targetSelector>#categoryMappingsData</targetSelector>
-		<templateRequestType>POST</templateRequestType>
-	</template>
-
     <!--类目树管理 开始-->
     <template key="insectCategory.tree">
         <requestUrl>/admin/insectCategory/tree</requestUrl>
@@ -109,6 +99,27 @@
         <requestUrl>/insectSearch</requestUrl>
         <loading type="boolean">true</loading>
         <targetSelector>#fbMappingListData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    
+    <template key="insectTalk.list">
+        <requestUrl>/admin/insectTalk/list</requestUrl>
+        <loading type="boolean">true</loading>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="insectTalk.listData">
+        <requestUrl>/admin/insectTalk/listData</requestUrl>
+        <loading type="boolean">true</loading>
+        <targetSelector>#fbMappingListData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="insectTalk.modify">
+        <requestUrl>/admin/insectTalk/modify</requestUrl>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="insectTalk.loadModify">
+        <requestUrl>/admin/insectTalk/loadModify</requestUrl>
+        <targetSelector>#modifyModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
 </templates>

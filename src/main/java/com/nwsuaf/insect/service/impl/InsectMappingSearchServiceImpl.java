@@ -21,7 +21,6 @@ import com.nwsuaf.insect.model.query.InsectAddOprData;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectCategoryService;
 import com.nwsuaf.insect.service.InsectMappingSearchService;
-import com.nwsuaf.insect.service.InsectService;
 import com.nwsuaf.insect.util.PaginationUtil;
 
 @Service("InsectMappingSearchService")

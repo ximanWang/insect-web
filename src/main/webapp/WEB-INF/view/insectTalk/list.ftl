@@ -7,25 +7,36 @@
 <div class="row m-t-20">
 	<div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
 		<form id="formQuery" onsubmit="return false;">
-            <div class="form-group m-t-10">
-                <label class="control-label col-md-2">选择昆虫</label>
-                <div class="col-md-4 text-left">
-                	<@insectSelector class="selectpicker" name="insectId"/>
-                </div>
-                <label class="control-label col-md-2">选择相册</label>
-                <div class="col-md-4 text-left">
-                	<@albmTypeSelector class="selectpicker" name="typeName"/>
+            <div class="form-group">
+            	<label class="control-label col-md-2">状态</label>
+				<div class="col-md-4">
+                <select class="selectpicker" name="isCheck" data-live-search="true">
+					<option value="">全部</option>
+					<option value="0">未回复</option>
+                    <option value="1">已回复</option>
+                 </select>
+            	</div>
+            
+                <label class="control-label col-md-2">提问时间</label>
+                <div class='col-md-3'>
+                    <div class='input-group date datepicker' id="startDateDiv" style="width:190px;margin-left:-5px">
+                        <input type='text' class="form-control" name="startDate" id="startDate" readonly/>
+                        <span class="input-group-addon">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
                 </div>
             </div>
-            
             <div class="form-group text-center m-t-20">
                 <button id="formQueryBtn" class="btn btn-md btn-success">
                     <i class="icon icon-filter-1">查询</i>
                 </button>
+                
             </div>
 		</form>
 	</div>
 </div>
+<#include "searchPictures/addPictures.ftl"/>
 <div class="row m-t-25">
     <div class="col-sm-10 col-sm-offset-1">
         <div class="row" id="fbMappingListData"></div>
@@ -39,7 +50,7 @@
 $(".selectpicker").select2({width : 180});
 
 var fbMappingPagination = new insect.Pagination({
-    templateKey : "searchPictures.listData"
+    templateKey : "insectTalk.listData"
 });
 /* 跳转到第一页 */
 fbMappingPagination.setSort({ctime:"DESC"}).first();

@@ -11,6 +11,8 @@ public class InsectTalk {
 
     private Date addTime;
 
+    private Integer isAnswer;
+
     private String answer;
 
     private String answerUser;
@@ -47,6 +49,14 @@ public class InsectTalk {
 
     public void setAddTime(Date addTime) {
         this.addTime = addTime;
+    }
+
+    public Integer getIsAnswer() {
+        return isAnswer;
+    }
+
+    public void setIsAnswer(Integer isAnswer) {
+        this.isAnswer = isAnswer;
     }
 
     public String getAnswer() {

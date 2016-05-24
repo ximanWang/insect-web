@@ -6,12 +6,13 @@
     <result column="ask_content" property="askContent" jdbcType="VARCHAR" />
     <result column="add_user" property="addUser" jdbcType="VARCHAR" />
     <result column="add_time" property="addTime" jdbcType="TIMESTAMP" />
+    <result column="is_answer" property="isAnswer" jdbcType="INTEGER" />
     <result column="answer" property="answer" jdbcType="VARCHAR" />
     <result column="answer_user" property="answerUser" jdbcType="VARCHAR" />
     <result column="answer_time" property="answerTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, ask_content, add_user, add_time, answer, answer_user, answer_time
+    id, ask_content, add_user, add_time, is_answer, answer, answer_user, answer_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -19,17 +20,29 @@
     from insect_talk
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getAllTalks" resultMap="BaseResultMap">
+  	select * from insect_talk
+  </select>
+  <select id="findByCondition" resultMap="BaseResultMap" parameterType="com.nwsuaf.insect.model.InsectTalk">
+  	select * from insect_talk  where 1=1
+		<if test="isAnswer != null">
+			<![CDATA[and is_answer =  #{isAnswer,jdbcType=INTEGER} ]]>
+		</if>
+		<if test="addTime != null ">
+			<![CDATA[and add_time >= #{addTime,jdbcType=TIMESTAMP} ]]>
+		</if>
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from insect_talk
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.nwsuaf.insect.model.InsectTalk" >
     insert into insect_talk (id, ask_content, add_user, 
-      add_time, answer, answer_user, 
-      answer_time)
+      add_time, is_answer, answer, 
+      answer_user, answer_time)
     values (#{id,jdbcType=INTEGER}, #{askContent,jdbcType=VARCHAR}, #{addUser,jdbcType=VARCHAR}, 
-      #{addTime,jdbcType=TIMESTAMP}, #{answer,jdbcType=VARCHAR}, #{answerUser,jdbcType=VARCHAR}, 
-      #{answerTime,jdbcType=TIMESTAMP})
+      #{addTime,jdbcType=TIMESTAMP}, #{isAnswer,jdbcType=INTEGER}, #{answer,jdbcType=VARCHAR}, 
+      #{answerUser,jdbcType=VARCHAR}, #{answerTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.InsectTalk" >
     insert into insect_talk
@@ -45,6 +58,9 @@
       </if>
       <if test="addTime != null" >
         add_time,
+      </if>
+      <if test="isAnswer != null" >
+        is_answer,
       </if>
       <if test="answer != null" >
         answer,
@@ -69,6 +85,9 @@
       <if test="addTime != null" >
         #{addTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="isAnswer != null" >
+        #{isAnswer,jdbcType=INTEGER},
+      </if>
       <if test="answer != null" >
         #{answer,jdbcType=VARCHAR},
       </if>
@@ -92,6 +111,9 @@
       <if test="addTime != null" >
         add_time = #{addTime,jdbcType=TIMESTAMP},
       </if>
+      <if test="isAnswer != null" >
+        is_answer = #{isAnswer,jdbcType=INTEGER},
+      </if>
       <if test="answer != null" >
         answer = #{answer,jdbcType=VARCHAR},
       </if>
@@ -109,6 +131,7 @@
     set ask_content = #{askContent,jdbcType=VARCHAR},
       add_user = #{addUser,jdbcType=VARCHAR},
       add_time = #{addTime,jdbcType=TIMESTAMP},
+      is_answer = #{isAnswer,jdbcType=INTEGER},
       answer = #{answer,jdbcType=VARCHAR},
       answer_user = #{answerUser,jdbcType=VARCHAR},
       answer_time = #{answerTime,jdbcType=TIMESTAMP}
