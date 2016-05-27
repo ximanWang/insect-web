@@ -118,9 +118,9 @@ $(function() {
 				<div class="single-reply">
 					<h4>提问</h4>
 					<form method="post" action="${rc.contextPath}/askAdd">
-						<input type="text" placeholder="姓名" required="">
-						<input class="name" type="text" placeholder="联系邮箱" required="">
-						<textarea placeholder="提问内容" required=""></textarea>
+						<input type="text" name="username" placeholder="姓名" required="">
+						<input class="name" name="email" type="text" placeholder="联系邮箱" required="">
+						<textarea name="askContent" placeholder="提问内容" required=""></textarea>
 						<input type="submit" value="SEND">
 					</form>
 				</div>

@@ -21,7 +21,7 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
   <select id="getAllTalks" resultMap="BaseResultMap">
-  	select * from insect_talk
+  	select * from insect_talk group by id desc
   </select>
   <select id="findByCondition" resultMap="BaseResultMap" parameterType="com.nwsuaf.insect.model.InsectTalk">
   	select * from insect_talk  where 1=1
@@ -31,6 +31,7 @@
 		<if test="addTime != null ">
 			<![CDATA[and add_time >= #{addTime,jdbcType=TIMESTAMP} ]]>
 		</if>
+		 group by id desc
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from insect_talk
@@ -41,7 +42,7 @@
       add_time, is_answer, answer, 
       answer_user, answer_time)
     values (#{id,jdbcType=INTEGER}, #{askContent,jdbcType=VARCHAR}, #{addUser,jdbcType=VARCHAR}, 
-      #{addTime,jdbcType=TIMESTAMP}, #{isAnswer,jdbcType=INTEGER}, #{answer,jdbcType=VARCHAR}, 
+      now(), #{isAnswer,jdbcType=INTEGER}, #{answer,jdbcType=VARCHAR}, 
       #{answerUser,jdbcType=VARCHAR}, #{answerTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.InsectTalk" >
@@ -121,7 +122,7 @@
         answer_user = #{answerUser,jdbcType=VARCHAR},
       </if>
       <if test="answerTime != null" >
-        answer_time = #{answerTime,jdbcType=TIMESTAMP},
+        answer_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

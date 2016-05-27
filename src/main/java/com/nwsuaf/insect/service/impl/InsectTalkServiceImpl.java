@@ -32,7 +32,6 @@ public class InsectTalkServiceImpl implements InsectTalkService{
 	    PageHelper.startPage(pagination.getCurrentPage(), pagination.getPageCount(), true);
 	    
 	    InsectTalk insectTalk = toInsectTalk(isCheck,startDate);
-	    
 	    List<InsectTalk> talkList = talkMapper.findByCondition(insectTalk);
 	    PageInfo page = new PageInfo(talkList);
 		ListResult listResult = new ListResult(talkList,page.getTotal());

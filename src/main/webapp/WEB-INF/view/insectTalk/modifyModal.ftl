@@ -1,5 +1,5 @@
 <div class="modal fade" tabindex="-1"  data-width="960"  id="modifyModal"  style="display: none;">
-    <form id="formModify" action="userRole/modify">
+    <form id="formModify" action="insectTalk/modify">
         <div class="modal-header">
             <button class="close"type="button" data-dismiss="modal" aria-hidden="true"> &times</button>
             <div class="row">
@@ -36,24 +36,6 @@
             //转换ID的类型
             formData.userroleId = parseInt(formData.userroleId);
 
-            //获取类目ID列表
-            var categoryIds = [];
-            if( formData.roleCode.indexOf("BACK") > -1 ){
-                $.each($("#formModify .addcate-label").find("span"), function(index, value){
-                    var cateId = $(value).attr("id");
-                    if( cateId != null){
-                        categoryIds.push(parseInt(cateId));
-                    }
-                });
-            }else if(formData.roleCode.indexOf("FONT") > -1 ){
-                $.each($("#formModify .addfcate-label").find("span"), function(index, value){
-                    var cateId = $(value).attr("id");
-                    if( cateId != null){
-                        categoryIds.push(parseInt(cateId));
-                    }
-                });
-            }
-            formData.categoryIds  = categoryIds.toString();
 
             $.ajax({
                 type: "POST",
