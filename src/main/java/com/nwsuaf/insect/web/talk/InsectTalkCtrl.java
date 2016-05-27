@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.enums.ToastMessageType;
 import com.nwsuaf.insect.exception.InsectException;
 import com.nwsuaf.insect.mapper.InsectTalkMapper;
-import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.model.InsectTalk;
 import com.nwsuaf.insect.model.ToastMessage;
 import com.nwsuaf.insect.model.query.InsectUpdateOprData;
@@ -55,16 +55,16 @@ public class InsectTalkCtrl {
 		return "insectTalk/listData";
 	}
 	@RequestMapping("/loadModify")
-	public String loadModify(@RequestBody Map<String, Object> requestMap, ModelMap model,
+	public ModelAndView loadModify(@RequestBody Map<String, Object> requestMap, ModelMap model,
 			HttpServletRequest request) {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
-			return "login/login";
-		int id = (Integer) requestMap.get("tid");
+			return new ModelAndView( "login/login");
+		int id = (Integer) requestMap.get("userroleId");
 		InsectTalk insectTalk = insectTalkMapper.selectByPrimaryKey(id);
 		model.addAttribute("insectTalk", insectTalk);
-		return "insectTalk/modifyModalData";
+		return new ModelAndView("insectTalk/modifyModalData");
 	}
 
 	@RequestMapping("/modify")

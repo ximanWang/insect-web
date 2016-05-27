@@ -14,7 +14,7 @@
 <div class="row m-t-20">
     <label class="control-label col-md-2 text-right">提问时间</label>
     <div class="col-md-3">
-        <input class="holo required" type="text" style="margin-top:-20px;color:gray" id="userEmail" name="addTime" readonly="true" value="${insectTalk.addTime!}">
+        <input class="holo required" type="text" style="margin-top:-20px;color:gray" id="userEmail" name="addTime" readonly="true" value="${insectTalk.askContent!}">
     </div>
     <span class="col-md-1 text-left text-muted small"></span>
     

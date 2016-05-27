@@ -52,4 +52,16 @@ public class InsectTalkServiceImpl implements InsectTalkService{
 		return insectTalk;
 	}
 
+	@Override
+	public ListResult getAllTalks(Pagination pagination) {
+		PaginationUtil.initDateQueryCondition(pagination);
+		//设置分页区间，并设置第三个参数为true，计算总记录数
+	    PageHelper.startPage(pagination.getCurrentPage(), pagination.getPageCount(), true);
+	    
+	    List<InsectTalk> talkList = talkMapper.getAllTalks();
+	    PageInfo page = new PageInfo(talkList);
+		ListResult listResult = new ListResult(talkList,page.getTotal());
+		return listResult;
+	}
+
 }

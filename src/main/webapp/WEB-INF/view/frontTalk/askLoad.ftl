@@ -6,10 +6,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insect</title>
 
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 
 <link rel="stylesheet", href="<@c.url value='/frontcss/bootstrap.css'/>">
 <link rel="stylesheet", href="<@c.url value='/frontcss/style.css'/>" >
@@ -116,29 +114,16 @@ $(function() {
 	<div class="blog">
 		<!-- container -->
 		<div class="container">
-			<div class="col-md-9 blog-grids">
-				<h4>问题列表</h4>
-				<#if talkList??>
-				<#list talkList as talkData>
-				
-				<div class="single-reply">					
-					<input type="text"  value="${talkData.askContent}">					
-					<textarea value="">${talkData.answer}</textarea>
-				</div>	
-				</#list>
-				</#if>
-				
-				<div id="fbMappingPageBar"></div>
-		</form>
-	</div>
-</div>
-	</div>
-	<div class="row m-t-25">
-    <div class="col-sm-10 col-sm-offset-1">
-        <div class="row" id="fbMappingListData"></div>
-    </div>
-    
-</div>
+			
+				<div class="single-reply">
+					<h4>提问</h4>
+					<form method="post" action="${rc.contextPath}/askAdd">
+						<input type="text" placeholder="姓名" required="">
+						<input class="name" type="text" placeholder="联系邮箱" required="">
+						<textarea placeholder="提问内容" required=""></textarea>
+						<input type="submit" value="SEND">
+					</form>
+				</div>
 			</div>
 			
 			<div class="clearfix"> </div>
@@ -147,29 +132,5 @@ $(function() {
 	</div>
 	<!-- //blog -->
 </body>
-<!-- script block -->
-<script type="text/javascript">
 
-//生成bootstrap的select样式
-$(".selectpicker").select2({width : 180});
-
-var fbMappingPagination = new insect.Pagination({
-    templateKey : "user.insectSearch"
-});
-/* 跳转到第一页 */
-fbMappingPagination.setSort({ctime:"DESC"}).first();
-
-$("#formQueryBtn").click(function() {
-	var condition = $("#formQuery").serializeObject();
-    condition.fCateId = parseInt(condition.fCateId);
-    condition.fAncestorId = parseInt(condition.fAncestorId);
-    condition.bCateId = parseInt(condition.bCateId);
-    condition.bProValueId = parseInt(condition.bProValueId);
-    fbMappingPagination.setCondition(condition).first();
-});
-
-</script>
-<script type="text/javascript">
-	fbMappingPagination.bar("#fbMappingPageBar",${pagination.total?c}, ${pagination.pageCount?c}, ${pagination.currentPage?c});
-</script>	
 </html>

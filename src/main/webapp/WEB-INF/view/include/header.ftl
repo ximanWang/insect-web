@@ -52,7 +52,7 @@
                         <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectSearch.list")'>条件查询</a></li>
                     </ul>
                 </li>
-                <#if isRoot>
+                
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
                       提问管理
@@ -62,8 +62,18 @@
                                <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectTalk.list")'>问题列表</a></li>
                         </ul>
                     </li>
-                </#if>
-                
+               
+                <#if isRoot>
+                	 <li class="dropdown">
+                        <a class="dropdown-toggle" href="#", data-toggle="dropdown">
+                      公告管理
+                        <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectTalk.list")'>发布公告</a></li>
+                        </ul>
+                    </li>
+                   </#if>
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
                        前台系统

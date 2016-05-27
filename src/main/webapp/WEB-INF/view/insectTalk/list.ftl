@@ -1,9 +1,4 @@
-<!-- html block -->
-<div class="sidebar sidebar-left mm-box">
-	<div class="sidemenu" id="loadAddModalBtn">
-		<i class="icon icon-plus-6">上传</i>
-	</div>
-</div>
+
 <div class="row m-t-20">
 	<div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
 		<form id="formQuery" onsubmit="return false;">
@@ -36,7 +31,8 @@
 		</form>
 	</div>
 </div>
-<#include "searchPictures/addPictures.ftl"/>
+
+<#include "insectTalk/modifyModal.ftl"/>
 <div class="row m-t-25">
     <div class="col-sm-10 col-sm-offset-1">
         <div class="row" id="fbMappingListData"></div>

@@ -6,4 +6,6 @@ import com.nwsuaf.insect.dto.Pagination;
 public interface InsectTalkService {
 
 	public ListResult getTalks(Pagination pagination);
+	
+	public ListResult getAllTalks(Pagination pagination);
 }
