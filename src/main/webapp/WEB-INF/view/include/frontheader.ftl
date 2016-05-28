@@ -59,7 +59,7 @@
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                               <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/index">前台主页面</a></li>
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/index">修改个人信息</a></li>
                         </ul>
                     </li>
                      
@@ -70,7 +70,7 @@
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                               <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/index">前台主页面</a></li>
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/login">登录</a></li>
                         </ul>
                     </li>
                </#if>
@@ -80,10 +80,10 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
 						<a class="dropdown-toggle" href="#", data-toggle="dropdown">欢迎，${Session.user.getUserName()}</a>
-						<input type="hidden" id="isRoot" value="${isRoot?string("Y","N")}" />
+						
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUser">
 							<li role="presentation">
-								<a role='menuitem', tabindex="-1", href='logout'>注销</a>
+								<a role='menuitem', tabindex="-1", href='${rc.contextPath}/logout'>注销</a>
 							</li>
 						</ul>
 					</li>

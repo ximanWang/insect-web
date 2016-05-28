@@ -56,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 <body>
 <div>
-	<form id="formModify" action="${rc.contextPath}/admin/index" method="post">
+	<form id="formModify" action="${rc.contextPath}/login" method="post">
 		
 		用户名：<input id="username" type="text" name="username" /><span class="errmsg">${map.error }</span></br>
 		<br />密码：<input id="password" type="password" name="password" /><br />
