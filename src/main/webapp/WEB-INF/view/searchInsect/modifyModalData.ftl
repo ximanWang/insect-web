@@ -115,19 +115,7 @@
         />
     </div>
 </div>
-<div class="row">
-  <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img src="images/A.jpg" alt="...">
-      <a href="#" class="btn btn-primary" role="button">删除</a>
-    </a>
-  </div>
-  <div class="col-xs-6 col-md-3">
-    <a href="#" class="thumbnail">
-      <img src="images/A.jpg" alt="...">
-    </a>
-  </div>
-</div>
+
 <script type="text/javascript">
     //生成bootstrap的select样式
     $(".selectpicker").select2({width : 180});

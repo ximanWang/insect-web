@@ -16,9 +16,11 @@ import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.enums.ToastMessageType;
 import com.nwsuaf.insect.exception.InsectException;
+import com.nwsuaf.insect.mapper.InsectCateUserRoleMapper;
 import com.nwsuaf.insect.model.InsectCateUserRole;
 import com.nwsuaf.insect.model.ToastMessage;
 import com.nwsuaf.insect.model.query.RoleUpdateOprData;
+import com.nwsuaf.insect.model.query.UserAddOprData;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.CateRoleService;
 import com.nwsuaf.insect.service.UserRoleService;
@@ -32,6 +34,9 @@ public class InsectRolesCtrl {
 	
 	@Autowired
 	private CateRoleService roleService;
+	
+	@Autowired
+	private InsectCateUserRoleMapper userRoleMapper;
 	
 	@RequestMapping(value="/list")
 	public String loadList(ModelMap model){
@@ -82,7 +87,7 @@ public class InsectRolesCtrl {
 		userRole.setId(updateData.getId());
 		userRole.setUserName(updateData.getUserName());
 		userRole.setUserEmail(updateData.getUserEmail());
-		userRole.setRemark(updateData.getRemark());
+		userRole.setRemark(updateData.getRoleCode());
 		userRole.setUpdateUser(userq.getUserName());
 		userRole.setRoleCode(updateData.getRoleCode());
 		if("ROOT".equals(updateData.getRoleCode())){
@@ -94,6 +99,40 @@ public class InsectRolesCtrl {
 		userRoleService.updateSelective(userRole);
 		
 		return new ToastMessage(ToastMessageType.SUCCESS, "操作已生效成功!");
+	}
+	
+	@RequestMapping("/loadAdd")
+	public String loadAdd(HttpServletRequest request) {
+		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
+		if (userq == null)
+			return "login/login";
+		return "userRole/addModalData";
+	}
+	
+	@RequestMapping("/add")
+	@ResponseBody
+	public ToastMessage add(@RequestBody UserAddOprData addOprData, HttpServletRequest request) {
+		
+		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
+		if (userq == null)
+			throw new InsectException("未登录");
+		
+		InsectCateUserRole userRole = new InsectCateUserRole();
+		userRole.setAddUser(userq.getUserName());
+		userRole.setRoleCode(addOprData.getRoleCode());
+		userRole.setRemark(addOprData.getRemark());
+		userRole.setUserEmail(addOprData.getUserEmail());
+		userRole.setUserCode(addOprData.getUserCode());
+		userRole.setUserName(addOprData.getUserName());
+		if("ROOT".equals(addOprData.getRoleCode())){
+			userRole.setRoleType("ROOT");
+		}else{
+			userRole.setRoleType("BACK");
+		}
+		userRole.setUserPasswd("88888888");
+		
+		userRoleMapper.insert(userRole);
+		return new ToastMessage(ToastMessageType.SUCCESS, "操作已生效成功!");
 	}
 }

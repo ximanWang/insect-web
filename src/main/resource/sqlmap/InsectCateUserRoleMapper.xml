@@ -51,7 +51,7 @@
     values (#{id,jdbcType=INTEGER}, #{userroleId,jdbcType=INTEGER}, #{userCode,jdbcType=VARCHAR}, 
       #{roleCode,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, #{userPasswd,jdbcType=VARCHAR}, 
       #{userEmail,jdbcType=VARCHAR}, #{roleType,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, 
-      #{addUser,jdbcType=VARCHAR}, #{addTime,jdbcType=TIMESTAMP}, #{updateUser,jdbcType=VARCHAR}, 
+      #{addUser,jdbcType=VARCHAR}, now(), #{updateUser,jdbcType=VARCHAR}, 
       #{updateTime,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.InsectCateUserRole" >
@@ -88,7 +88,7 @@
         add_user,
       </if>
       <if test="addTime != null" >
-        add_time,
+        now(),
       </if>
       <if test="updateUser != null" >
         update_user,
@@ -176,7 +176,7 @@
         update_user = #{updateUser,jdbcType=VARCHAR},
       </if>
       <if test="updateTime != null" >
-        update_time = #{updateTime,jdbcType=TIMESTAMP},
+        update_time = now(),
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

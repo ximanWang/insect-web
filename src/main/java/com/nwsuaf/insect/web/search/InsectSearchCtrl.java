@@ -54,8 +54,7 @@ public class InsectSearchCtrl {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
-			return "login/login";
-		
+			return "login/login";		
 		ListResult resultList = insectMappingSearchService.getFBMappings(pagination, userq);
 
 		@SuppressWarnings("unchecked")

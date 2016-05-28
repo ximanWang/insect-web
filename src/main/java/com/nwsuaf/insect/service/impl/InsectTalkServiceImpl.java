@@ -44,7 +44,7 @@ public class InsectTalkServiceImpl implements InsectTalkService{
 		if(startDate != null && !startDate.equals("")){
 			insectTalk.setAddTime(Date.valueOf(startDate));
 		}
-		if(isCheck != null && !startDate.equals("")){
+		if(isCheck != null && !isCheck.equals("")){
 			insectTalk.setIsAnswer(Integer.parseInt(isCheck));
 		}
 		
@@ -58,6 +58,18 @@ public class InsectTalkServiceImpl implements InsectTalkService{
 	    PageHelper.startPage(pagination.getCurrentPage(), pagination.getPageCount(), true);
 	    
 	    List<InsectTalk> talkList = talkMapper.getAllTalks();
+	    PageInfo page = new PageInfo(talkList);
+		ListResult listResult = new ListResult(talkList,page.getTotal());
+		return listResult;
+	}
+
+	@Override
+	public ListResult getFrontTalks(Pagination pagination) {
+		PaginationUtil.initDateQueryCondition(pagination);
+		//设置分页区间，并设置第三个参数为true，计算总记录数
+	    PageHelper.startPage(pagination.getCurrentPage(), pagination.getPageCount(), true);
+	    
+	    List<InsectTalk> talkList = talkMapper.getAllFrontTalks();
 	    PageInfo page = new PageInfo(talkList);
 		ListResult listResult = new ListResult(talkList,page.getTotal());
 		return listResult;

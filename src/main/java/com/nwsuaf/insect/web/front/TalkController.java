@@ -31,7 +31,7 @@ public class TalkController {
 	public String loadList( Pagination pagination, ModelMap modelMap,
 			HttpServletRequest request) {
 		
-		ListResult result = talkService.getAllTalks(pagination);
+		ListResult result = talkService.getFrontTalks(pagination);
 		modelMap.addAttribute("talkList",result.getResult());
 		pagination.setTotal(result.getTotalItem());
 		modelMap.addAttribute("pagination", pagination);

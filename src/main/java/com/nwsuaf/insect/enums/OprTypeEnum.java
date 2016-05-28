@@ -2,8 +2,8 @@ package com.nwsuaf.insect.enums;
 
 /**
  * 操作类型枚举
- * 
  * @author ximan
+ * 2016/04/06
  *
  */
 public enum OprTypeEnum {

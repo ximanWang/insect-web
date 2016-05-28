@@ -13,4 +13,5 @@
      
     <!-- 扫描文件（自动将service层注入） -->
     <context:component-scan base-package="com.nwsuaf.insect"/>
+    
 </beans>

@@ -94,6 +94,7 @@
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUser">
 							<li role="presentation">
 								<a role='menuitem', tabindex="-1", href='logout'>注销</a>
+								<a role='menuitem', tabindex="-1", href='logout'>修改个人信息</a>
 							</li>
 						</ul>
 					</li>

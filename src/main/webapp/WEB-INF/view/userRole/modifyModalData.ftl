@@ -24,7 +24,7 @@
     			<option value="">${userRole.roleCode}</option>
                 <#if cateRoleList??>
                      <#list cateRoleList as cateRole>
-                            <option value="${cateRole.roleName!}">${cateRole.roleName}</option>
+                            <option value="${cateRole.roleCode!}">${cateRole.roleName}</option>
                      </#list>
                  </#if>
         </select>

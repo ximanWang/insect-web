@@ -14,7 +14,7 @@
 						<option value="">全部</option>
                         <#if cateRoleList??>
                             <#list cateRoleList as cateRole>
-                                <option value="${cateRole.roleName}">${cateRole.roleName}</option>
+                                <option value="${cateRole.roleCode}">${cateRole.roleName}</option>
                             </#list>
                         </#if>
                     </select>
@@ -94,26 +94,23 @@ $("#cancel, .close").click(function() {
     });
 });
 
-$("#loadAddModalBtn").click(function() {
-
-    //清除之前新增的多余的权限范围标签
-    cateSelect.init("#formAdd");
-    fcateSelect.init("#formAdd");
-    loadAddFormCateRange();
+$("#loadAddModalBtn").click(function(ev) {
+	var cityName = $('#formQuery input[name=cityName]').val();
+    var params = {cityName : cityName};
+    insect.template.renderTemplateByKey("userRole.loadAdd", params);
 
     $("#addModal").modal("show");
     $("#formAdd").validate_popover({onsubmit: false, popoverPosition: "top"});
     $("#addModal").on("scroll", function() { $.validator.reposition(); });
     $("#addModal").on("hide.bs.modal", function (e) {
-       $(".popover").each( function() {
-          $(this).hide();
-       });
+        $(".popover").each( function() {
+            $(this).hide();
+        });
     });
     $(window).resize(function() {
         $.validator.reposition();
     });
 });
-
 $("#formQueryBtn").click(function() {
 	var condition = $("#formQuery").serializeObject();
     userRolePagination.setCondition(condition).first();

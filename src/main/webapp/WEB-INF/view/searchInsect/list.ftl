@@ -87,13 +87,7 @@ var startDateDiv = $('#startDateDiv').datepicker({
 }).on('changeDate', function(ev) {
     startDateDiv.hide();
     //设置结束日期的一些条件
-//    var newDate = startDateDiv.getDate();
-//    if(newDate!="Invalid Date") {
-//        newDate.setDate(newDate.getDate() + 1);
-//        endDateDiv.setStartDate(newDate);
-//        endDateDiv.setDate(newDate);
-//        $('#endDate')[0].focus();
-//    }
+
 }).data('datepicker');
 
 //设置日期控件的一些默认条件
@@ -157,60 +151,5 @@ $("#opDelConfirm #ok").click(function() {
         }
     });
 });
-
-<#if isRoot==1>
-	$('#formRefreshBtn').click(function(){
-	   	$("#opRefreshConfirm").modal("show");
-	});
-	var refreshStatus = function(){
-		$.ajax({
-			type: "POST",
-		    url: "fbMapping/askRefreshStatus",
-		    dataType: "json",
-		    data: {},
-		    success: function (data) {
-		    	var status = parseInt(data.body);
-		    	if(status == 1){
-		    		setTimeout("refreshStatus();", 3000);
-		    	} else if(status > 1){
-			    	$('#formRefreshBtn .icon').html('立即执行');
-		            $('#formRefreshBtn').removeAttr('disabled');
-		            var msg = {
-		            	2 : $('<p class="text-success">映射关系已更新！</p>'),
-		            	3 : $('<p class="text-error">映射关系更新失败，请重试！</p>')
-		            }
-		            if(msg[status]){
-		            	$("#refreshStatusMessage #statusMessage p").remove();
-			            $("#refreshStatusMessage #statusMessage").append(msg[status]);
-			            $("#refreshStatusMessage").modal("show");
-		            }
-	            }
-		    }
-		});
-	}
-	
-	// 执行刷新前后台映射关系缓存
-	$("#opRefreshConfirm #ok").click(function() {
-	    var url = "fbMapping/refresh";
-	    startloading();
-	    $.ajax({
-	        type: "POST",
-	        url: url,
-	        dataType: "json",
-	        data: {},
-	        success: function (data) {
-	        	closeLoading();
-	            $("#opRefreshConfirm").modal("hide");
-	            toast(data);
-	            if(data.type == "SUCCESS") {
-	            	$('#formRefreshBtn .icon').html('刷新执行中');
-	            	$('#formRefreshBtn').attr('disabled', 'disabled');
-	            	setTimeout("refreshStatus();", 3000);
-	            }
-	        }
-	    });
-	});
-</#if>
-
 
 </script>

@@ -41,6 +41,11 @@
         <targetSelector>#modifyModalData</targetSelector>
         <templateRequestType>POST</templateRequestType>
     </template>
+    <template key="userRole.loadAdd">
+        <requestUrl>/admin/userRole/loadAdd</requestUrl>
+        <targetSelector>#addModalData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
     <!--权限管理相关 结束-->
 
     <!--条件查询 开始-->

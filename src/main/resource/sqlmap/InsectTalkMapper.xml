@@ -23,6 +23,9 @@
   <select id="getAllTalks" resultMap="BaseResultMap">
   	select * from insect_talk group by id desc
   </select>
+  <select id="getAllFrontTalks" resultMap="BaseResultMap">
+  	select * from insect_talk where is_answer=1 group by id desc
+  </select>
   <select id="findByCondition" resultMap="BaseResultMap" parameterType="com.nwsuaf.insect.model.InsectTalk">
   	select * from insect_talk  where 1=1
 		<if test="isAnswer != null">

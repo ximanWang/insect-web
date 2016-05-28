@@ -125,6 +125,7 @@ $(function() {
 					<input type="text"  value="${talkData.askContent}">					
 					<textarea value="">${talkData.answer}</textarea>
 				</div>	
+		
 				</#list>
 				</#if>
 				

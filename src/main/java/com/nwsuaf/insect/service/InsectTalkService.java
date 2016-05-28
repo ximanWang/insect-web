@@ -8,4 +8,6 @@ public interface InsectTalkService {
 	public ListResult getTalks(Pagination pagination);
 	
 	public ListResult getAllTalks(Pagination pagination);
+
+	public ListResult getFrontTalks(Pagination pagination);
 }

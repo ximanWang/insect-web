@@ -21,4 +21,6 @@ public interface InsectTalkMapper {
     int updateByPrimaryKey(InsectTalk record);
 
 	List<InsectTalk> findByCondition(InsectTalk insectTalk);
+
+	List<InsectTalk> getAllFrontTalks();
 }

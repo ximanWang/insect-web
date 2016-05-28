@@ -3,12 +3,7 @@
     <div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
         <div class="row-fluid">
             <h3 class="text-success text-center">Pest Tree</h3>
-            <div id="search_box">
-                <form id="search_form" method="post" action="#">
-                    <input type="text" id="s" value="Search" class="swap_value" />
-                    <input type="image" src="http://files.jb51.net/demoimg/200912/btn_search_box.gif" width="27" height="24" id="go" alt="Search" title="Search" />
-                </form>
-            </div>
+           
             <div class="panel-group m-t-20 m-r-20" id="accordion" style="display: none;float: right;width: 350px;">
                 <div class="panel panel-default">
                     <div class="panel-heading">
