@@ -6,7 +6,7 @@
 </div>
 <div class="row m-t-20">
 	<div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
-		<form id="formQuery" onsu bmit="return false;">
+		<form id="formQuery" onsubmit="return false;">
             <div class="form-group m-t-10">
                 <label class="control-label col-md-2">选择昆虫</label>
                 <div class="col-md-4 text-left">

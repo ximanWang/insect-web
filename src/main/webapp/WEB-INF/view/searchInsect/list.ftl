@@ -12,7 +12,7 @@
                 <div class="col-md-4">
                     <@ancestorSelector class="selectpicker" id="fAncestorId" name="fAncestorId"/>
                 </div>
-                <label class="control-label col-md-2">后台类目</label>
+                <label class="control-label col-md-2">分类级别</label>
                 <div class="col-md-4 text-left">
                 	<@cateSelector class="selectpicker" name="bCateId"/>
                 </div>

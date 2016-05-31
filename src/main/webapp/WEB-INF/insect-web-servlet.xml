@@ -19,6 +19,7 @@
 	<mvc:resources location="/css/" mapping="/css/**" />
 	<mvc:resources location="/font-css/" mapping="/font-css/**" />
 	<mvc:resources location="/admin/images/" mapping="/admin/images/**" />
+	<mvc:resources location="/images/" mapping="/images/**" />
 	<mvc:resources location="/frontimage/" mapping="/frontimage/**" />
 	<mvc:annotation-driven>
 		<mvc:message-converters register-defaults="true">
