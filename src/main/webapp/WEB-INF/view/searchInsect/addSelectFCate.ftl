@@ -17,7 +17,7 @@
 
 <div class="row m-t-20 addfcate-select-div" style="display: none">
     <label class="control-label col-md-2 text-right"></label>
-    <label class="control-label col-md-1 text-right">父类目</label>
+    <label class="control-label col-md-1 text-right">分类级别</label>
     <div class="col-md-3">
         <@cateSelector class="selectpicker" name="fCateId"/>
     </div>
@@ -43,7 +43,7 @@
 
 <div class="row m-t-20 addfcate-select-div" style="display: none">
     <label class="control-label col-md-2 text-right"></label>
-    <label class="control-label col-md-1 text-right">父类目</label>
+    <label class="control-label col-md-1 text-right">分类级别</label>
     <div class="col-md-3">
         <@cateSelector class="selectpicker" name="fPestId"/>
     </div>

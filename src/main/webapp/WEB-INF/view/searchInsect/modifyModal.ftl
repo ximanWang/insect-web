@@ -37,7 +37,7 @@
      		url: $("#formModify").attr("action"),
      		contentType: 'application/json',
        		dataType: "json",
-       		data:formData,
+       		data:JSON.stringify(formData),
           	success: function (data) {
         		closeLoading();
            		if(data.type == "SUCCESS") {

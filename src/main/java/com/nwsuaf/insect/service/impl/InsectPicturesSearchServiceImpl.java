@@ -66,10 +66,10 @@ public class InsectPicturesSearchServiceImpl implements InsectPicturesSearchServ
 			}
 		}else{
 			if(insectId != null){
-				if(type.equals("typeA")){
+				if(type.equals("标本照")){
 					typeNum = 1;
 					album = albumMapper.selectByTypeAndId(insectId, typeNum);
-				}else if(type.equals("typeB")){
+				}else if(type.equals("生态照")){
 					typeNum = 0;
 					album = albumMapper.selectByTypeAndId(insectId, typeNum);
 				}

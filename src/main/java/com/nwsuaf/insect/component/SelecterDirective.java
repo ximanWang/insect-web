@@ -76,8 +76,8 @@ public class SelecterDirective implements TemplateDirectiveModel {
 			new SelectFilterWriter(type, params) {
 				protected void writeOptions(StringBuilder sb) {
 					List<String> albumTypeList = new ArrayList<String>();
-					albumTypeList.add("typeA");
-					albumTypeList.add("typeB");
+					albumTypeList.add("标本照");
+					albumTypeList.add("生态照");
 					for (String type : albumTypeList) {
 						if (isCheckPrivilege()) {
 							continue;
