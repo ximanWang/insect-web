@@ -112,7 +112,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="history">
 				
 				<div class="col-md-7 history-right">
-					<h3>铜绿异丽金龟${insect.chineseName}</h3>
+					<h3>${insect.chineseName}</h3>
 					<p> 学名（中文）：${insect.chineseName}
 						<span>学名（拉丁文）：${insect.lationName}</span>
 						<span>学名（英文）：${insect.englishName}</span>
@@ -131,126 +131,22 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<h1>相册</h1>
 			<div class="portfolio-mian">
 					<div class="portfolio-top">
+								
 								<div class="col-md-3 port-1-left">
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper ">		
-											<a href="../frontimage/port-3.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
-										     <img src="../frontimage/port-3.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-1  b-delay03 ">Photography</h2>
+									<#if pictures??>
+										<#list pictures as pictures>
+										<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
+											<div class="portfolio-wrapper">		
+											<a href="../${pictures.url}" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="../${pictures.url}"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-4   b-delay03 ">Photography</h2>
 										  	 </div></a>
-										</div>
-									</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-5.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
-										     <img src="../frontimage/port-5.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">Photography</h2>
-										  	 </div></a>
+										  	 </div>
 			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-8.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
-										     <img src="../frontimage/port-8.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-9.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
-										     <img src="../frontimage/port-9.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
+										</#list>
+									</#if>
+									
 								</div>
-								<div class="col-md-3 port-1-right">
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper">		
-											<a href="../frontimage/port-4.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-4.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-6.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-6.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-7.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-7.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-2.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-2.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-								</div>
-								<div class="col-md-3 portfolio-right">
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper">		
-											<a href="../frontimage/port-2.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-2.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-4   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-7.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-7.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-5  b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-3.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-3.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-5  b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-5.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-5.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-5  b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-								</div>
-								<div class="col-md-3 port-1-right portfolio-last">
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper">		
-											<a href="../frontimage/port-9.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-9.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-8.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-8.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-4.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-4.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper p-5">		
-											<a href="../frontimage/port-6.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="../frontimage/port-6.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
-										  	 </div></a>
-			                			</div>
-			                		</div>
-								</div>
+								
 								<div class="clearfix"></div>
 					</div>
 				</div>

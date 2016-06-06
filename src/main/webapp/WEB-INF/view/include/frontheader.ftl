@@ -37,7 +37,7 @@
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/insectSearch'>条件查询</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/picturesSearch'>条件查询</a></li>
                     </ul>
                	  </li>
                		

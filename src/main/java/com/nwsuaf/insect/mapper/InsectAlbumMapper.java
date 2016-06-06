@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Param;
 
-import com.nwsuaf.insect.model.AlbumPictures;
 import com.nwsuaf.insect.model.InsectAlbum;
 
 public interface InsectAlbumMapper {
@@ -23,4 +22,5 @@ public interface InsectAlbumMapper {
     int updateByPrimaryKeySelective(InsectAlbum record);
 
     int updateByPrimaryKey(InsectAlbum record);
+    
 }
