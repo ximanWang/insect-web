@@ -4,12 +4,7 @@
 					<div class="header-logo">
 						<a href="index.html"><img src="frontimage/logo.png" alt="" /></a>
 					</div>
-					<div class="top-nav">
-							<ul class="cl-effect-1">
-								<li><a href="index">主页</a></li>                                             
-								<li><a href='javascript:insect.template.renderTemplateByKey("insectSearch.list")'>昆虫树展示</a></li>
-							</ul>
-					</div>
+					
 				</div>
 				<div class="banner-grid-info">
 					<div class="social-icons">

@@ -37,37 +37,7 @@ $("#formAdd #submitBtn").click(function(){
     
 });
 
-function submitAddWithUpload(formData){
-	//上传文件和表单内容
-	startloading();
-	$.ajaxFileUpload({
-		type: "POST",
-		url : 'fbMapping/addWithCityIds',
-		secureuri : false, // 是否需要安全协议，一般设置为false
-		fileElementId : 'addCityRange', // 文件上传域的ID
-		data : formData,
- 		contentType: 'application/json',
-		dataType : 'json',
-		success : function(data, status) {
-			closeLoading();
-			if(data.type == "SUCCESS") {
-				$("#addModal").modal("hide");
-				fbMappingPagination.first();
-				$("#addCityRange").filestyle('destroy');
-				$("#addCityRange").filestyle('clear');
-			}
-			if(data.extra && data.extra.length > 0){
-				logModal.show(data.body, data.extra);
-			} else {
-				toast(data);
-			}
-		},
-		error : function(data, status, e) {
-			closeLoading();
-			toast(new msgObject("ERROR", e.responseText));
-		}
-	});
-}
+
 
 function submitAdd(formData){
 	startloading();

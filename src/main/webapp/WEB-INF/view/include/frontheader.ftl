@@ -22,15 +22,25 @@
                     </ul>
                 </li>
                 
-                <li class="dropdown">
+                  <li class="dropdown">
                     <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                  	  条件查询
+                  	  昆虫信息查询
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/insectSearch'>条件查询</a></li>
                     </ul>
-               
+               	  </li>
+               	  <li class="dropdown">
+                    <a class="dropdown-toggle" href="#", data-toggle="dropdown">
+                  	  昆虫图片查询
+                    <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/insectSearch'>条件查询</a></li>
+                    </ul>
+               	  </li>
+               		
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
                      有问必答

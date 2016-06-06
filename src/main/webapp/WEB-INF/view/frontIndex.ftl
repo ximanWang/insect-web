@@ -99,14 +99,7 @@ $(function() {
         <div class="row-fluid">
             <h3 class="text-success text-center">Insect Tree</h3>
 
-            <div class="easy-tree" >
-                <ul>
-                    <#if insectCategoryHTML??>
-                        ${insectCategoryHTML}
-                    </#if>
-                </ul>
-            </div>
-
+            
         </div>
 
         <div class="row">
@@ -125,29 +118,29 @@ $(function() {
 								<div class="col-md-3 port-1-left">
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper ">		
-											<a href="frontimage/port-3.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
-										     <img src="frontimage/port-3.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-1  b-delay03 ">Photography</h2>
+											<a href="frontimage/port-11.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
+										     <img src="frontimage/port-11.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-1  b-delay03 ">白纷舟蛾</h2>
 										  	 </div></a>
 										</div>
 									</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-5.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
-										     <img src="frontimage/port-5.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">Photography</h2>
+											<a href="frontimage/port-22.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
+										     <img src="frontimage/port-22.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">牧鹿蛾</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-8.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
-										     <img src="frontimage/port-8.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">Photography</h2>
+											<a href="frontimage/port-33.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
+										     <img src="frontimage/port-33.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">四斑露尾甲</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-9.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
-										     <img src="frontimage/port-9.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">Photography</h2>
+											<a href="frontimage/port-44.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
+										     <img src="frontimage/port-44.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">楔斑拟灯蛾</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
@@ -155,89 +148,89 @@ $(function() {
 								<div class="col-md-3 port-1-right">
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper">		
-											<a href="frontimage/port-4.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-4.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
+											<a href="frontimage/port-55.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="frontimage/port-55.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">雅蜉金龟</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-6.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-6.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
+											<a href="frontimage/port-66.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="frontimage/port-66.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">雅蜉金龟</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-7.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-7.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
+											<a href="frontimage/port-77.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="frontimage/port-77.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">竹缕舟蛾</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-2.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-2.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
+											<a href="frontimage/port-88.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="frontimage/port-88.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">著内斑舟蛾</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 								</div>
 								<div class="col-md-3 portfolio-right">
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper">		
-											<a href="frontimage/port-2.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-2.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-4   b-delay03 ">Photography</h2>
+										<div class="portfolio-wrapper p-5">		
+											<a href="frontimage/port-33.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
+										     <img src="frontimage/port-33.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">四斑露尾甲</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-7.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-7.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-5  b-delay03 ">Photography</h2>
+											<a href="frontimage/port-44.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
+										     <img src="frontimage/port-44.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">楔斑拟灯蛾</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-3.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-3.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-5  b-delay03 ">Photography</h2>
+											<a href="frontimage/port-33.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="frontimage/port-33.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-5  b-delay03 ">Photography</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-5.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-5.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-5  b-delay03 ">Photography</h2>
+											<a href="frontimage/port-88.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="frontimage/port-88.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">著内斑舟蛾</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 								</div>
 								<div class="col-md-3 port-1-right portfolio-last">
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
-										<div class="portfolio-wrapper">		
-											<a href="frontimage/port-9.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-9.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
+										<div class="portfolio-wrapper p-5">		
+											<a href="frontimage/port-33.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
+										     <img src="frontimage/port-33.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">四斑露尾甲</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-8.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-8.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
+											<a href="frontimage/port-44.jpg" class="b-link-stripe b-animate-go  swipebox" title="">
+										     <img src="frontimage/port-44.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left  prt-2  b-delay03 ">楔斑拟灯蛾</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-4.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-4.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
+											<a href="frontimage/port-44.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="frontimage/port-44.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">楔斑拟灯蛾</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
 									<div class="portfolio app mix_all" data-cat="app" style="display: inline-block; opacity: 1;">
 										<div class="portfolio-wrapper p-5">		
-											<a href="frontimage/port-6.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
-										     <img src="frontimage/port-6.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">Photography</h2>
+											<a href="frontimage/port-66.jpg" class="b-link-stripe b-animate-go   swipebox" title="">
+										     <img src="frontimage/port-66.jpg"><div class="b-wrapper"><h2 class="b-animate b-from-left prt-3   b-delay03 ">雅蜉金龟</h2>
 										  	 </div></a>
 			                			</div>
 			                		</div>
@@ -251,7 +244,6 @@ $(function() {
 		<!-- //container -->
 	</div>
 	<!-- //gallery -->
-	 <#include "/include/ffooter.ftl"/>
 
 </body>
 </html>
