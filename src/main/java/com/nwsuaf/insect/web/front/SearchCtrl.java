@@ -9,10 +9,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
+import com.nwsuaf.insect.mapper.AlbumPicturesMapper;
+import com.nwsuaf.insect.mapper.InsectAlbumMapper;
 import com.nwsuaf.insect.model.Insect;
 import com.nwsuaf.insect.service.InsectMappingSearchService;
 import com.nwsuaf.insect.service.InsectService;
@@ -26,13 +27,16 @@ public class SearchCtrl {
 	private InsectMappingSearchService insectMappingSearchService;
 	@Autowired
 	private InsectService insectService;
-	
+	@Autowired
+	private InsectAlbumMapper albumMapper;
+	@Autowired
+	private AlbumPicturesMapper picturesMapper;
 
 	@RequestMapping(value = "/searchDetail/{id}")
 	public String loadList(@PathVariable Integer id, ModelMap model) {
 		
 		Insect insect = insectService.selectById(id);
-		model.addAttribute(insect);
+		model.addAttribute("insect",insect);
 		return "frontSearch/insectDetail";
 	}
 	

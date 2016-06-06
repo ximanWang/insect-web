@@ -112,17 +112,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="history">
 				
 				<div class="col-md-7 history-right">
-					<h3>铜绿异丽金龟</h3>
-					<p> 学名（中文）：脊纹异丽金龟
-						<span>学名（拉丁文）：Anomala corpulenta Motschulsky</span>
-						<span>学名（英文）：</span>
-						<span>别名：铜绿丽金龟		</span>				
+					<h3>铜绿异丽金龟${insect.chineseName}</h3>
+					<p> 学名（中文）：${insect.chineseName}
+						<span>学名（拉丁文）：${insect.lationName}</span>
+						<span>学名（英文）：${insect.englishName}</span>
+						<span>别名：${insect.alias}		</span>				
 						<span>害虫种类：地下害虫</span>
 						<span>种类细分：蛴螬类</span>
-						<span>形态特征：成虫为中型甲虫。体长卵圆形，背腹扁圆，体长15mm～21mm，宽 8mm～12mm，体背铜绿色有金属光泽，前胸背板及鞘翅侧缘黄褐色或褐色。唇基褐绿色且前缘上卷；复眼黑色；触角9节，鳃片部3节，黄褐色。前胸背板大，前缘凹入，侧缘略呈弧形，最阔点在中点之前，前侧角前伸尖锐，后侧角钝角形，后缘边框宽，前缘边框有显著膜质饰边。小盾片近半圆形。鞘翅黄铜绿色且3条纵隆脊略见，合缝隆较显，翅面上密布刻点，翅缘有膜质饰边。雄虫腹面棕黄且密生细毛、雌虫乳白色且末节横带棕黄色，臀板黑斑近三角形。足黄褐色，胫、跗节深褐色，前足胫节外侧2齿、内侧1棘刺，2附爪不等大、后足大爪不分叉。初羽化的成虫前翅淡白，后渐变黄褐、青绿到铜绿具金属光泽。</span>
-						<span>寄主:成虫危害柳、榆、松、板栗、乌桕、油茶、油桐、核桃、果树、豆类等几十种树木和植物的叶部，幼虫则食害植物及苗木的根部。</span> 
-						<span>分布：全省</span>
-						<span>采集地：</span>
+						<span>形态特征：${insect.features}</span>
+						<span>寄主:${insect.host}</span> 
+						<span>分布：${insect.distribution}</span>
+						<span>采集地：${insect.gatherPlace}</span>
 
 					</p>
 				</div>
