@@ -11,90 +11,89 @@
 		</div>
         <div class="collapse navbar-collapse">
         	<ul class="url nav navbar-nav navbar-left">
-        		<li class="dropdown">
-					<a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                        权限管理
-						<span class="caret"></span>
-					</a>
-					<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-						<li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:oprUserRole()'>权限管理</a></li>
-					</ul>
-				</li>
-
+        		
                 <li class="dropdown">
                     <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                    	昆虫分类树展示
+                    	首页
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectCategory.tree")'>昆虫分类树管理</a></li>
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("pestCategory.tree")'>害虫分类树管理</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/index">返回首页</a></li>
                     </ul>
                 </li>
                 
-                <li class="dropdown">
+                  <li class="dropdown">
                     <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                    	图片管理
+                  	  昆虫信息查询
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("searchPictures.list")'>昆虫图片管理</a></li>
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("poiPropCategory.list")'>昆虫图片上传</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/insectSearch'>条件查询</a></li>
                     </ul>
-                </li>
-
-                <li class="dropdown">
+               	  </li>
+               	  <li class="dropdown">
                     <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                  	  条件查询
+                  	  昆虫图片查询
                     <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectSearch.list")'>条件查询</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/picturesSearch'>条件查询</a></li>
                     </ul>
-                </li>
+               	  </li>
+               		
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#", data-toggle="dropdown">
+                     有问必答
+                        <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/talkList'>问题浏览</a></li>
+                                 <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/askLoad'>我要提问</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#", data-toggle="dropdown">
+                   在线测试
+                        <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/testOnline'>在线测试</a></li>
+                        </ul>
+                    </li>
                 
-                    <li class="dropdown">
+                    
+                    <#if Session.user?exists>
+                    	<li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                      提问管理
+                      个人中心
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                               <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectTalk.list")'>问题列表</a></li>
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/index">修改个人信息</a></li>
                         </ul>
                     </li>
-               
-                <#if isRoot>
-                	 <li class="dropdown">
+                     
+                    <#else>
+                    	<li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                      公告管理
+                      登录
                         <span class="caret"></span>
                         </a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                               <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectTalk.list")'>发布公告</a></li>
+                               <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/login">登录</a></li>
                         </ul>
                     </li>
-                   </#if>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" href="#", data-toggle="dropdown">
-                       前台系统
-                        <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                               <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/index">前台主页面</a></li>
-                        </ul>
-                    </li>
-               
+               </#if>
                 
         	</ul>
         	<#if Session.user?exists>
 				<ul class="nav navbar-nav navbar-right">
 					<li class="dropdown">
-						<a class="dropdown-toggle" href="#", data-toggle="dropdown">${Session.user.getUserName()}</a>
-						<input type="hidden" id="isRoot" value="${isRoot?string("Y","N")}" />
+						<a class="dropdown-toggle" href="#", data-toggle="dropdown">欢迎，${Session.user.getUserName()}</a>
+						
 						<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuUser">
 							<li role="presentation">
-								<a role='menuitem', tabindex="-1", href='logout'>注销</a>
-								<a role='menuitem', tabindex="-1", href='logout'>修改个人信息</a>
+								<a role='menuitem', tabindex="-1", href='${rc.contextPath}/logout'>注销</a>
 							</li>
 						</ul>
 					</li>

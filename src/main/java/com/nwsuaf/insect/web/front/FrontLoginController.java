@@ -37,7 +37,7 @@ public class FrontLoginController {
 		} else {
 			 Map map = new HashMap(); 
 			 map.put("error", "用户名或密码不正确，请重新输入！");
-			return new ModelAndView("login/login","map",map);
+			return new ModelAndView("frontLogin/login","map",map);
 		}
 	}
 

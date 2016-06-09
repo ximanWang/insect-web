@@ -37,7 +37,6 @@ public class SelecterDirective implements TemplateDirectiveModel {
 	@Autowired
 	private InsectAlbumService insectAlbumService;
 
-	@Override
 	public void execute(Environment env, Map params, TemplateModel[] loopVars,
 			TemplateDirectiveBody body) throws TemplateException, IOException {
 		if (loopVars.length != 0) {

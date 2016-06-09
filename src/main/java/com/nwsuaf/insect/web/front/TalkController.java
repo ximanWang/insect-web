@@ -13,8 +13,8 @@ import org.springframework.web.servlet.ModelAndView;
 import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.mapper.InsectTalkMapper;
+import com.nwsuaf.insect.model.FrontUser;
 import com.nwsuaf.insect.model.InsectTalk;
-import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectTalkService;
 
 
@@ -47,7 +47,7 @@ public class TalkController {
 	@ResponseBody
 	public ModelAndView addNews(@ModelAttribute("SpringWeb") InsectTalk addOprData, HttpServletRequest request, ModelMap  model) {
 		
-		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
+		FrontUser userq = (FrontUser) request.getSession().getAttribute("user");
 
 		if (userq == null)
 			return new ModelAndView("frontLogin/login");
