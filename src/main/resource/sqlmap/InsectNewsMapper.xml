@@ -17,6 +17,9 @@
     from insect_news
     where id = #{id,jdbcType=INTEGER}
   </select>
+  <select id="getAllNews" resultMap="BaseResultMap">
+  	select * from insect_news group by id desc
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from insect_news
     where id = #{id,jdbcType=INTEGER}
@@ -25,7 +28,7 @@
     insert into insect_news (id, title, content, 
       addUser, addtime)
     values (#{id,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
-      #{adduser,jdbcType=VARCHAR}, #{addtime,jdbcType=TIMESTAMP})
+      #{adduser,jdbcType=VARCHAR}, now())
   </insert>
   <insert id="insertSelective" parameterType="com.nwsuaf.insect.model.InsectNews" >
     insert into insect_news
@@ -60,7 +63,7 @@
         #{adduser,jdbcType=VARCHAR},
       </if>
       <if test="addtime != null" >
-        #{addtime,jdbcType=TIMESTAMP},
+        now(),
       </if>
     </trim>
   </insert>

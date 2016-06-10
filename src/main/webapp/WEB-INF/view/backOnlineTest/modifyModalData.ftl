@@ -32,28 +32,28 @@
 <div class="row m-t-20">
     <label class="control-label col-md-2 text-right">答案A</label>
     <div class="col-md-9">
-        <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="remark" value="${onlineTest.answera!}">
+        <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="answera" value="${onlineTest.answera!}">
     </div>
     <span class="col-md-1 text-left text-muted small"></span>
 </div>
 <div class="row m-t-20">
     <label class="control-label col-md-2 text-right">答案B</label>
     <div class="col-md-9">
-        <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="remark" value="${onlineTest.answerb!}">
+        <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="answerb" value="${onlineTest.answerb!}">
     </div>
     <span class="col-md-1 text-left text-muted small"></span>
 </div>
 <div class="row m-t-20">
     <label class="control-label col-md-2 text-right">答案C</label>
     <div class="col-md-9">
-        <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="remark" value="${onlineTest.answerc!}">
+        <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="answerc" value="${onlineTest.answerc!}">
     </div>
     <span class="col-md-1 text-left text-muted small"></span>
 </div>
 <div class="row m-t-20">
     <label class="control-label col-md-2 text-right">答案D</label>
     <div class="col-md-9">
-        <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="remark" value="${onlineTest.answerd!}">
+        <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="answerd" value="${onlineTest.answerd!}">
     </div>
     <span class="col-md-1 text-left text-muted small"></span>
 </div>

@@ -1,4 +1,4 @@
-package com.nwsuaf.insect.web.onlinetest;
+package com.nwsuaf.insect.web.news;
 
 import java.util.Map;
 
@@ -16,30 +16,29 @@ import com.nwsuaf.insect.dto.ListResult;
 import com.nwsuaf.insect.dto.Pagination;
 import com.nwsuaf.insect.enums.ToastMessageType;
 import com.nwsuaf.insect.exception.InsectException;
-import com.nwsuaf.insect.mapper.InsectOnlineTestMapper;
-import com.nwsuaf.insect.model.InsectCateUserRole;
+import com.nwsuaf.insect.mapper.InsectNewsMapper;
+import com.nwsuaf.insect.model.InsectNews;
 import com.nwsuaf.insect.model.InsectOnlineTest;
 import com.nwsuaf.insect.model.ToastMessage;
-import com.nwsuaf.insect.model.query.OnlineTestAddOprData;
-import com.nwsuaf.insect.model.query.OnlineTestUpdateOprData;
+import com.nwsuaf.insect.model.query.InsctNewsAddOprData;
+import com.nwsuaf.insect.model.query.InsectNewsUpdateOprData;
 import com.nwsuaf.insect.model.query.UserQuery;
-import com.nwsuaf.insect.service.OnlineTestService;
+import com.nwsuaf.insect.service.InsectNewsService;
 
 @Controller
-@RequestMapping("/admin/onlineTest")
-public class BackOnlineTestCtrl {
+@RequestMapping("/admin/insectNews")
+public class InsectNewsCtrl {
 
 	@Autowired
-	private InsectOnlineTestMapper testMapper;
+	private InsectNewsMapper newsMapper;
 	@Autowired
-	private OnlineTestService testService;
+	private InsectNewsService newsService;
 	
 	@RequestMapping(value="/list")
 	public String loadList(ModelMap model){
 		
-		model.addAttribute("cateRoleList", testMapper.getAllTests());
 
-		return "backOnlineTest/list";
+		return "backNews/list";
 	}
 	
 	@RequestMapping(value="/listData", method = RequestMethod.POST)
@@ -50,12 +49,12 @@ public class BackOnlineTestCtrl {
 		if (userq == null)
 			throw new InsectException("未登录");
 
-		ListResult result = testService.getTests(pagination);
-		modelMap.addAttribute("onlineTestList",result.getResult());
+		ListResult result = newsService.getNews(pagination);
+		modelMap.addAttribute("newsList",result.getResult());
 		pagination.setTotal(result.getTotalItem());
 		modelMap.addAttribute("pagination", pagination);
 
-		return "backOnlineTest/listData";
+		return "backNews/listData";
 	}
 	
 	@RequestMapping("/loadModify")
@@ -65,58 +64,51 @@ public class BackOnlineTestCtrl {
 
 		if (userq == null)
 			throw new InsectException("未登录");
-		int testId = (Integer) requestMap.get("userroleId");
-		InsectOnlineTest onlineTest = testMapper.selectByPrimaryKey(testId);
-		model.addAttribute("onlineTest", onlineTest);
-		return "backOnlineTest/modifyModalData";
+		int newsId = (Integer) requestMap.get("userroleId");
+		InsectNews insectNews = newsMapper.selectByPrimaryKey(newsId);
+		model.addAttribute("insectNews", insectNews);
+		return "backNews/modifyModalData";
 	}
-
+	
 	@RequestMapping("/modify")
 	@ResponseBody
-	public ToastMessage modify(@RequestBody OnlineTestUpdateOprData updateData,
+	public ToastMessage modify(@RequestBody InsectNewsUpdateOprData updateData,
 			HttpServletRequest request) {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 		if (userq == null)
 			throw new InsectException("未登录");
 		
-		InsectOnlineTest onlineTest = testMapper.selectByPrimaryKey(updateData.getId());
-		onlineTest.setQuestion(updateData.getQuestion());
-		onlineTest.setAnswera(updateData.getAnswerA());
-		onlineTest.setAnswerb(updateData.getAnswerB());
-		onlineTest.setAnswerc(updateData.getAnswerC());
-		onlineTest.setAnswerd(updateData.getAnswerD());
-		onlineTest.setCorrectanswer(Integer.parseInt(updateData.getCorrectAnswer()));
-		
-		testMapper.updateByPrimaryKeySelective(onlineTest);
+		InsectNews insectNews = newsMapper.selectByPrimaryKey(updateData.getNewsId());
+		insectNews.setTitle(updateData.getTitle());
+		insectNews.setContent(updateData.getContent());
+
+		newsMapper.updateByPrimaryKey(insectNews);
 		
 		return new ToastMessage(ToastMessageType.SUCCESS, "操作已生效成功!");
 	}
-	
+
 	@RequestMapping("/loadAdd")
 	public String loadAdd(HttpServletRequest request) {
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 
 		if (userq == null)
 			return "login/login";
-		return "backOnlineTest/addModalData";
+		return "backNews/addModalData";
 	}
 	
 	@RequestMapping("/add")
 	@ResponseBody
-	public ToastMessage add(@RequestBody OnlineTestAddOprData addOprData, HttpServletRequest request) {
+	public ToastMessage add(@RequestBody InsctNewsAddOprData addOprData, HttpServletRequest request) {
 		
 		UserQuery userq = (UserQuery) request.getSession().getAttribute("user");
 		if (userq == null)
 			throw new InsectException("未登录");
 		
-		InsectOnlineTest onlineTest = new InsectOnlineTest();
-		onlineTest.setQuestion(addOprData.getQuestion());
-		onlineTest.setAnswera(addOprData.getAnswerA());
-		onlineTest.setAnswerb(addOprData.getAnswerB());
-		onlineTest.setAnswerc(addOprData.getAnswerC());
-		onlineTest.setAnswerd(addOprData.getAnswerD());
-		onlineTest.setCorrectanswer(Integer.parseInt(addOprData.getCorrectAnswer()));
-		testMapper.insertSelective(onlineTest);
+		InsectNews insectNews = new InsectNews();
+		insectNews.setAdduser(userq.getUserName());
+		insectNews.setTitle(addOprData.getTitle());
+		insectNews.setContent(addOprData.getContent());
+		newsMapper.insert(insectNews);
 		return new ToastMessage(ToastMessageType.SUCCESS, "操作已生效成功!");
 	}
 }

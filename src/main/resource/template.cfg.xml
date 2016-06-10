@@ -76,6 +76,34 @@
     </template>
     <!--在线测试 结束-->
     
+    <!-- 公告管理开始 -->
+    <template key="insectNews.list">
+        <requestUrl>/admin/insectNews/list</requestUrl>
+        <loading type="boolean">true</loading>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="insectNews.listData">
+        <requestUrl>/admin/insectNews/listData</requestUrl>
+        <loading type="boolean">true</loading>
+        <targetSelector>#fbMappingListData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="insectNews.modify">
+        <requestUrl>/admin/insectNews/modify</requestUrl>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="insectNews.loadModify">
+        <requestUrl>/admin/insectNews/loadModify</requestUrl>
+        <targetSelector>#modifyModalData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="insectNews.loadAdd">
+        <requestUrl>/admin/insectNews/loadAdd</requestUrl>
+        <targetSelector>#addModalData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <!--公告管理 结束-->
+    
     <!--条件查询 开始-->
     <template key="insectSearch.list">
         <requestUrl>/admin/insectSearch/list</requestUrl>

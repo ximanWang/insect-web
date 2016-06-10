@@ -43,13 +43,6 @@
                 </div>
                 <span class="col-md-1 text-left text-muted small"></span>
             </div>
-            <div class="row m-t-20">
-                <label class="control-label col-md-2 text-right">人员备注</label>
-                <div class="col-md-9">
-                    <input class="holo" type="text" style="margin-top:-20px;" id="remark" name="remark" >
-                </div>
-                <span class="col-md-1 text-left text-muted small"></span>
-            </div>
         </div>
 <script type="text/javascript">
     //生成bootstrap的select样式

@@ -1,5 +1,7 @@
 package com.nwsuaf.insect.mapper;
 
+import java.util.List;
+
 import com.nwsuaf.insect.model.InsectNews;
 
 public interface InsectNewsMapper {
@@ -14,4 +16,8 @@ public interface InsectNewsMapper {
     int updateByPrimaryKeySelective(InsectNews record);
 
     int updateByPrimaryKey(InsectNews record);
+
+	List<InsectNews> getAllNews();
+    
+    
 }
