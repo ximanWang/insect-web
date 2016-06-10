@@ -20,19 +20,15 @@ import com.nwsuaf.insect.model.InsectNews;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectCategoryService;
 import com.nwsuaf.insect.service.InsectUserRoleService;
+import com.nwsuaf.insect.service.PestTreeBuilderService;
 import com.nwsuaf.insect.service.TreeBuilderService;
 import com.nwsuaf.insect.service.UserService;
+import com.nwsuaf.insect.service.pest.PestCategoryService;
 
 @Controller
 @RequestMapping("/")
 public class IndexController {
 	
-	@Autowired
-	private InsectCategoryService insectCategoryService;
-
-	@Autowired
-	private TreeBuilderService treeBuilderService;
-
 	@Autowired
 	private InsectUserRoleService insectUserRoleService;
 	@Autowired
@@ -40,13 +36,6 @@ public class IndexController {
 	
 	@RequestMapping(value = "/index")
 	public ModelAndView showIndex(ModelMap model){
-		List<Integer> categoryIds = new ArrayList<Integer>();
-		categoryIds.add(1);
-		categoryIds.add(2);
-		String insectCategoryHTML = treeBuilderService.buildInsectTree(insectCategoryService
-				.getInsectCategoryTree(categoryIds, true));
-		model.addAttribute("insectCategoryHTML", insectCategoryHTML);
-		
 		List<InsectNews> newsList = newsMapper.getAllNews();
 		InsectNews news = newsList.get(0);
 		model.addAttribute("news",news);

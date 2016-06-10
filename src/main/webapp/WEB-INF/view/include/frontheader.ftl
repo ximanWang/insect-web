@@ -21,7 +21,15 @@
                         <li role="presentation"><a role='menuitem', tabindex="-1", href="${rc.contextPath}/index">返回首页</a></li>
                     </ul>
                 </li>
-                
+                <li class="dropdown">
+                    <a class="dropdown-toggle" href="#", data-toggle="dropdown">
+                  	 昆虫分类树展示
+                    <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='${rc.contextPath}/showTree'>分类树展示</a></li>
+                    </ul>
+               	  </li>
                   <li class="dropdown">
                     <a class="dropdown-toggle" href="#", data-toggle="dropdown">
                   	  昆虫信息查询

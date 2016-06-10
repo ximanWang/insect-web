@@ -55,7 +55,7 @@
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-tagsinput.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.iframe-transport.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.ui.widget.js'/>" ></script>
-<script type="text/javascript" src="<@c.url value='/js/easyTree.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/easyTree-user.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-datepicker.js'/>"></script>
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-tagsinput.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/waitMe.min.js'/>" ></script>
@@ -90,24 +90,14 @@ $(function() {
 <body>
 	<#include "/include/frontheader.ftl"/>
     <#include "/include/fheader.ftl"/>
-	<!-- gallery -->
-	<div class="gallery">
 		<!-- container -->
 		<div class="container">
-		<div class="row m-t-20 m-b-20">
-    <div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
-        <div class="row-fluid">
-            <h3 class="text-success text-center">Insect Tree</h3>
-
-            
-        </div>
 
         <div class="row">
             <div class="divider divider-default"></div>
         </div>
 
     </div>
-</div>
 			<div class="gallery-info">
 				<h3>最新图片展</h3>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,galley of type and scrambled it to make a type specimen book.</p>
@@ -239,11 +229,11 @@ $(function() {
 					</div>
 				</div>
 				
-				
 		</div>
 		<!-- //container -->
 	</div>
 	<!-- //gallery -->
 
 </body>
+
 </html>
