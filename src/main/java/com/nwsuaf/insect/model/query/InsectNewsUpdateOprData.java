@@ -10,7 +10,7 @@ import com.alibaba.fastjson.annotation.JSONType;
 public class InsectNewsUpdateOprData {
 
 	@JSONField
-	private Integer newsId;
+	private Integer id;
 	@JSONField
 	private String title;
 	@JSONField

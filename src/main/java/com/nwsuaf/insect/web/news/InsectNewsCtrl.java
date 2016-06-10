@@ -78,7 +78,7 @@ public class InsectNewsCtrl {
 		if (userq == null)
 			throw new InsectException("未登录");
 		
-		InsectNews insectNews = newsMapper.selectByPrimaryKey(updateData.getNewsId());
+		InsectNews insectNews = newsMapper.selectByPrimaryKey(updateData.getId());
 		insectNews.setTitle(updateData.getTitle());
 		insectNews.setContent(updateData.getContent());
 

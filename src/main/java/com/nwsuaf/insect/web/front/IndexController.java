@@ -15,6 +15,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.nwsuaf.insect.mapper.InsectNewsMapper;
+import com.nwsuaf.insect.model.InsectNews;
 import com.nwsuaf.insect.model.query.UserQuery;
 import com.nwsuaf.insect.service.InsectCategoryService;
 import com.nwsuaf.insect.service.InsectUserRoleService;
@@ -33,6 +35,8 @@ public class IndexController {
 
 	@Autowired
 	private InsectUserRoleService insectUserRoleService;
+	@Autowired
+	private InsectNewsMapper newsMapper;
 	
 	@RequestMapping(value = "/index")
 	public ModelAndView showIndex(ModelMap model){
@@ -42,6 +46,10 @@ public class IndexController {
 		String insectCategoryHTML = treeBuilderService.buildInsectTree(insectCategoryService
 				.getInsectCategoryTree(categoryIds, true));
 		model.addAttribute("insectCategoryHTML", insectCategoryHTML);
+		
+		List<InsectNews> newsList = newsMapper.getAllNews();
+		InsectNews news = newsList.get(0);
+		model.addAttribute("news",news);
 		return new ModelAndView("frontIndex");
 	}
 	@RequestMapping(value = "/detail")

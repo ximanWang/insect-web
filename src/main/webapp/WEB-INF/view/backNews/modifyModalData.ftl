@@ -9,7 +9,7 @@
 <div class="row m-t-20">
      <label class="control-label col-md-2 text-right">标题</label>
     <div class="col-md-9">
-        <input class="holo required" type="text" style="margin-top:-20px;color:gray" id="title" name="question" readonly="true" value="${insectNews.title!}">
+        <input class="holo required" type="text" style="margin-top:-20px;color:gray" id="title" name="title"  value="${insectNews.title!}">
     </div>
     <span class="col-md-1 text-left text-muted small"></span>  
 </div>

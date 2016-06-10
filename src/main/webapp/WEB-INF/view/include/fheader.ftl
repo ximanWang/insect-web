@@ -15,8 +15,8 @@
 						</ul>
 					</div>
 					<div class="banner-grid-right">
-						<h3>New Collections Lorem Ipsum is simply dummy text of the printing</h3>
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,when an unknown printer took a galley of type and scrambled it to make</p>
+						<h3>${news.title}</h3>
+						<p>${news.content}</p>
 					</div>
 				</div>
 				<div class="clearfix"> </div>
