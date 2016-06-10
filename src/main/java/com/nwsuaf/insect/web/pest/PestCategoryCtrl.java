@@ -28,6 +28,17 @@ public class PestCategoryCtrl {
 	@Autowired
 	private PestCategoryService pestCategoryService;	
 	
+	@RequestMapping(value = "/adminTree")
+	public String getTreeAdmin(ModelMap model, HttpServletRequest request) {
+		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");
+		userq = userService.findUserByName(userq.getUserName());
+		List<Integer> categoryIds = insectUserRoleService.getBackCategoryIds(userq.getInsectCateUserRoles());
+		String pestCategoryHTML = treeBuilderService.buildPestTree(pestCategoryService
+				.getInsectCategoryTree(categoryIds, userq.getIsRoot()));
+		model.addAttribute("pestCategoryHTML", pestCategoryHTML);
+		return "pestCategoryTree/tree-admin";
+	}
+	
 	@RequestMapping(value = "/tree")
 	public String getTree(ModelMap model, HttpServletRequest request) {
 		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");

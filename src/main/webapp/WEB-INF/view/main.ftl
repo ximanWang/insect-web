@@ -49,7 +49,7 @@
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-tagsinput.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.iframe-transport.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/jquery.ui.widget.js'/>" ></script>
-<script type="text/javascript" src="<@c.url value='/js/easyTree.js'/>" ></script>
+
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-datepicker.js'/>"></script>
 <script type="text/javascript" src="<@c.url value='/js/bootstrap-tagsinput.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/js/waitMe.min.js'/>" ></script>

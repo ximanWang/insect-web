@@ -1,10 +1,10 @@
 <#assign c=JspTaglibs["http://java.sun.com/jstl/core_rt"]>
-<script type="text/javascript" src="<@c.url value='/js/easyTree-user.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/easyTree.js'/>" ></script>
 <!-- html block -->
 <div class="row m-t-20 m-b-20">
     <div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
         <div class="row-fluid">
-            <h3 class="text-success text-center">Pest Tree</h3>
+            <h3 class="text-success text-center">Insect Tree</h3>
            
             <div class="panel-group m-t-20 m-r-20" id="accordion" style="display: none;float: right;width: 350px;">
                 <div class="panel panel-default">
@@ -26,8 +26,8 @@
 
             <div class="easy-tree" style="display: none">
                 <ul>
-                    <#if pestCategoryHTML??>
-                        ${pestCategoryHTML}
+                    <#if insectCategoryHTML??>
+                        ${insectCategoryHTML}
                     </#if>
                 </ul>
             </div>
@@ -145,7 +145,6 @@
             success:function(data){
             	closeLoading();
                 $(".commit-modal-dialog").modal("hide");
-                alert(data+"success");
                 if(data.extra && data.extra.length > 0){
 			   		logModal.show(data.body, data.extra);
 			   		$("#opCommitOprConfirm").modal("hide");
@@ -153,7 +152,7 @@
 				    toast(data);
 			    	$("#opCommitOprConfirm").modal("hide");
 			    }
-            	insect.template.renderTemplateByKey("insectCategory.tree");
+            	insect.template.renderTemplateByKey("insectCategory.adminTree");
             	$("#opCommitOprConfirm").modal("hide");
         	},
         	error:function(data){

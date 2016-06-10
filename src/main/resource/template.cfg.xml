@@ -135,6 +135,16 @@
 
 
     <!--类目树管理 开始-->
+    <template key="insectCategory.adminTree">
+        <requestUrl>/admin/insectCategory/adminTree</requestUrl>
+        <loading type="boolean">true</loading>
+    </template>
+
+    <template key="pestCategory.adminTree">
+        <requestUrl>/admin/pestCategory/adminTree</requestUrl>
+        <loading type="boolean">true</loading>
+    </template>
+    
     <template key="insectCategory.tree">
         <requestUrl>/admin/insectCategory/tree</requestUrl>
         <loading type="boolean">true</loading>

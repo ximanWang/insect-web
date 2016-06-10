@@ -37,6 +37,17 @@ public class InsectCategoryCtrl {
 	@Autowired
 	private UserService userService;
 
+	@RequestMapping(value = "/adminTree")
+	public String getAdminTree(ModelMap model, HttpServletRequest request) {
+		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");
+		userq = userService.findUserByName(userq.getUserName());
+		List<Integer> categoryIds = insectUserRoleService.getBackCategoryIds(userq.getInsectCateUserRoles());
+		String insectCategoryHTML = treeBuilderService.buildInsectTree(insectCategoryService
+				.getInsectCategoryTree(categoryIds, userq.getIsRoot()));
+		model.addAttribute("insectCategoryHTML", insectCategoryHTML);
+		return "insectCategoryTree/tree-admin";
+	}
+	
 	@RequestMapping(value = "/tree")
 	public String getTree(ModelMap model, HttpServletRequest request) {
 		UserQuery userq = (UserQuery)request.getSession().getAttribute("user");

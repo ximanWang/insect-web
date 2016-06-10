@@ -26,10 +26,18 @@
                     	昆虫分类树展示
                     <span class="caret"></span>
                     </a>
+                    <#if isRoot>
+                    <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectCategory.adminTree")'>昆虫分类树管理</a></li>
+                        <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("pestCategory.adminTree")'>害虫分类树管理</a></li>
+                    </ul>
+                    <#else>
                     <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
                         <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectCategory.tree")'>昆虫分类树管理</a></li>
                         <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("pestCategory.tree")'>害虫分类树管理</a></li>
                     </ul>
+                    
+                    </#if>
                 </li>
                 
                 <li class="dropdown">
@@ -71,7 +79,7 @@
                                <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("onlineTest.list")'>试题列表</a></li>
                         </ul>
                     </li>
-                <#if isRoot>
+                    
                 	 <li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
                       公告管理
@@ -81,7 +89,7 @@
                                <li role="presentation"><a role='menuitem', tabindex="-1", href='javascript:insect.template.renderTemplateByKey("insectNews.list")'>公告管理</a></li>
                         </ul>
                     </li>
-                   </#if>
+                    
                     <li class="dropdown">
                         <a class="dropdown-toggle" href="#", data-toggle="dropdown">
                        前台系统

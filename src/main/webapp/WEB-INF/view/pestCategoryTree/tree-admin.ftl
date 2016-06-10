@@ -1,5 +1,5 @@
 <#assign c=JspTaglibs["http://java.sun.com/jstl/core_rt"]>
-<script type="text/javascript" src="<@c.url value='/js/easyTree-user.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/easyTree.js'/>" ></script>
 <!-- html block -->
 <div class="row m-t-20 m-b-20">
     <div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
