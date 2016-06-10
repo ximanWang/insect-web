@@ -116,7 +116,7 @@ $(function() {
  <div class="row m-t-20 m-b-20">
     <div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
         <div class="row-fluid">
-            <h3 class="text-success text-center">昆虫/害虫分类树</h3>
+            <h3 class="text-success text-center">昆虫分类树</h3>
            
             <div class="easy-tree" style="display: none">
                 <ul>
@@ -126,6 +126,15 @@ $(function() {
                 </ul>
             </div>
             
+        </div>
+
+    </div>
+</div>
+<div class="row m-t-20 m-b-20">
+    <div class="col-sm-10 col-sm-offset-1 mm-box form-horizontal filter-pan">
+        <div class="row-fluid">
+            <h3 class="text-success text-center">害虫分类树展示</h3>
+           
             <div class="easy-tree" style="display: none">
                 <ul>
                     <#if pestCategoryHTML??>
@@ -138,7 +147,6 @@ $(function() {
 
     </div>
 </div>
-
 </body>
 	
 <script type="text/javascript">

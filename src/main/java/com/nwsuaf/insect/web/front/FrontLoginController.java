@@ -33,7 +33,7 @@ public class FrontLoginController {
 		if (user != null) {
 			request.getSession().setAttribute("user", user);
 			
-			return new ModelAndView("frontIndex");
+			return new ModelAndView("redirect:/index");
 		} else {
 			 Map map = new HashMap(); 
 			 map.put("error", "用户名或密码不正确，请重新输入！");
