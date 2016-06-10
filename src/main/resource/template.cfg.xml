@@ -48,6 +48,34 @@
     </template>
     <!--权限管理相关 结束-->
 
+	 <!-- 在线测试开始 -->
+    <template key="onlineTest.list">
+        <requestUrl>/admin/onlineTest/list</requestUrl>
+        <loading type="boolean">true</loading>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="onlineTest.listData">
+        <requestUrl>/admin/onlineTest/listData</requestUrl>
+        <loading type="boolean">true</loading>
+        <targetSelector>#fbMappingListData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="onlineTest.modify">
+        <requestUrl>/admin/onlineTest/modify</requestUrl>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="onlineTest.loadModify">
+        <requestUrl>/admin/onlineTest/loadModify</requestUrl>
+        <targetSelector>#modifyModalData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <template key="onlineTest.loadAdd">
+        <requestUrl>/admin/onlineTest/loadAdd</requestUrl>
+        <targetSelector>#addModalData</targetSelector>
+        <templateRequestType>POST</templateRequestType>
+    </template>
+    <!--在线测试 结束-->
+    
     <!--条件查询 开始-->
     <template key="insectSearch.list">
         <requestUrl>/admin/insectSearch/list</requestUrl>

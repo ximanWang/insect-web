@@ -47,7 +47,7 @@ public class InsectSearchCtrl {
 		return "searchInsect/list";
 	}
 
-	@RequestMapping(value = "/listData", method = RequestMethod.POST)
+	@RequestMapping(value = "/listData", method = RequestMethod.GET)
 	public String qryListData(@RequestBody Pagination pagination, ModelMap model,
 			HttpServletRequest request) {
 
