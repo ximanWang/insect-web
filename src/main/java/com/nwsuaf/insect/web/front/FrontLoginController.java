@@ -53,11 +53,11 @@ public class FrontLoginController {
 	}
 	
 	@RequestMapping("/logout")
-	public String loginOut(HttpServletRequest request, HttpServletResponse response) {
+	public ModelAndView loginOut(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession session = request.getSession(false);// 防止创建Session
 		if (session != null) {
 			session.removeAttribute("user");
 		}
-		return "frontIndex";
+		return new ModelAndView("redirect:/index");
 	}
 }

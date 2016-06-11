@@ -9,12 +9,15 @@
 
 <link rel="stylesheet", href="<@c.url value='/frontcss/style-question.css'/>">
 
+
 <style type="text/css">
 .demo{width:760px; margin:60px auto 10px auto}
 </style>
-
 <script type="text/javascript" src="<@c.url value='/frontjs/jquery.min-test.js'/>" ></script>
 <script type="text/javascript" src="<@c.url value='/frontjs/quiz.js'/>" ></script>
+<script type="text/javascript" src="<@c.url value='/js/bootstrap.min.js'/>" ></script>
+
+
 <script type="text/javascript">
 
 function afterAjaxSuccess(jsonData) {
@@ -42,8 +45,14 @@ $(function(){
 
 <body>
 
+<div class="gallery-info">
+				<p>     </p><br />
+<br />			</div>
 <div class="demo">
 	<div id='quiz-container'></div>
+</div>
+<div>
+	<a href="${rc.contextPath}/index">返回首页</a>
 </div>
 <div style="text-align:center;margin:50px 0; font:normal 14px/24px 'MicroSoft YaHei';">
 </div>

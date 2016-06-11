@@ -54,8 +54,8 @@ public class TalkController {
 
 		InsectTalk record = new InsectTalk();
 		record.setAskContent(addOprData.getAskContent());
-		// TODO setAddUser setAddTime
 		record.setAddUser(userq.getUserName());
+		record.setIsAnswer(0);
 		talkMapper.insert(record);
 		
 		return new ModelAndView("redirect:/talkList");

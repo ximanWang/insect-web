@@ -97,9 +97,10 @@ $(function() {
             <div class="divider divider-default"></div>
         </div>
 
-    </div>
+    </div><br/>
 			<div class="gallery-info">
-				<h3>最新图片展</h3>
+			<br />
+				<h3>New Pictures</h3>
 				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,galley of type and scrambled it to make a type specimen book.</p>
 			</div>
 			<div class="portfolio-mian">

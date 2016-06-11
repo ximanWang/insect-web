@@ -39,9 +39,9 @@
                 contentFob += '<div class="prev"><a class="nav-previous" href="#">&lt; 上一题</a></div>';
             }
             if (questionsIteratorIndex < config.questions.length - 1) {
-                contentFob += '<div class="next"><a class="nav-next" href="#">下一题 &gt;</a></div>';
+                contentFob += '<div class="next1"><a class="nav-next1" href="#">下一题 &gt;</a></div>';
             } else {
-                contentFob += '<div class="next final"><a class="nav-show-result" href="#">完成</a></div>';
+                contentFob += '<div class="next1 final"><a class="nav-show-result" href="#">完成</a></div>';
             }
             contentFob += '</div></div>';
             answers.push(config.questions[questionsIteratorIndex].correctAnswer);
@@ -101,7 +101,7 @@
             });
             return false;
         });
-        superContainer.find('.next').click(function() {
+        superContainer.find('.next1').click(function() {
             if ($(this).parents('.slide-container').find('li.selected').length === 0) {
                 notice.fadeIn(300);
                 return false;

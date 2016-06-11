@@ -35,7 +35,7 @@
 						<div class="msKeimgBox">
 						   <img src="${picture.url}" class="col-xs-4 col-md-6" />
  							  <span class="hidden">
-  							     <img src="${picture.url}" />
+  							     <img src="../${picture.url}" />
   							  </span>
 						</div>
                         </#if>
